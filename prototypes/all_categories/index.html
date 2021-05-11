@@ -44,40 +44,6 @@
             max-width: 400px;
             font: 12px/20px Helvetica;
         }
-        #menu {
-            background: #fff;
-            position: absolute;
-            z-index: 1;
-            top: 50px;
-            right: 50px;
-            width: 80px;
-            font-family: Helvetica;
-        }
-        #menu a {
-            font-size: 13px;
-            color:"gray";
-            display: block;
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-            text-align: center;
-        }
-        #menu a:last-child {
-            border: none;
-        }
-        #menu a:hover {
-            background-color:"white";
-            color:"gray";
-        }
-        #menu a.active {
-            background-color:gray;
-            color: #ffffff;
-        }
-        #menu a.active:hover {
-            background:gray;
-        }
 
 	</style>
 
@@ -1609,58 +1575,6 @@ var dateclosed = e.features[0].properties.date_closed;
 var dateopened = e.features[0].properties.date_opened; 
 popup.setLngLat(coordinates).setHTML("<a href=" + url + ">" + description2 + "</a>" + "<br><strong>Date Opened:</strong> " + dateopened + "<br><strong>Date Closed:</strong> " + dateclosed ).addTo(map);
 });
-});
-
-map.on('idle', function () {
-// If these two layers have been added to the style,
-// add the toggle buttons.
-if (map.getLayer('WRA') && map.getLayer('EAIS') && map.getLayer('Hawaii')) {
-// Enumerate ids of the layers.
-var toggleableLayerIds = ['WRA', 'EAIS', 'Hawaii'];
-// Set up the corresponding toggle button for each layer.
-for (var i = 0; i < toggleableLayerIds.length; i++) {
-var id = toggleableLayerIds[i];
-if (!document.getElementById(id)) {
-// Create a link.
-var link = document.createElement('a');
-link.id = id;
-link.href = '#';
-link.textContent = id;
-link.className = 'active';
-// Show or hide layer when the toggle is clicked.
-link.onclick = function (e) {
-var clickedLayer = this.textContent;
-e.preventDefault();
-e.stopPropagation();
- 
-var visibility = map.getLayoutProperty(
-clickedLayer,
-'visibility'
-);
- 
-// Toggle layer visibility by changing the layout object's visibility property.
-if (visibility === 'visible') {
-map.setLayoutProperty(
-clickedLayer,
-'visibility',
-'none'
-);
-this.className = '';
-} else {
-this.className = 'active';
-map.setLayoutProperty(
-clickedLayer,
-'visibility',
-'visible'
-);
-}
-};
- 
-var layers = document.getElementById('menu');
-layers.appendChild(link);
-}
-}
-}
 });
 </script>
 </body>
