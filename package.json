@@ -20,6 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "prototypes": "python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./prototypes",
     "staging": "PUBLIC_URL=./ REACT_APP_ROUTER_MODE=hash react-scripts build --mode staging && python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./build"
   },
   "eslintConfig": {
