@@ -1,0 +1,33 @@
+body {
+  margin:0; padding:0;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+}
+
+#map-inset {
+  border: 1px solid #666;
+  height: 15rem;
+  width: 15rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  z-index: 1000;
+
+
+}
+
+#map-inset .mapboxgl-ctrl-logo,
+#map-inset .mapboxgl-ctrl-attrib {
+  display: none;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 1rem;
+}
