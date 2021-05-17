@@ -1,0 +1,19 @@
+.layer-picker {
+  background: white;
+  padding: 0.5rem;
+
+  ol.layer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .layer {
+      cursor: pointer;
+      margin: 0.25em;
+
+      &.enabled {
+        font-weight: bold;
+      }
+    }
+  }
+}

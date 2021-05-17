@@ -3,11 +3,15 @@ import ReactDOM from "react-dom";
 import App from "components/App";
 import { Router } from "router";
 
+import Provider from "store";
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Provider>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

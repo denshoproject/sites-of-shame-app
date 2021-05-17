@@ -1,0 +1,9 @@
+.index {
+  display: flex;
+  flex-direction: column;
+
+  .main-map-container {
+    height: 100vh;
+    width: 100%;
+  }
+}

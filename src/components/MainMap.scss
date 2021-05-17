@@ -1,0 +1,18 @@
+.MainMap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+
+    & > * {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
