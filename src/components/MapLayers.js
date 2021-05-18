@@ -5,19 +5,14 @@ import { Context, reducer } from "../store";
 import * as turf from "@turf/turf";
 import { csv } from "d3";
 
-const fetchData = () =>
-  csv("./data/facilities.csv", (d) => {
-    // console.log(d);
-    return d;
-  });
+const fetchFacilities = () => csv("./data/facilities.csv");
 
 const facilitiesToGeoJSON = (facilities) => {
-  const facilityPoints = [];
-  facilities.map((f) => {
-    const point = turf.point([f.geo_longitude, f.geo_latitude], f);
-    facilityPoints.push(point);
-  });
-  return turf.featureCollection(facilityPoints);
+  return turf.featureCollection(
+    facilities.map((f) => {
+      return turf.point([f.geo_longitude, f.geo_latitude], f);
+    })
+  );
 };
 
 const MapLayers = () => {
@@ -25,11 +20,10 @@ const MapLayers = () => {
 
   useEffect(() => {
     // Load CSV, convert to GeoJSON, add to the layers in the store
-    fetchData().then((facilities) => {
+    fetchFacilities().then((facilities) => {
       const facilitiesGeoJSON = facilitiesToGeoJSON(facilities);
       const newLayer = {
         id: "sos-facilities",
-        // url: "data/sos_facilities.geojson",
         data: facilitiesGeoJSON,
         layerType: "circle",
         sourceType: "geojson",

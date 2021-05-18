@@ -1,22 +1,7 @@
 import React, { createContext, useReducer } from "react";
 
 const initialState = {
-  layers: [
-    // {
-    //   id: "sos-facilities",
-    //   url: "data/sos_facilities.geojson",
-    //   layerType: "circle",
-    //   sourceType: "geojson",
-    //   paint: {
-    //     "circle-radius": 50,
-    //     "circle-color": "red",
-    //     "circle-stroke-color": "white",
-    //     "circle-stroke-width": 1,
-    //     "circle-opacity": 0.5,
-    //   },
-    //   enabled: true,
-    // },
-  ],
+  layers: [],
 };
 
 const reducer = (state, action) => {
@@ -55,10 +40,9 @@ const reducer = (state, action) => {
         }),
       };
     case "add layer":
-      const newLayers = [...state.layers, action.payload];
       return {
         ...state,
-        layers: newLayers,
+        layers: [...state.layers, action.payload],
       };
     default:
       return state;
