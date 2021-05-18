@@ -2,8 +2,22 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
   layers: [
+    {
+      id: "sos-facilities",
+      url: "data/sos_facilities.geojson",
+      layerType: "circle",
+      sourceType: "geojson",
+      paint: {
+        "circle-radius": 50,
+        "circle-color": "red",
+        "circle-stroke-color": "white",
+        "circle-stroke-width": 1,
+        "circle-opacity": 0.5,
+      },
+      enabled: true,
+    },
   ],
-};;
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -18,27 +32,27 @@ const reducer = (state, action) => {
           };
         }),
       };
-    case 'enable layer':
+    case "enable layer":
       return {
         ...state,
-        layers: state.layers.map(l => {
+        layers: state.layers.map((l) => {
           if (l.id !== action.layerId) return l;
           return {
             ...l,
-            enabled: true
+            enabled: true,
           };
-        })
+        }),
       };
-    case 'disable layer':
+    case "disable layer":
       return {
         ...state,
-        layers: state.layers.map(l => {
+        layers: state.layers.map((l) => {
           if (l.id !== action.layerId) return l;
           return {
             ...l,
-            enabled: false
+            enabled: false,
           };
-        })
+        }),
       };
     default:
       return state;
