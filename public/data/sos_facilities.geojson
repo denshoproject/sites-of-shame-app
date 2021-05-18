@@ -1,0 +1,2595 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "1",
+        "densho_id": "1-w-topa",
+        "sos_facility_uid": "w-topa",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Topaz (Central Utah)",
+        "encyc_url": "https://encyclopedia.densho.org/Topaz/",
+        "encyc_article_title": "Topaz (Central Utah)",
+        "encyc_article_status": "published",
+        "date_opened": "September 11, 1942",
+        "date_closed": "October 31, 1945",
+        "location_description": "Located at 4,600 feet of elevation in west-central Utah, Topaz was set in Millard County near the town of Delta, 140 miles southwest of Salt Lake City. Topaz Mountain was 9 miles northwest. The 19,800 acres of extremely flat terrain were within the Sevier Desert. Dust was a major problem. Temperatures range from 106 degrees in summer to -30 degrees in winter. Vegetation is mainly high desert brush.",
+        "population_description": "Most of those held in Topaz were from the San Francisco Bay area: Alameda, San Francisco, and San Mateo Counties in California.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "8,130",
+        "peak_popdate": "1943-03-17",
+        "location_name": "Delta, Utah",
+        "location_state": "Utah",
+        "location_tgn": "tgn/2108812",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.57717,
+          39.3521777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "2",
+        "densho_id": "2-w-post",
+        "sos_facility_uid": "w-post",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Poston (Colorado River)",
+        "encyc_url": "https://encyclopedia.densho.org/Poston_(Colorado_River)/",
+        "encyc_article_title": "Poston (Colorado River)",
+        "encyc_article_status": "published",
+        "date_opened": "June 2, 1942",
+        "date_closed": "November 28, 1945",
+        "location_description": "Located at 320 feet of elevation in southwestern Arizona on the Colorado River Reservation in Yuma County (now La Paz), 12 miles south of the town of Parker. The Colorado River runs 2 1/2 miles to the west. The 71,000 acres in the lower Sonoran desert are near the California border. The harsh climate featured hot and humid summers and cold winter nights. Dust was a constant problem.",
+        "population_description": "Held people from Arizona, Oregon, and Washington. Salinas, Santa Anita, and Pinedale Assembly Centers in California as well as Mayer Assembly Center, Arizona, sent their populations here.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "17,814",
+        "peak_popdate": "1942-09-02",
+        "location_name": "Parker, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/2007106",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.2891177,
+          34.1500162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "3",
+        "densho_id": "3-w-gila",
+        "sos_facility_uid": "w-gila",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Gila River",
+        "encyc_url": "https://encyclopedia.densho.org/Gila_River/",
+        "encyc_article_title": "Gila River",
+        "encyc_article_status": "published",
+        "date_opened": "July 20, 1942",
+        "date_closed": "November 10, 1945",
+        "location_description": "Located in a valley within the Gila River Indian Reservation in Pinal County, 50 miles south of Phoenix, 3 miles north of the Sacaton Mountains. Consisted of two separate camps: Canal and Butte, located 3.5 miles apart between irrigation canals. The 16,500 acres are in an arid desert valley with average summer temperatures over 100 degrees. Vegetation includes mesquite, creosote, and cactus.",
+        "population_description": "Held people from Los Angeles, Sacramento, and Amador Counties; 3,000 were sent from southern San Joaquin Valley; also held 155 Japanese immigrants from Hawaii. Canal Camp housed people from the Turlock Assembly Center and San Joaquin Valley, while Butte Camp housed people from the Tulare and Santa Anita Assembly Centers.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "13,348",
+        "peak_popdate": "1942-11-30",
+        "location_name": "Sacaton, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/7015593",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.1865412,
+          32.2212596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "4",
+        "densho_id": "4-w-gran",
+        "sos_facility_uid": "w-gran",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Granada (Amache)",
+        "encyc_url": "https://encyclopedia.densho.org/Amache_(Granada)/",
+        "encyc_article_title": "Granada (Amache)",
+        "encyc_article_status": "published",
+        "date_opened": "August 27, 1942",
+        "date_closed": "October 15, 1945",
+        "location_description": "Located at 3,600 feet of elevation on a wind-swept prairie in southeastern Colorado 140 miles east of Pueblo, 16 miles east of Lamar, and 15 miles west of the Kansas border. The Arkansas River runs 2 1/2 miles north of the camp, but the 10,500 acres of land is arid when not irrigated. Vegetation includes wild grasses, sagebrush, and prickly pear cactus.",
+        "population_description": "Held people from California: Los Angeles, San Diego, and Santa Clara Counties (Merced and Santa Anita Assembly Centers), northern California coast, west Sacramento Valley, and the northern San Joaquin Valley.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "7,318",
+        "peak_popdate": "1943-02-01",
+        "location_name": "Granada, Colorado",
+        "location_state": "Colorado",
+        "location_tgn": "tgn/2015676",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.3234389,
+          38.05692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "5",
+        "densho_id": "5-w-hear",
+        "sos_facility_uid": "w-hear",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Heart Mountain",
+        "encyc_url": "https://encyclopedia.densho.org/Heart_Mountain/",
+        "encyc_article_title": "Heart Mountain",
+        "encyc_article_status": "published",
+        "date_opened": "August 12, 1942",
+        "date_closed": "November 10, 1945",
+        "location_description": "Located on 46,000 acres in Park County in northwest Wyoming, 12 miles northwest of Cody, in open sagebrush desert at 4,700 feet of elevation near the Shoshone River. Heart Mountain, 8 miles to the west, creates a dramatic backdrop. Dust storms are common. Winters are severe, with lows dipping to -30 degrees.",
+        "population_description": "Held people from Los Angeles, Santa Clara, and San Francisco, California; Yakima, Washington; and Oregon.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "10,767",
+        "peak_popdate": "1943-01-01",
+        "location_name": "Cody, Wyoming",
+        "location_state": "Wyoming",
+        "location_tgn": "tgn/7013629",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.0565308,
+          44.52634219999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "6",
+        "densho_id": "6-w-jero",
+        "sos_facility_uid": "w-jero",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Jerome",
+        "encyc_url": "https://encyclopedia.densho.org/Jerome/",
+        "encyc_article_title": "Jerome",
+        "encyc_article_status": "published",
+        "date_opened": "October 6, 1942",
+        "date_closed": "June 30, 1944",
+        "location_description": "Located in the Mississippi River delta region 12 miles west of the Mississippi River, 18 miles south of McGehee, 120 miles southeast of Little Rock. The 10,000-acre area was impoverished and consisted of heavily wooded swampland. It was 27 miles south of the Rohwer incarceration camp. Summers were hot and humid, with chiggers, mosquitoes, and poisonous snakes.",
+        "population_description": "Held people from Los Angeles, Fresno, and Sacramento, California; also held people from Honolulu, Hawaii.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "8,497",
+        "peak_popdate": "1943-02-11",
+        "location_name": "Denson, Arkansas",
+        "location_state": "Arkansas",
+        "location_tgn": "tgn/2008597",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.4556901,
+          35.4263645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "7",
+        "densho_id": "7-w-manz",
+        "sos_facility_uid": "w-manz",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Manzanar",
+        "encyc_url": "https://encyclopedia.densho.org/Manzanar/",
+        "encyc_article_title": "Manzanar",
+        "encyc_article_status": "published",
+        "date_opened": "June 2, 1942",
+        "date_closed": "November 21, 1945",
+        "location_description": "Located at 3,900 feet of elevation in the desert of the southern Owens Valley in east-central California, 220 miles north of Los Angeles, 250 miles south of Reno, between the towns Lone Pine and Independence. The 6,000 acres are framed by the Sierra Nevada mountains to the west and the White-Inyo range to the east. Summers are hot, winters cold; annual rainfall is under 6 inches, although the area has rivers fed from mountain runoff. Vegetation is mostly sagebrush.",
+        "population_description": "Over 90 percent of the people held here were from the Los Angeles, California, area; others were from Stockton, California, and Bainbridge Island, Washington.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "10,046",
+        "peak_popdate": "1942-09-22",
+        "location_name": "Manzanar, California",
+        "location_state": "California",
+        "location_tgn": "tgn/4006871",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1462987,
+          36.7285184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "8",
+        "densho_id": "8-w-mini",
+        "sos_facility_uid": "w-mini",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Minidoka",
+        "encyc_url": "https://encyclopedia.densho.org/Minidoka/",
+        "encyc_article_title": "Minidoka",
+        "encyc_article_status": "published",
+        "date_opened": "August 10, 1942",
+        "date_closed": "October 28, 1945",
+        "location_description": "Located at 4,000 feet of elevation on uneven terrain in southern Idaho, Minidoka is in the Snake River Plain of Jerome County, 15 miles east of Jerome and 15 miles north of Twin Falls. The 33,000 acres of arid desert was dominated by sagebrush; the southern boundary of the camp was formed by the man-made North Side canal.",
+        "population_description": "Held people from Washington, Oregon, and Alaska; in 1943 many of the incarcerees from Bainbridge Island, Washington, were transferred at their own request to Minidoka from Manzanar.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "9,397",
+        "peak_popdate": "1943-03-01",
+        "location_name": "Hunt, Idaho",
+        "location_state": "Idaho",
+        "location_tgn": "tgn/2025735",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.2500316,
+          42.6782431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "9",
+        "densho_id": "9-w-rohw",
+        "sos_facility_uid": "w-rohw",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Rohwer",
+        "encyc_url": "https://encyclopedia.densho.org/Rohwer/",
+        "encyc_article_title": "Rohwer",
+        "encyc_article_status": "published",
+        "date_opened": "September 18, 1942",
+        "date_closed": "November 30, 1945",
+        "location_description": "Located at 140 feet of elevation in Desha County in southeastern Arkansas, 110 miles southeast of Little Rock and 11 miles north of McGehee. The 10,161 acres of wooded swampland were in an impoverished area 27 miles north of the Jerome incarceration camp. The Mississippi River is 5 miles to the east. Summers are hot and humid, with chiggers and mosquitoes adding to the discomfort. The site had severe drainage problems; about half of the site was under swampy water during the spring.",
+        "population_description": "Held people from Los Angeles and San Joaquin, California; incarcerees endured a three-day train ride to Arkansas.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "8,475",
+        "peak_popdate": "1943-03-11",
+        "location_name": "Rohwer, Arkansas",
+        "location_state": "Arkansas",
+        "location_tgn": "tgn/2009393",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.3945566,
+          33.6255234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Concentration Camp",
+        "legacy_densho_id": "10",
+        "densho_id": "10-w-tule",
+        "sos_facility_uid": "w-tule",
+        "legacy_facility_type": "Concentration Camp",
+        "facility_name": "Tule Lake",
+        "encyc_url": "https://encyclopedia.densho.org/Tule_Lake/",
+        "encyc_article_title": "Tule Lake",
+        "encyc_article_status": "published",
+        "date_opened": "May 27, 1942",
+        "date_closed": "March 20, 1946",
+        "location_description": "Located at an elevation of 4,000 feet on a flat treeless area in Modoc County, 35 miles southeast of Klamath Falls, Oregon, and 10 miles from the town of Tulelake. (The town is spelled as one word and the incarceration camp as two.) Mt. Shasta is 50 miles away and visible on a clear day. The soil is sandy loam; vegetation is sparse grass and sagebrush. Winters are long and cold; summers are hot and dry.",
+        "population_description": "First to arrive were 500 volunteer residents from the Portland and Puyallup Assembly Centers. Others arrived from the Marysville, Pinedale, Pomona, Sacramento, and Salinas Assembly Centers in California. Some were sent directly from the southern San Joaquin Valley. After it became a segregation center, the camp held people from California, Hawaii, Washington, and Oregon.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "18,789",
+        "peak_popdate": "1944-12-25",
+        "location_name": "Newell, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2012922",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.3722116,
+          41.8882132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "11",
+        "densho_id": "11-a-puya",
+        "sos_facility_uid": "a-puya",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Puyallup (Camp Harmony)",
+        "encyc_url": "https://encyclopedia.densho.org/Puyallup_(detention_facility)/",
+        "encyc_article_title": "Puyallup (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 28, 1942",
+        "date_closed": "September 12, 1942",
+        "location_description": "Located on the Western Washington State Fairgrounds, 35 miles south of Seattle, Washington.",
+        "population_description": "Held people from Seattle and Tacoma, Washington; also held some from Alaska.",
+        "exclusion_orders": "",
+        "exit_destinations": "Tule Lake, Minidoka",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "7,390",
+        "peak_popdate": "1942-07-25",
+        "location_name": "Puyallup, Washington",
+        "location_state": "Washington",
+        "location_tgn": "tgn/2116562",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.2928974,
+          47.1853785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "12",
+        "densho_id": "12-a-port",
+        "sos_facility_uid": "a-port",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Portland",
+        "encyc_url": "https://encyclopedia.densho.org/Portland_(detention_facility)/",
+        "encyc_article_title": "Portland (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 2, 1942",
+        "date_closed": "September 10, 1942",
+        "location_description": "Located at the eleven-acre Pacific International Livestock Exposition Pavilion in Portland, Oregon.",
+        "population_description": "Held people from northeast Oregon and central Washington.",
+        "exclusion_orders": "",
+        "exit_destinations": "Heart Mountain, Minidoka, and Tule Lake",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "3,676",
+        "peak_popdate": "1942-06-06",
+        "location_name": "Portland, Oregon",
+        "location_state": "Oregon",
+        "location_tgn": "tgn/7014273",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6762071,
+          45.5234515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "13",
+        "densho_id": "13-a-mary",
+        "sos_facility_uid": "a-mary",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Marysville",
+        "encyc_url": "https://encyclopedia.densho.org/Marysville_(detention_facility)/",
+        "encyc_article_title": "Marysville (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 8, 1942",
+        "date_closed": "June 29, 1942",
+        "location_description": "Located about 8 miles south of Marysville, California. Late spring rains delayed the camp's opening from the slated date of April 16, 1942.",
+        "population_description": "Held people from Placer and Sacramento Counties, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Tule Lake",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "2,451",
+        "peak_popdate": "1942-06-02",
+        "location_name": "Marysville, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2012626",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.5913547,
+          39.1457253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "14",
+        "densho_id": "14-a-sacr",
+        "sos_facility_uid": "a-sacr",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Sacramento (Walerga)",
+        "encyc_url": "https://encyclopedia.densho.org/Sacramento_(detention_facility)/",
+        "encyc_article_title": "Sacramento (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 6, 1942",
+        "date_closed": "June 26, 1942",
+        "location_description": "Located 15 miles northeast of downtown Sacramento, California.",
+        "population_description": "Held people from Sacramento and San Joaquin Counties, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Tule Lake",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,739",
+        "peak_popdate": "1942-05-30",
+        "location_name": "Sacramento, California",
+        "location_state": "California",
+        "location_tgn": "tgn/1002841",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.4943996,
+          38.5815719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "15",
+        "densho_id": "15-a-tanf",
+        "sos_facility_uid": "a-tanf",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Tanforan",
+        "encyc_url": "https://encyclopedia.densho.org/Tanforan_(detention_facility)/",
+        "encyc_article_title": "Tanforan (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 28, 1942",
+        "date_closed": "October 13, 1942",
+        "location_description": "Located 12 miles south of San Francisco, California.",
+        "population_description": "Held people from the San Francisco Bay area of California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Topaz",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "7,816",
+        "peak_popdate": "1942-07-25",
+        "location_name": "San Bruno, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7394300",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4110835,
+          37.6304904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "16",
+        "densho_id": "16-a-stoc",
+        "sos_facility_uid": "a-stoc",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Stockton",
+        "encyc_url": "https://encyclopedia.densho.org/Stockton_(detention_facility)/",
+        "encyc_article_title": "Stockton (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 10, 1942",
+        "date_closed": "October 17, 1942",
+        "location_description": "Located at the San Joaquin County Fairgrounds in Stockton, California.",
+        "population_description": "Held people from San Joaquin County, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Rohwer, Gila River",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,271",
+        "peak_popdate": "1942-05-21",
+        "location_name": "Stockton, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7014545",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.2907796,
+          37.9577016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "17",
+        "densho_id": "17-a-turl",
+        "sos_facility_uid": "a-turl",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Turlock",
+        "encyc_url": "https://encyclopedia.densho.org/Turlock_(detention_facility)/",
+        "encyc_article_title": "Turlock (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 30, 1942",
+        "date_closed": "August 12, 1942",
+        "location_description": "Located in the town of Turlock, California.",
+        "population_description": "Held people from the Sacramento River delta and Los Angeles, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Gila River",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "3,661",
+        "peak_popdate": "1942-06-02",
+        "location_name": "Turlock, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7014665",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.8465941,
+          37.4946568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "18",
+        "densho_id": "18-a-sali",
+        "sos_facility_uid": "a-sali",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Salinas",
+        "encyc_url": "https://encyclopedia.densho.org/Salinas_(detention_facility)/",
+        "encyc_article_title": "Salinas (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 27, 1942",
+        "date_closed": "July 4, 1942",
+        "location_description": "Located at the north end of the town of Salinas, California.",
+        "population_description": "Held people from the Monterey Bay area of California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Poston;Tule Lake",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "3,586",
+        "peak_popdate": "1942-06-23",
+        "location_name": "Salinas, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7389748",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6555013,
+          36.6777372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "19",
+        "densho_id": "19-a-merc",
+        "sos_facility_uid": "a-merc",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Merced",
+        "encyc_url": "https://encyclopedia.densho.org/Merced_(detention_facility)/",
+        "encyc_article_title": "Merced (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 6, 1942",
+        "date_closed": "September 15, 1942",
+        "location_description": "Located in California's central San Joaquin Valley within the town of Merced at the county fairgrounds; the buildings were sited south of the fairgrounds proper.",
+        "population_description": "Held people from the Northern California coast, west Sacramento Valley, and northern San Joaquin Valley, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Granada",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,508",
+        "peak_popdate": "1942-06-03",
+        "location_name": "Merced, California",
+        "location_state": "California",
+        "location_tgn": "tgn/1002656",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.4829677,
+          37.3021632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "20",
+        "densho_id": "20-a-pine",
+        "sos_facility_uid": "a-pine",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Pinedale",
+        "encyc_url": "https://encyclopedia.densho.org/Pinedale_(detention_facility)/",
+        "encyc_article_title": "Pinedale (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 7, 1942",
+        "date_closed": "July 23, 1942",
+        "location_description": "Located 8 miles north of downtown Fresno, California.",
+        "population_description": "Held people from Sacramento and El Dorado Counties in California; also held people from Oregon and Washington.",
+        "exclusion_orders": "",
+        "exit_destinations": "Tule Lake, Poston",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,792",
+        "peak_popdate": "1942-06-29",
+        "location_name": "Pinedale, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2011481",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.7961611,
+          36.8411529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "21",
+        "densho_id": "21-a-fres",
+        "sos_facility_uid": "a-fres",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Fresno",
+        "encyc_url": "https://encyclopedia.densho.org/Fresno_(detention_facility)/",
+        "encyc_article_title": "Fresno (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 6, 1942",
+        "date_closed": "October 30, 1942",
+        "location_description": "Located at the Fresno County Fairgrounds in central California.",
+        "population_description": "Held people from the central San Joaquin Valley and Amador County, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Jerome, Gila River",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "5,120",
+        "peak_popdate": "1942-09-04",
+        "location_name": "Fresno, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7014030",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.7725868,
+          36.7468422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "22",
+        "densho_id": "22-a-tula",
+        "sos_facility_uid": "a-tula",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Tulare",
+        "encyc_url": "https://encyclopedia.densho.org/Tulare_(detention_facility)/",
+        "encyc_article_title": "Tulare (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 20, 1942",
+        "date_closed": "September 4, 1942",
+        "location_description": "Located in the southern San Joaquin Valley of California.",
+        "population_description": "Held people from California: Los Angeles and Sacramento Counties and the Southern California coast.",
+        "exclusion_orders": "",
+        "exit_destinations": "Gila River",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,978",
+        "peak_popdate": "1942-08-11",
+        "location_name": "Tulare, California",
+        "location_state": "California",
+        "location_tgn": "tgn/1002956",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.3473379,
+          36.2077288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "23",
+        "densho_id": "23-a-sant",
+        "sos_facility_uid": "a-sant",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Santa Anita",
+        "encyc_url": "https://encyclopedia.densho.org/Santa_Anita_(detention_facility)/",
+        "encyc_article_title": "Santa Anita (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 27, 1942",
+        "date_closed": "October 27, 1942",
+        "location_description": "Located at the world-famous Santa Anita Racetrack in Arcadia, California.",
+        "population_description": "Held people from Los Angeles, San Diego, and Santa Clara Counties, California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Poston, Topaz, Gila River, Heart Mountain, Jerome, Rohwer, Granada, and Manzanar",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "18,719",
+        "peak_popdate": "1942-08-23",
+        "location_name": "Arcadia, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7013315",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0353449,
+          34.1397292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "24",
+        "densho_id": "24-a-pomo",
+        "sos_facility_uid": "a-pomo",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Pomona",
+        "encyc_url": "https://encyclopedia.densho.org/Pomona_(detention_facility)/",
+        "encyc_article_title": "Pomona (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 7, 1942",
+        "date_closed": "August 24, 1942",
+        "location_description": "Located at the Los Angeles County Fairgrounds (Fairplex) in Southern California.",
+        "population_description": "Held people from Los Angeles, San Francisco, and Santa Clara Counties in California.",
+        "exclusion_orders": "",
+        "exit_destinations": "Heart Mountain",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "5,434",
+        "peak_popdate": "1942-07-20",
+        "location_name": "Pomona, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7014425",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.7523048,
+          34.0552267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "25",
+        "densho_id": "25-a-maye",
+        "sos_facility_uid": "a-maye",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Mayer",
+        "encyc_url": "https://encyclopedia.densho.org/Mayer_(detention_facility)/",
+        "encyc_article_title": "Mayer (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 7, 1942",
+        "date_closed": "June 2, 1942",
+        "location_description": "Located 75 miles northwest of Phoenix, Arizona, Mayer was set on land that was originally farmland.",
+        "population_description": "Held people from southern Arizona.",
+        "exclusion_orders": "",
+        "exit_destinations": "Poston",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "245",
+        "peak_popdate": "1942-05-25",
+        "location_name": "Mayer, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/2007019",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2362734,
+          34.3978054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "27",
+        "densho_id": "27-d-sant",
+        "sos_facility_uid": "d-sant",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Santa Fe",
+        "encyc_url": "https://encyclopedia.densho.org/Santa_Fe_(detention_facility)/",
+        "encyc_article_title": "Santa Fe (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "February 1942",
+        "date_closed": "September 1946",
+        "location_description": "Located 2.5 miles west of the Santa Fe city center, this 80-acre site in northern New Mexico included a Civilian Conservation Corps (CCC) camp.",
+        "population_description": "Held people of Japanese descent from the continental U.S., Alaska, Hawaii, Latin America, and the Pacific Islands. Later included internees transferred from Tule Lake segregation center: 866 Japanese American \"renunciants,\" those who had given up their U.S. citizenship, and 313 designated \"troublemakers.\" After 1942, German and Italian nationals were held here.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "2,100",
+        "peak_popdate": "1945-06-01",
+        "location_name": "Santa Fe, New Mexico",
+        "location_state": "New Mexico",
+        "location_tgn": "tgn/2001454",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.937799,
+          35.6869752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "28",
+        "densho_id": "28-d-linc",
+        "sos_facility_uid": "d-linc",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Fort Lincoln (Bismarck)",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Lincoln_(Bismarck)_(detention_facility)/",
+        "encyc_article_title": "Fort Lincoln (Bismarck) (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "December 7, 1941",
+        "date_closed": "March 6, 1946",
+        "location_description": "Located in Morton County, 5 miles south of Bismarck, North Dakota, on a U.S. Army base.",
+        "population_description": "Held Japanese and German nationals; German and Italian seamen; and Japanese American \"renunciants,\" those who had given up their U.S. citizenship.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "1,518",
+        "peak_popdate": "1942-02-01",
+        "location_name": "Bismarck, North Dakota",
+        "location_state": "North Dakota",
+        "location_tgn": "tgn/2007755",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.7837392,
+          46.8083268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "29",
+        "densho_id": "29-d-crys",
+        "sos_facility_uid": "d-crys",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Crystal City",
+        "encyc_url": "https://encyclopedia.densho.org/Crystal_City_(detention_facility)/",
+        "encyc_article_title": "Crystal City (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "November 2, 1942",
+        "date_closed": "January 1948",
+        "location_description": "Located in Zavala County in South Texas, 170 miles west of Corpus Christi. Semiarid grasslands with an average annual rainfall of about 21 inches. Summers are hot and humid, with temperatures exceeding 100 degrees.",
+        "population_description": "Held people of Japanese ancestry from the U.S. and Latin America and their families; also held German and Italian nationals and their families.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "4,000",
+        "peak_popdate": "",
+        "location_name": "Crystal City, Texas",
+        "location_state": "Texas",
+        "location_tgn": "tgn/2103556",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.8281104,
+          28.6774795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "30",
+        "densho_id": "30-d-miss",
+        "sos_facility_uid": "d-miss",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Fort Missoula",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Missoula_(detention_facility)/",
+        "encyc_article_title": "Fort Missoula (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "December 18, 1941",
+        "date_closed": "July 1, 1944",
+        "location_description": "Located at an old U.S. Army post on the southwest edge of Missoula, Montana, that was turned over to the Department of Justice (DOJ) in 1941. Missoula is in western Montana.",
+        "population_description": "Held more than 1,000 Italian seamen captured in U.S. waters; also held 1,250 Japanese immigrants from the continental U.S. and Hawaii.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "2,003",
+        "peak_popdate": "",
+        "location_name": "Missoula, Montana",
+        "location_state": "Montana",
+        "location_tgn": "tgn/2001291",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.019501,
+          46.8605189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Citizen Isolation Center",
+        "legacy_densho_id": "31",
+        "densho_id": "31-c-moab",
+        "sos_facility_uid": "c-moab",
+        "legacy_facility_type": "Citizen Isolation Center",
+        "facility_name": "Moab Isolation Center",
+        "encyc_url": "https://encyclopedia.densho.org/Moab_(detention_facility)/",
+        "encyc_article_title": "Moab (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "January 11, 1943",
+        "date_closed": "April 27, 1943",
+        "location_description": "Located at Dalton Wells, 13 miles north of Moab in southeastern Utah. Summer temperatures reach the high 90s. Vegetation included sagebrush, tumbleweed, cottonwood, and tamarisk trees. The drab and desolate area was used for stock grazing.",
+        "population_description": "Nisei and kibei men designated \"troublemakers\" by War Relocation Authority (WRA) camp directors were imprisoned at Moab. (U.S. citizens could not be sent to the Department of Justice or U.S. Army internment camps.) The first to arrive were sixteen men removed from Manzanar after a riot.",
+        "exclusion_orders": "",
+        "exit_destinations": "Leupp Citizen Isolation Center",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "83",
+        "peak_popdate": "",
+        "location_name": "Dalton Wells, Utah",
+        "location_state": "Utah",
+        "location_tgn": "tgn/2108807",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.0937311,
+          39.3209801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Citizen Isolation Center",
+        "legacy_densho_id": "32",
+        "densho_id": "32-c-leup",
+        "sos_facility_uid": "c-leup",
+        "legacy_facility_type": "Citizen Isolation Center",
+        "facility_name": "Leupp",
+        "encyc_url": "https://encyclopedia.densho.org/Leupp_(detention_facility)/",
+        "encyc_article_title": "Leupp (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 27, 1943",
+        "date_closed": "December 2, 1943",
+        "location_description": "The Leupp camp, in the high desert of northeastern Arizona about 30 miles northwest of Winslow, was located at an abandoned Navajo Indian Reservation boarding school.",
+        "population_description": "Inmates from the Moab Citizen Isolation Center were transferred to Leupp, and other designated \"troublemakers\" were sent to Leupp from various War Relocation Authority (WRA) camps at the discretion of camp administrators.",
+        "exclusion_orders": "",
+        "exit_destinations": "Tule Lake Segregation Center",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "50 to 100",
+        "peak_popdate": "",
+        "location_name": "Leupp, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/2006972",
+        "notes": "https://www.intermountainhistories.org/items/show/52"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.0062528,
+          35.2980659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Federal Prison",
+        "legacy_densho_id": "33",
+        "densho_id": "33-p-mcne",
+        "sos_facility_uid": "p-mcne",
+        "legacy_facility_type": "U.S. Federal Prison",
+        "facility_name": "McNeil Island Federal Penitentiary",
+        "encyc_url": "https://encyclopedia.densho.org/McNeil_Island_Penitentiary_(detention_facility)/",
+        "encyc_article_title": "McNeil Island Penitentiary (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Work prison located on an island in the southern portion of Puget Sound, 10 miles southwest of Tacoma, Washington. Currently a medium-security state correctional facility holding about 1,000 male inmates.",
+        "population_description": "Younger draft resisters from Heart Mountain and Minidoka incarceration camps were held here. Gordon Hirabayashi was also imprisoned here for draft resistance.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "",
+        "peak_popdate": "",
+        "location_name": "McNeil Island, Washington",
+        "location_state": "Washington",
+        "location_tgn": "tgn/1008106",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6815078,
+          47.2133614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "34",
+        "densho_id": "34-u-lord",
+        "sos_facility_uid": "u-lord",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Lordsburg",
+        "encyc_url": "https://encyclopedia.densho.org/Lordsburg_(detention_facility)/",
+        "encyc_article_title": "Lordsburg (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "June 15, 1942",
+        "date_closed": "1944",
+        "location_description": "Located on 1,300 acres of desert land near Lordsburg in southwest New Mexico.",
+        "population_description": "Held internees of Japanese ancestry transferred from numerous U.S. Army- and Departmen of Justice-run internment camps; also held German nationals, German and Japanese prisoners of war (POWs), as well as U.S. Army soldiers who had been convicted of various offenses.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "1,500",
+        "peak_popdate": "",
+        "location_name": "Lordsburg, New Mexico",
+        "location_state": "New Mexico",
+        "location_tgn": "tgn/2067142",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.7086649,
+          32.3503605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "35",
+        "densho_id": "35-d-stan",
+        "sos_facility_uid": "d-stan",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Fort Stanton",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Stanton_(detention_facility)/",
+        "encyc_article_title": "Fort Stanton (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located in isolated southern New Mexico in Lincoln County, 35 miles north of Ruidoso. Fort Stanton was originally established in 1855 and was used in 1899 as a tuberculosis sanatorium.",
+        "population_description": "Mostly held German nationals and German seamen from the luxury liner <i>Columbus</i> captured in U.S. waters in 1939. Also held those considered by the Department of Justice to be the most \"troublesome\" Japanese internees: ten nisei and kibei \"renunciants\" and seven issei transferred from the Santa Fe internment camp.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "17",
+        "peak_popdate": "",
+        "location_name": "Fort Stanton, New Mexico",
+        "location_state": "New Mexico",
+        "location_tgn": "tgn/2066966",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5230362,
+          33.495914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Federal Prison",
+        "legacy_densho_id": "36",
+        "densho_id": "36-p-cata",
+        "sos_facility_uid": "p-cata",
+        "legacy_facility_type": "U.S. Federal Prison",
+        "facility_name": "Catalina Federal Honor Camp",
+        "encyc_url": "https://encyclopedia.densho.org/Catalina_Federal_Honor_Camp_(detention_facility)/",
+        "encyc_article_title": "Catalina Federal Honor Camp (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located in the Santa Catalina Mountains, northeast of Tucson, Arizona. The camp was established in 1939 within southern Arizona's Coronado National Forest to provide prison labor to build mountain highways.",
+        "population_description": "Held draft resisters mainly from Granada incarceration camp, some from Poston and Topaz incarceration camps; Gordon Hirabayashi, who was imprisoned after losing his Supreme Court case against the exclusion order, was transferred here to complete his sentence.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "46",
+        "peak_popdate": "",
+        "location_name": "Santa Catalina Mountains, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/2643964",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.7053702,
+          32.4303529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Additional Facility",
+        "legacy_densho_id": "37",
+        "densho_id": "37-f-cowc",
+        "sos_facility_uid": "f-cowc",
+        "legacy_facility_type": "Additional Facility",
+        "facility_name": "Cow Creek",
+        "encyc_url": "https://encyclopedia.densho.org/Cow_Creek_(detention_facility)/",
+        "encyc_article_title": "Cow Creek (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "December 10, 1942",
+        "date_closed": "February 15, 1943",
+        "location_description": "Located in the desert of California near the Death Valley National Monument, one of the hottest places on Earth. Summer temperatures stay well over 100 degrees. Death Valley encompasses the lowest point in the Western Hemisphere at 282 feet below sea level and is the driest place in North America with an average rainfall of only 1.96 inches a year.",
+        "population_description": "Held forty men and their families from the Manzanar incarceration camp.",
+        "exclusion_orders": "",
+        "exit_destinations": "resettled outside camps",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "66",
+        "peak_popdate": "",
+        "location_name": "Cow Creek, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2262158",
+        "notes": "https://oregonnews.uoregon.edu/lccn/sn99063863/1942-06-11/ed-1/; https://www.malheurco.org/parks-department/cow-hollow-park/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.4980211,
+          40.9177102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "38",
+        "densho_id": "38-d-kene",
+        "sos_facility_uid": "d-kene",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Kenedy",
+        "encyc_url": "https://encyclopedia.densho.org/Kenedy_(detention_facility)/",
+        "encyc_article_title": "Kenedy (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 1, 1942",
+        "date_closed": "September 1945",
+        "location_description": "Located 50 miles southeast of San Antonio, Texas, in Karnes County on the site of a closed Civilian Conservation Corps (CCC) camp.",
+        "population_description": "Held people of Japanese, German, and Italian descent from the U.S. and Latin America; also held Japanese and German prisoners of war (POWs).",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "700",
+        "peak_popdate": "1943-10-01",
+        "location_name": "Kenedy, Texas",
+        "location_state": "Texas",
+        "location_tgn": "tgn/2002016",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.8486123,
+          28.8191468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Additional Facility",
+        "legacy_densho_id": "39",
+        "densho_id": "39-f-ante",
+        "sos_facility_uid": "f-ante",
+        "legacy_facility_type": "Additional Facility",
+        "facility_name": "Antelope Springs",
+        "encyc_url": "https://encyclopedia.densho.org/Antelope_Springs_(detention_facility)/",
+        "encyc_article_title": "Antelope Springs (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located in a sparse pinyon and juniper forest at an elevation of 7,400 feet at the base of the 9,669-foot Swasey Peak, part of the House Range in western Utah. The closest town is Delta.",
+        "population_description": "Used for recreation by children from the Topaz incarceration camp, which was 90 miles west.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "75",
+        "peak_popdate": "Summer 1943",
+        "location_name": "Antelope Springs, Utah",
+        "location_state": "Utah",
+        "location_tgn": "tgn/2135020",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.4285714,
+          37.7808064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "40",
+        "densho_id": "40-u-sill",
+        "sos_facility_uid": "u-sill",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Sill",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Sill_(detention_facility)/",
+        "encyc_article_title": "Fort Sill (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "June 24, 1942",
+        "location_description": "Located in Comanche County, 3 miles north of Lawton, Oklahoma, southwest of Oklahoma City. The camp saw unusually strong windstorms in the spring and scorching hot temperatures in the summer.",
+        "population_description": "Held approximately 700 Japanese immigrants from the continental U.S., plus three German nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "707",
+        "peak_popdate": "1942-05-04",
+        "location_name": "Fort Sill, Oklahoma",
+        "location_state": "Oklahoma",
+        "location_tgn": "tgn/7017847",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5090089,
+          34.70455949999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "41",
+        "densho_id": "41-u-stri",
+        "sos_facility_uid": "u-stri",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Stringtown",
+        "encyc_url": "https://encyclopedia.densho.org/Stringtown_(detention_facility)/",
+        "encyc_article_title": "Stringtown (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located 5 miles north of Stringtown in southern Oklahoma. Currently a medium-security facility, the Mack Alford Correctional Center.",
+        "population_description": "Held Japanese immigrants from the U.S., as well as German prisoners of war (POWs).",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "176",
+        "peak_popdate": "",
+        "location_name": "Stringtown, Oklahoma",
+        "location_state": "Oklahoma",
+        "location_tgn": "tgn/2084058",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.05332519999999,
+          34.46676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "42",
+        "densho_id": "42-u-sand",
+        "sos_facility_uid": "u-sand",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Sand Island",
+        "encyc_url": "https://encyclopedia.densho.org/Sand_Island_(detention_facility)/",
+        "encyc_article_title": "Sand Island (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "December 1941",
+        "date_closed": "March 1, 1943",
+        "location_description": "Located on a five-acre facility near Honolulu Harbor in Hawaii.",
+        "population_description": "Held people of Japanese descent, citizens and non-citizens, men and women; also held Austrian, Finn, German, Italian, and Norwegian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "300",
+        "peak_popdate": "",
+        "location_name": "Sand Island, Oahu, Hawaii",
+        "location_state": "Oahu",
+        "location_tgn": "tgn/2442567",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.8778435,
+          21.3064413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Federal Prison",
+        "legacy_densho_id": "43",
+        "densho_id": "43-p-leav",
+        "sos_facility_uid": "p-leav",
+        "legacy_facility_type": "U.S. Federal Prison",
+        "facility_name": "Leavenworth Federal Penitentiary",
+        "encyc_url": "https://encyclopedia.densho.org/Leavenworth_(detention_facility)/",
+        "encyc_article_title": "Leavenworth (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located 15 miles northwest of Kansas City. At 1,583 square acres, it is currently the largest maximum-security prison in the U.S., housing about 2,000 inmates.",
+        "population_description": "Held twenty-eight nisei soldiers from Fort McClellan, Alabama; seven leaders of Heart Mountain's Fair Play Committee; and thirty older draft resisters from Heart Mountain incarceration camp.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "37",
+        "peak_popdate": "",
+        "location_name": "Leavenworth, Kansas",
+        "location_state": "Kansas",
+        "location_tgn": "tgn/2000711",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9224637,
+          39.3111112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "44",
+        "densho_id": "44-u-mcco",
+        "sos_facility_uid": "u-mcco",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Camp McCoy",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_McCoy_(detention_facility)/",
+        "encyc_article_title": "Camp McCoy (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 1, 1942",
+        "date_closed": "",
+        "location_description": "Located 9 miles west of Tomah and 92 miles northwest of Madison, Wisconsin.",
+        "population_description": "Held Japanese immigrants from Hawaii; German and Italian nationals; and Japanese and German prisoners of war (POWs).",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "293",
+        "peak_popdate": "1942-03-01",
+        "location_name": "Camp McCoy, Wisconsin",
+        "location_state": "Wisconsin",
+        "location_tgn": "tgn/2121220",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.68835519999999,
+          44.012716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "45",
+        "densho_id": "45-i-elli",
+        "sos_facility_uid": "i-elli",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "Ellis Island",
+        "encyc_url": "https://encyclopedia.densho.org/Ellis_Island_(detention_facility)/",
+        "encyc_article_title": "Ellis Island (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "December 1, 1941",
+        "date_closed": "June 1944",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located on Ellis Island, a mostly artificial island of 27 acres in Upper New York Bay.",
+        "population_description": "Held Japanese immigrants on the East Coast arrested by the FBI immediately after the attack on Pearl Harbor; other foreign nationals were also held there.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "608",
+        "peak_popdate": "1941-12-01",
+        "location_name": "Ellis Island, New York",
+        "location_state": "New York",
+        "location_tgn": "tgn/7855286",
+        "notes": "https://kingstonlounge.blogspot.com/2013/05/ellis-island-baggage-and-dormitory.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.03955959999999,
+          40.6994721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Additional Facility",
+        "legacy_densho_id": "46",
+        "densho_id": "46-f-tule",
+        "sos_facility_uid": "f-tule",
+        "legacy_facility_type": "Additional Facility",
+        "facility_name": "Tulelake",
+        "encyc_url": "https://encyclopedia.densho.org/Tulelake_(detention_facility)/",
+        "encyc_article_title": "Tulelake (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 1943",
+        "date_closed": "October 1943",
+        "location_description": "Located 5 miles west of the Tule Lake incarceration camp in the Tulelake-Butte Valley of Siskiyou County in northeastern California. Tulelake is southeast of Klamath Falls and northeast of Mt. Shasta.",
+        "population_description": "Two different groups of men were put in this camp: more than one hundred men from the Tule Lake incarceration camp who refused to answer the \"loyalty questionnaire,\" and later, the WRA brought in men from other camps whom they paid higher wages in order to break a strike by Tulelake farm workers.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "50 to 100",
+        "peak_popdate": "",
+        "location_name": "Tulelake, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2014671",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.4774916,
+          41.9559884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "47",
+        "densho_id": "47-u-forr",
+        "sos_facility_uid": "u-forr",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Camp Forrest",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Forrest_(detention_facility)/",
+        "encyc_article_title": "Camp Forrest (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "U.S. Army internment camp located in a wooded area of rural Tennessee, 70 miles south of Nashville.",
+        "population_description": "Held Japanese immigrants from the U.S.; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "190",
+        "peak_popdate": "May–June 1942",
+        "location_name": "Tullahoma, Tennessee",
+        "location_state": "Tennessee",
+        "location_tgn": "tgn/2101873",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.20943419999999,
+          35.3620235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "48",
+        "densho_id": "48-d-seag",
+        "sos_facility_uid": "d-seag",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Seagoville",
+        "encyc_url": "https://encyclopedia.densho.org/Seagoville_(detention_facility)/",
+        "encyc_article_title": "Seagoville (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "April 12, 1942",
+        "date_closed": "June 30, 1945",
+        "location_description": "Located southeast of Dallas, this site was originally a federal prison for women.",
+        "population_description": "Held women and children of Japanese ancestry from the U.S. and Latin America; also held German, Italian, and Japanese immigrants being repatriated to their home countries.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "343",
+        "peak_popdate": "",
+        "location_name": "Seagoville, Texas",
+        "location_state": "Texas",
+        "location_tgn": "tgn/2107550",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.53832279999999,
+          32.6395776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "49",
+        "densho_id": "49-i-shar",
+        "sos_facility_uid": "i-shar",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "Sharp Park",
+        "encyc_url": "https://encyclopedia.densho.org/Sharp_Park_(detention_facility)/",
+        "encyc_article_title": "Sharp Park (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 30, 1942",
+        "date_closed": "1946",
+        "location_description": "Located near Sharp Park in Northern California; set on a former state relief camp.",
+        "population_description": "Held people of Japanese descent from California and Peru; also held German, Italian, and Chinese nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "379",
+        "peak_popdate": "1942-07-14",
+        "location_name": "Sharp Park, California",
+        "location_state": "California",
+        "location_tgn": "tgn/1103075",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4863492,
+          37.6322976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "50",
+        "densho_id": "50-a-owen",
+        "sos_facility_uid": "a-owen",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Owens Valley",
+        "encyc_url": "https://encyclopedia.densho.org/Owens_Valley_(detention_facility)/",
+        "encyc_article_title": "Owens Valley (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 21, 1942",
+        "date_closed": "June 2, 1942",
+        "location_description": "Located on the site that later became the WRA-run incarceration camp Manzanar.",
+        "population_description": "More than 90 percent were from the Los Angeles area; others were from Stockton, California, and Bainbridge Island, Washington.",
+        "exclusion_orders": "",
+        "exit_destinations": "Manzanar",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "9,666",
+        "peak_popdate": "",
+        "location_name": "Manzanar, California",
+        "location_state": "California",
+        "location_tgn": "tgn/4006871",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1462987,
+          36.7285184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Temporary Assembly Center",
+        "legacy_densho_id": "51",
+        "densho_id": "51-a-park",
+        "sos_facility_uid": "a-park",
+        "legacy_facility_type": "Temporary Assembly Center",
+        "facility_name": "Parker Dam",
+        "encyc_url": "https://encyclopedia.densho.org/Parker_Dam_(detention_facility)/",
+        "encyc_article_title": "Parker Dam (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 8, 1942",
+        "date_closed": "May 31, 1942",
+        "location_description": "Located on the site that later became the WRA-run incarceration camp Poston.",
+        "population_description": "Held people from Arizona, California, Oregon, and Washington.",
+        "exclusion_orders": "",
+        "exit_destinations": "Poston",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "",
+        "peak_popdate": "",
+        "location_name": "Parker, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/2007106",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.2891177,
+          34.1500162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "52",
+        "densho_id": "52-d-koos",
+        "sos_facility_uid": "d-koos",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Kooskia",
+        "encyc_url": "https://encyclopedia.densho.org/Kooskia_(detention_facility)/",
+        "encyc_article_title": "Kooskia (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "May 1943",
+        "date_closed": "May 1945",
+        "location_description": "Located in Clearwater National Forest in North Central Idaho, 40 miles east of the town of Kooskia. Set in a remote, heavily wooded area, the facility had been a highway construction camp sited on an old Civilian Conservation Corps (CCC) camp.",
+        "population_description": "Held Japanese immigrants from the U.S. and Latin America, as well as German nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "100 to 200",
+        "peak_popdate": "",
+        "location_name": "Kooskia, Idaho",
+        "location_state": "Idaho",
+        "location_tgn": "tgn/2025800",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.9779188,
+          46.1448942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Department of Justice Internment Camp",
+        "legacy_densho_id": "53",
+        "densho_id": "53-d-oldr",
+        "sos_facility_uid": "d-oldr",
+        "legacy_facility_type": "Department of Justice Internment Camp",
+        "facility_name": "Old Raton Ranch",
+        "encyc_url": "https://encyclopedia.densho.org/Old_Raton_(detention_facility)/",
+        "encyc_article_title": "Old Raton (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "January 23, 1942",
+        "date_closed": "December 18, 1942",
+        "location_description": "This short-lived camp was located 13 miles east of Fort Stanton internment camp in the Lincoln National Forest in southern New Mexico.",
+        "population_description": "This little-known camp held thirty-two inmates of Japanese descent, all from Clovis, New Mexico. Men, women, and children--citizens and non-citizens alike--were rounded up based on their Japanese ancestry. The Department of Justice (DOJ) categorized the issei as \"enemy aliens\" who were accompanied by their citizen children.",
+        "exclusion_orders": "",
+        "exit_destinations": "Poston;Gila River;Topaz",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "32",
+        "peak_popdate": "1942-01-23",
+        "location_name": "Lincoln, New Mexico",
+        "location_state": "New Mexico",
+        "location_tgn": "tgn/2449490",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.3838716,
+          33.4920276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "54",
+        "densho_id": "54-u-blan",
+        "sos_facility_uid": "u-blan",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Camp Blanding",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Blanding_(detention_facility)/",
+        "encyc_article_title": "Camp Blanding (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "U.S. Army Internment Camp located in Starke, Florida, southwest of Jacksonville, in northeast Florida.",
+        "population_description": "Held Japanese immigrants from the U.S. Also held German and Italian nationals, as well as fourteen German prisoners of war (POWs) captured in a submarine.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "5",
+        "peak_popdate": "",
+        "location_name": "Starke, Florida",
+        "location_state": "Florida",
+        "location_tgn": "tgn/2021369",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.1098275,
+          29.9441298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "55",
+        "densho_id": "55-u-livi",
+        "sos_facility_uid": "u-livi",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Camp Livingston",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Livingston_(detention_facility)/",
+        "encyc_article_title": "Camp Livingston (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "June 8, 1942",
+        "date_closed": "",
+        "location_description": "Located in Alexandria, Louisiana, north of Baton Rouge in the central part of the state. Hot and humid summer months with temperatures up to 130 degrees, poisonous reptiles, and stinging insects added to the hardship.",
+        "population_description": "Held internees of Japanese ancestry sent from the Department of Justice-run Fort Missoula internment camp and from the U.S. Army-run Fort Sill and Camp Forrest internment camps.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "1,123",
+        "peak_popdate": "1943-03-12",
+        "location_name": "Alexandria, Louisiana",
+        "location_state": "Louisiana",
+        "location_tgn": "tgn/7013268",
+        "notes": "https://www.alexandria-louisiana.com/camp-livingston-louisiana.htm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4451371,
+          31.3112936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "56",
+        "densho_id": "56-u-flor",
+        "sos_facility_uid": "u-flor",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Camp Florence",
+        "encyc_url": "https://encyclopedia.densho.org/Florence_(detention_facility)/",
+        "encyc_article_title": "Florence (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located in Florence, Arizona. Florence is northeast of Casa Grande Ruins National Monument, between Phoenix and Tucson in southern Arizona. Hot desert area with extreme summer temperatures.",
+        "population_description": "Held individuals of Japanese ancestry.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "",
+        "peak_popdate": "",
+        "location_name": "Florence, Arizona",
+        "location_state": "Arizona",
+        "location_tgn": "tgn/7016521",
+        "notes": "https://www.c-span.org/video/?63023-1/world-war-ii-pow-camp (on the site of current INS facility; note incinerator structure from video sw of pin)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.3873431,
+          33.0314508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "57",
+        "densho_id": "57-u-blis",
+        "sos_facility_uid": "u-blis",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Bliss",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Bliss_(detention_facility)/",
+        "encyc_article_title": "Fort Bliss (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located near El Paso in southern Texas, close to the Mexico border.",
+        "population_description": "Held Japanese immigrants from mainland U.S. and Hawaii, including seventy-three internees transferred from the Santa Fe internment camp; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "91",
+        "peak_popdate": "1942-10-01",
+        "location_name": "Fort Bliss, Texas",
+        "location_state": "Texas",
+        "location_tgn": "tgn/7021840",
+        "notes": "http://www.usmilitariaforum.com/forums/index.php?/topic/172991-prisoner-of-war-compound-fort-bliss-texas/ (reference to water tower and old officers club)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.4336693,
+          31.8072113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "58",
+        "densho_id": "58-u-howa",
+        "sos_facility_uid": "u-howa",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Howard",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Howard_(detention_facility)/",
+        "encyc_article_title": "Fort Howard (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located on old army barracks within Fort Howard Army Post, Baltimore County, Maryland.",
+        "population_description": "Held Japanese immigrants from the U.S., German nationals, and German prisoners of war (POWs).",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "fewer than 50",
+        "peak_popdate": "",
+        "location_name": "Fort Howard, Maryland",
+        "location_state": "Maryland",
+        "location_tgn": "tgn/7016252",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.44496029999999,
+          39.2073308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "59",
+        "densho_id": "59-u-lewi",
+        "sos_facility_uid": "u-lewi",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Lewis",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Lewis_(detention_facility)/",
+        "encyc_article_title": "Fort Lewis (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "1942",
+        "date_closed": "3/30/1943",
+        "location_description": "Located within Fort Lewis Army Base, 17 miles south of Tacoma, Washington.",
+        "population_description": "Held people of Japanese descent from Alaska, Hawaii, and the mainland U.S.; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "50 to 100",
+        "peak_popdate": "",
+        "location_name": "Fort Lewis, Washington",
+        "location_state": "Washington",
+        "location_tgn": "tgn/1002594",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5647222,
+          47.1144444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "60",
+        "densho_id": "60-u-mcdo",
+        "sos_facility_uid": "u-mcdo",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort McDowell",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_McDowell_/_Angel_Island_(detention_facility)/",
+        "encyc_article_title": "Fort McDowell / Angel Island (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Also known as \"Angel Island,\" a 740-acre island in the middle of the San Francisco Bay.",
+        "population_description": "Held Japanese, German, and Italian immigrants from Hawaii; one Norwegian national; and one Japanese prisoner of war (POW).",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "199",
+        "peak_popdate": "1942-02-21",
+        "location_name": "Fort McDowell, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2335391",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4227496,
+          37.8627046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "61",
+        "densho_id": "61-u-mead",
+        "sos_facility_uid": "u-mead",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Meade",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Meade_(detention_facility)/",
+        "encyc_article_title": "Fort Meade (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located southwest of Baltimore in Anne Arundel County, Maryland.",
+        "population_description": "Held Japanese immigrants from the U.S.; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "100 to 200",
+        "peak_popdate": "1942-05-04",
+        "location_name": "Fort George Meade, Maryland",
+        "location_state": "Maryland",
+        "location_tgn": "tgn/2047111",
+        "notes": "https://www.baltimoresun.com/maryland/laurel/ph-ll-history-ft-meade-20160219-story.html (\"bordered by Zimbroski, Broad Foot, York and Third Ave)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.72686030000001,
+          39.1135041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "62",
+        "densho_id": "62-u-rich",
+        "sos_facility_uid": "u-rich",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Richardson",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Richardson_(detention_facility)/",
+        "encyc_article_title": "Fort Richardson (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located 9 miles north of downtown Anchorage, Alaska.",
+        "population_description": "Held Japanese immigrants from Alaska, plus two German nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "17",
+        "peak_popdate": "1942-02-14",
+        "location_name": "Fort Richardson, Alaska",
+        "location_state": "Alaska",
+        "location_tgn": "tgn/2335498",
+        "notes": "https://www.alaskapublic.org/wp-content/uploads/2019/02/Fort-Richardson-Internment-Camp-3-21-2015-Final-Redacted.pdf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.68833,
+          61.25444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "63",
+        "densho_id": "63-u-samh",
+        "sos_facility_uid": "u-samh",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Fort Sam Houston",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Sam_Houston_(detention_facility)/",
+        "encyc_article_title": "Fort Sam Houston (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Located in San Antonio, Texas.",
+        "population_description": "Held people of Japanese descent from Alaska and Hawaii; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "250",
+        "peak_popdate": "1942-06-01",
+        "location_name": "Fort Sam Houston, Texas",
+        "location_state": "Texas",
+        "location_tgn": "tgn/2639743",
+        "notes": "https://www.thc.texas.gov/preserve/projects-and-programs/military-history/texas-world-war-ii/world-war-ii-japanese-american-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.43076,
+          29.4766354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "65",
+        "densho_id": "65-u-grif",
+        "sos_facility_uid": "u-grif",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Griffith Park",
+        "encyc_url": "https://encyclopedia.densho.org/Griffith_Park_(detention_facility)/",
+        "encyc_article_title": "Griffith Park (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "March 1942",
+        "date_closed": "",
+        "location_description": "Located at a former Civilian Conservation Corps (CCC) camp in Southern California.",
+        "population_description": "Held Japanese immigrants from the U.S.; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "50 to 100",
+        "peak_popdate": "1942-03-12",
+        "location_name": "Burbank, California",
+        "location_state": "California",
+        "location_tgn": "tgn/2010408",
+        "notes": "https://www.kcet.org/shows/lost-la/riots-love-fests-buried-secrets-griffith-parks-hidden-histories (CCC Camp SP-40)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.3089661,
+          34.1808392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "U.S. Army Internment Camp",
+        "legacy_densho_id": "66",
+        "densho_id": "66-u-hono",
+        "sos_facility_uid": "u-hono",
+        "legacy_facility_type": "U.S. Army Internment Camp",
+        "facility_name": "Honouliuli",
+        "encyc_url": "https://encyclopedia.densho.org/Honouliuli_(detention_facility)/",
+        "encyc_article_title": "Honouliuli (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "February 1943",
+        "date_closed": "1945",
+        "location_description": "Located on 160 acres of sugarcane fields northwest of Honolulu. One of two camps used to imprison people of Japanese ancestry in Hawaii.",
+        "population_description": "Held people of Japanese ancestry, citizens and non-citizens, male and female; also held European nationals and prisoners of war (POWs) from the Pacific theater.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "300",
+        "peak_popdate": "",
+        "location_name": "Honouliuli, Oahu, Hawaii",
+        "location_state": "Oahu",
+        "location_tgn": "tgn/2024962",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -158.0361111,
+          21.3677778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "67",
+        "densho_id": "67-i-east",
+        "sos_facility_uid": "i-east",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "East Boston",
+        "encyc_url": "https://encyclopedia.densho.org/East_Boston_(detention_facility)/",
+        "encyc_article_title": "East Boston (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located in East Boston, Massachusetts.",
+        "population_description": "Held Japanese immigrants; German, Italian, and other foreign nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "Fewer than 50",
+        "peak_popdate": "",
+        "location_name": "East Boston, Massachusetts",
+        "location_state": "Massachusetts",
+        "location_tgn": "tgn/7015009",
+        "notes": "https://www.massport.com/massport/community/initiatives/open-space-parks/the-east-boston-immigration-station/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0388601,
+          42.37021370000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "68",
+        "densho_id": "68-i-sanf",
+        "sos_facility_uid": "i-sanf",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "San Francisco",
+        "encyc_url": "https://encyclopedia.densho.org/San_Francisco_(detention_facility)/",
+        "encyc_article_title": "San Francisco (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located on Silver Avenue in San Francisco, California.",
+        "population_description": "Held Japanese immigrants arrested by the FBI in Northern California.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "200",
+        "peak_popdate": "March 1942",
+        "location_name": "San Francisco, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7420610",
+        "notes": "https://gaic.info/internment-camps/temporary-detention-facilities/sharp-park-and-801-silver-avenue-temporary-detention-stations-san-francisco-california/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4194155,
+          37.7749295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "69",
+        "densho_id": "69-i-sanp",
+        "sos_facility_uid": "i-sanp",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "San Pedro",
+        "encyc_url": "https://encyclopedia.densho.org/San_Pedro_(detention_facility)/",
+        "encyc_article_title": "San Pedro (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located near Los Angeles in San Pedro, California.",
+        "population_description": "Held Japanese immigrants arrested by the FBI.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "50 to 100",
+        "peak_popdate": "",
+        "location_name": "San Pedro, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7418615",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2922461,
+          33.7360619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "70",
+        "densho_id": "70-i-seat",
+        "sos_facility_uid": "i-seat",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "Seattle",
+        "encyc_url": "https://encyclopedia.densho.org/Seattle_(detention_facility)/",
+        "encyc_article_title": "Seattle (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located in Seattle, Washington.",
+        "population_description": "Held Japanese immigrants; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "100 to 200",
+        "peak_popdate": "",
+        "location_name": "Seattle, Washington",
+        "location_state": "Washington",
+        "location_tgn": "tgn/7014494",
+        "notes": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3320708,
+          47.6062095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Immigration Detention Station",
+        "legacy_densho_id": "71",
+        "densho_id": "71-i-tuna",
+        "sos_facility_uid": "i-tuna",
+        "legacy_facility_type": "Immigration Detention Station",
+        "facility_name": "Tuna Canyon",
+        "encyc_url": "https://encyclopedia.densho.org/Tuna_Canyon_(detention_facility)/",
+        "encyc_article_title": "Tuna Canyon (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "Immigration and Naturalization Service (INS) detention station located at a former Civilian Conservation Corps (CCC) camp near Pasadena in Los Angeles County, California.",
+        "population_description": "Held Japanese immigrants; also held German and Italian nationals.",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "300",
+        "peak_popdate": "",
+        "location_name": "Tujunga, California",
+        "location_state": "California",
+        "location_tgn": "tgn/7015468",
+        "notes": "http://www.tunacanyon.org/history-of-the-site/tcds-map/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.3082747,
+          34.2596475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "include_sos": "yes",
+        "mapped": "yes",
+        "sos_category": "Additional Facility",
+        "legacy_densho_id": "72",
+        "densho_id": "72-f-nyss",
+        "sos_facility_uid": "f-nyss",
+        "legacy_facility_type": "Additional Facility",
+        "facility_name": "Nyssa, Oregon",
+        "encyc_url": "https://encyclopedia.densho.org/Nyssa,_Oregon_(detention_facility)/",
+        "encyc_article_title": "Nyssa, Oregon (detention facility)",
+        "encyc_article_status": "",
+        "date_opened": "",
+        "date_closed": "",
+        "location_description": "",
+        "population_description": "",
+        "exclusion_orders": "",
+        "exit_destinations": "",
+        "duration_class": "",
+        "popsize_class": "",
+        "peak_population": "",
+        "peak_popdate": "",
+        "location_name": "Nyssa, Oregon",
+        "location_state": "Oregon",
+        "location_tgn": "tgn/2085219",
+        "notes": "https://oregonnews.uoregon.edu/lccn/sn99063863/1942-06-11/ed-1/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9979309,
+          43.8819705
+        ]
+      }
+    }
+  ]
+}
