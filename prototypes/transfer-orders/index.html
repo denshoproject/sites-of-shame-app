@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Map - Transfer Orders</title>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <style>
+ 		body { 
+             margin: 0; 
+             padding: 0; 
+        }
+		#map { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            width: 100%; 
+        }
+	</style>
+</head>
+<body>
+  <div id="map"></div>
+  <script type="text/javascript">
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6ImNrb2N5bHh4azAxc2Eydmxrb2kzc2J6a3oifQ.RGkRsYuGNbsO3vwtZLV5WQ';
+var map = new mapboxgl.Map({
+	container: 'map', 
+	style: 'mapbox://styles/stamen/ckocyn94d0vd317rxcj4u84yx', 
+	center: [-88, 48], 
+	zoom: 3 
+});
+
+map.on('load', function () {
+
+map.addSource('route', {
+type: 'geojson',
+data: './route.geojson'
+});
+
+map.addLayer({
+'id': 'route',
+'source': 'route',
+'type': 'line',
+'paint': {
+'line-width': 
+{
+    property: 'widthtest',
+    stops: [
+            [1, 1],
+           [650, 4]
+]
+},
+'line-color': 'gray'
+}
+});
+
+map.addSource('EAIS', {
+	type: 'geojson',
+	data: './eais.geojson'
+})
+
+map.addLayer({
+'id': 'EAIS',
+'type': 'circle',
+'source': 'EAIS', 
+'paint': {
+	'circle-radius':
+    {
+     property: "peak_population",
+     stops: [
+         [0,   5],
+         [20000,   20]
+          ]
+   },
+'circle-color': 
+{
+    property: "Category2",
+    type: "categorical",
+    stops: [
+        ["1", "#ff7b54"],
+        ["2", "#FFB26B"],
+        ["3", "#ffd56b"],
+        ["4", "#939b62"],
+        ["5", "#faf2da"],
+        ["6", "#8e9775"],
+        ["7", "#4a503d"],
+        ["8", "#e28f83"]
+    ]
+    }
+}
+});
+
+map.addSource('WRA', {
+	type: 'geojson',
+	data: './wra.geojson'
+   
+});
+
+map.addLayer({
+'id': 'WRA',
+'type': 'circle',
+'source': 'WRA', 
+'paint': {
+'circle-radius':
+    {
+     property: "peak_population",
+     stops: [
+         [0,   5],
+         [20000,   20]
+          ]
+   },
+'circle-color': 
+{
+    property: "Category2",
+    type: "categorical",
+    stops: [
+        ["1", "#ff7b54"],
+        ["2", "#FFB26B"],
+        ["3", "#ffd56b"],
+        ["4", "#939b62"],
+        ["5", "#faf2da"],
+        ["6", "#8e9775"],
+        ["7", "#4a503d"],
+        ["8", "#e28f83"]
+    ]
+    }
+}
+})
+
+map.addSource('Hawaii', {
+	type: 'geojson',
+	data: './hawaii.geojson'
+})
+
+map.addLayer({
+'id': 'Hawaii',
+'type': 'circle',
+'source': 'Hawaii', 
+'paint': {
+	'circle-radius':
+    {
+     property: "peak_population",
+     stops: [
+         [0,   5],
+         [20000,   20]
+          ]
+   },
+'circle-color': 
+{
+    property: "Category2",
+    type: "categorical",
+    stops: [
+        [1, "#ff7b54"],
+        [2, "#FFB26B"],
+        [3, "#ffd56b"],
+        [4, "#939b62"],
+        [5, "#faf2da"],
+        [6, "#8e9775"],
+        [7, "#4a503d"],
+        [8, "#e28f83"]
+    ]
+    }
+}
+});
+});
+</script>
+</body>
+</html>
