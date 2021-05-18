@@ -55,10 +55,10 @@ const reducer = (state, action) => {
         }),
       };
     case "add layer":
-      state.layers.push(action.payload);
+      const newLayers = [...state.layers, action.payload];
       return {
         ...state,
-        layers: state.layers,
+        layers: newLayers,
       };
     default:
       return state;
