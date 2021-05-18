@@ -1,9 +1,8 @@
 import React, { createContext, useReducer } from "react";
 
 const initialState = {
-  layers: [
-  ],
-};;
+  layers: [],
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -18,27 +17,32 @@ const reducer = (state, action) => {
           };
         }),
       };
-    case 'enable layer':
+    case "enable layer":
       return {
         ...state,
-        layers: state.layers.map(l => {
+        layers: state.layers.map((l) => {
           if (l.id !== action.layerId) return l;
           return {
             ...l,
-            enabled: true
+            enabled: true,
           };
-        })
+        }),
       };
-    case 'disable layer':
+    case "disable layer":
       return {
         ...state,
-        layers: state.layers.map(l => {
+        layers: state.layers.map((l) => {
           if (l.id !== action.layerId) return l;
           return {
             ...l,
-            enabled: false
+            enabled: false,
           };
-        })
+        }),
+      };
+    case "add layer":
+      return {
+        ...state,
+        layers: [...state.layers, action.payload],
       };
     default:
       return state;

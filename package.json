@@ -6,7 +6,9 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@turf/turf": "^6.3.0",
     "classnames": "^2.3.1",
+    "d3": "^6.7.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "mapbox-gl": "1.13.0",
@@ -23,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "csv2geojson": "csv2geojson public/data/SoS.Facilities.Master.List.-.sos_facilities.csv > public/data/sos_facilities.geojson",
     "prototypes": "python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./prototypes",
     "staging": "PUBLIC_URL=./ REACT_APP_ROUTER_MODE=hash react-scripts build --mode staging && python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./build"
   },
@@ -50,5 +53,8 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "csv2geojson": "^5.1.1"
   }
 }

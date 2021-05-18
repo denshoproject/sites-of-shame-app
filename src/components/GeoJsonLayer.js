@@ -1,14 +1,14 @@
 import React from "react";
-import { Layer, Source } from 'react-mapbox-gl';
+import { Layer, Source } from "react-mapbox-gl";
 
 const VectorLayer = ({ before, layer }) => {
   return (
     <React.Fragment>
       <Source
-        id={layer.id} 
+        id={layer.id}
         geoJsonSource={{
-          type: 'geojson',
-          data: layer.url,
+          type: "geojson",
+          data: layer.data,
         }}
       />
       <Layer
