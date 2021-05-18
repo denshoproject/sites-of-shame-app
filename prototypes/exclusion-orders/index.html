@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Map - Exclusion Orders</title>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <style>
+ 		body { 
+             margin: 0; 
+             padding: 0; 
+        }
+		#map { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            width: 100%; 
+        }
+	</style>
+</head>
+<body>
+    <div id="map"></div>
+
+<script type="text/javascript">
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6ImNrb2N5bHh4azAxc2Eydmxrb2kzc2J6a3oifQ.RGkRsYuGNbsO3vwtZLV5WQ';
+var map = new mapboxgl.Map({
+	container: 'map', 
+	style: 'mapbox://styles/stamen/ckocyn94d0vd317rxcj4u84yx', 
+	center: [-88, 48], 
+	zoom: 3 
+});
+
+map.on('load', function () {
+
+map.addSource('eo', {
+type: 'geojson',
+data: '/eo_simplified.geojson'
+});
+ 
+map.addLayer({
+'id': 'eo',
+'type': 'fill',
+'source': 'eo',
+'layout': {},
+'paint': {
+'fill-color': 'gray', 
+'fill-opacity': 0.5
+}
+});
+
+map.addLayer({
+'id': 'outline',
+'type': 'line',
+'source': 'eo',
+'layout': {},
+'paint': {
+'line-color': '#fff',
+'line-width': 1
+}
+});
+
+var popup = new mapboxgl.Popup({
+});
+
+map.on('click', 'eo', function (e) {
+var coordinates = e.features[0].geometry.coordinates.slice();
+var name = e.features[0].properties.Name
+var description = e.features[0].properties.description
+popup.setLngLat(e.lngLat).setHTML("<strong>" + name + "</strong><br>" + description).addTo(map);
+});
+map.on('mouseleave', 'exclusion-orders', function () {
+popup.remove();
+});
+
+});
+</script>
+</body>
+</html>
