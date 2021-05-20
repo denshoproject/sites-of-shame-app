@@ -36,6 +36,24 @@ const MapLayers = () => {
           "circle-opacity": 0.5,
         },
         enabled: true,
+        layerLegend: [
+          {
+            color: "red",
+            name: "Incarceration Camp",
+          },
+          {
+            color: "pink",
+            name: "Temporary Assembly Center",
+          },
+          {
+            color: "salmon",
+            name: "Citizen Isolation Center",
+          },
+          {
+            color: "orange",
+            name: "EAIS",
+          },
+        ],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });
