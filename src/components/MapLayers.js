@@ -23,6 +23,7 @@ const MapLayers = () => {
     fetchFacilities().then((facilities) => {
       const facilitiesGeoJSON = facilitiesToGeoJSON(facilities);
       const newLayer = {
+        name: "Facilities",
         id: "sos-facilities",
         data: facilitiesGeoJSON,
         layerType: "circle",
