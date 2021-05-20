@@ -1,6 +1,7 @@
 .layer-picker {
   background: white;
   padding: 0.5rem;
+  text-align: left;
 
   ol.layer-list {
     list-style: none;
@@ -15,5 +16,21 @@
         font-weight: bold;
       }
     }
+  }
+
+  .layer-legend-item {
+    font-weight: normal;
+    list-style: none;
+  }
+
+  .color-circle {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    padding: 0;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    background-color: #ccc;
   }
 }

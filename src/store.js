@@ -1,7 +1,20 @@
 import React, { createContext, useReducer } from "react";
 
 const initialState = {
-  layers: [],
+  layers: [
+    {
+      name: "Exclusion Orders",
+      id: "exclusion orders",
+      data: "./data/exclusion-orders.geojson",
+      layerType: "fill",
+      sourceType: "geojson",
+      paint: {
+        "fill-color": "salmon",
+      },
+      enabled: true,
+      layerLegend: [],
+    },
+  ],
 };
 
 const reducer = (state, action) => {

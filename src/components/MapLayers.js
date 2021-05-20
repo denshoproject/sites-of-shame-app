@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 
 import GeoJsonLayer from "./GeoJsonLayer";
-import { Context, reducer } from "../store";
+import { Context } from "../store";
 import * as turf from "@turf/turf";
 import { csv } from "d3";
 
@@ -23,6 +23,7 @@ const MapLayers = () => {
     fetchFacilities().then((facilities) => {
       const facilitiesGeoJSON = facilitiesToGeoJSON(facilities);
       const newLayer = {
+        name: "Facilities",
         id: "sos-facilities",
         data: facilitiesGeoJSON,
         layerType: "circle",
@@ -35,6 +36,24 @@ const MapLayers = () => {
           "circle-opacity": 0.5,
         },
         enabled: true,
+        layerLegend: [
+          {
+            color: "red",
+            name: "Incarceration Camp",
+          },
+          {
+            color: "pink",
+            name: "Temporary Assembly Center",
+          },
+          {
+            color: "salmon",
+            name: "Citizen Isolation Center",
+          },
+          {
+            color: "orange",
+            name: "EAIS",
+          },
+        ],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });
