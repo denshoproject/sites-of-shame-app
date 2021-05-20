@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import GeoJsonLayer from "./GeoJsonLayer";
 import { Context } from "../store";
 import * as turf from "@turf/turf";
-import { csv, json } from "d3";
+import { csv } from "d3";
 
 const fetchFacilities = () => csv("./data/facilities.csv");
 
@@ -14,8 +14,6 @@ const facilitiesToGeoJSON = (facilities) => {
     })
   );
 };
-
-const fetchExclusionOrders = () => json("./data/exclusion-orders.geojson");
 
 const MapLayers = () => {
   const { state, dispatch } = useContext(Context);
@@ -56,25 +54,6 @@ const MapLayers = () => {
             name: "EAIS",
           },
         ],
-      };
-      dispatch({ type: "add layer", payload: newLayer });
-    });
-  }, [dispatch]);
-
-  useEffect(() => {
-    // Load CSV, convert to GeoJSON, add to the layers in the store
-    fetchExclusionOrders().then((eoGeoJSON) => {
-      const newLayer = {
-        name: "Exclusion Orders",
-        id: "exclusion orders",
-        data: eoGeoJSON,
-        layerType: "fill",
-        sourceType: "geojson",
-        paint: {
-          "fill-color": "salmon",
-        },
-        enabled: true,
-        layerLegend: [],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });
