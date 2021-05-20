@@ -9,7 +9,6 @@
     "@turf/turf": "^6.3.0",
     "classnames": "^2.3.1",
     "d3": "^6.7.0",
-    "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "mapbox-gl": "1.13.0",
     "node-sass": "^4.14.1",
@@ -55,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "csv2geojson": "^5.1.1"
+    "csv2geojson": "^5.1.1",
+    "husky": "^6.0.0"
   }
 }
