@@ -15,7 +15,7 @@ const facilitiesToGeoJSON = (facilities) => {
   );
 };
 
-const fetchExclusionOrders = () => json("./data/eo_simplified.geojson");
+const fetchExclusionOrders = () => json("./data/exclusion-orders.geojson");
 
 const MapLayers = () => {
   const { state, dispatch } = useContext(Context);
