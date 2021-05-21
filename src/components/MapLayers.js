@@ -40,6 +40,7 @@ const MapLayers = () => {
         name: "Facilities",
         id: "sos-facilities",
         data: facilitiesGeoJSON,
+        clickable: true,
         layerType: "circle",
         sourceType: "geojson",
         paint: {
@@ -89,6 +90,7 @@ const MapLayers = () => {
         name: "journeys",
         id: "sos-journeys",
         data: journeysGeoJSON,
+        clickable: true,
         layerType: "circle",
         sourceType: "geojson",
         paint: {

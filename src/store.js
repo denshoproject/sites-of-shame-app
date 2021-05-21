@@ -1,11 +1,14 @@
 import React, { createContext, useReducer } from "react";
 
 const initialState = {
+  clickedFeature: null,
+
   layers: [
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
       data: "./data/exclusion-orders.geojson",
+      clickable: true,
       layerType: "fill",
       sourceType: "geojson",
       paint: {
@@ -18,6 +21,7 @@ const initialState = {
       name: "Transfer Orders",
       id: "transfer orders",
       data: "./data/transfer-orders.geojson",
+      clickable: true,
       layerType: "line",
       sourceType: "geojson",
       paint: {
@@ -32,6 +36,11 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "set clickedFeature":
+      return {
+        ...state,
+        clickedFeature: action.clickedFeature,
+      };
     case "toggle layer":
       return {
         ...state,
