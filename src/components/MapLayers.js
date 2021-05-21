@@ -87,7 +87,7 @@ const MapLayers = () => {
     fetchJourneys().then((journeys) => {
       const journeysGeoJSON = journeysToGeoJSON(journeys);
       const newLayer = {
-        name: "journeys",
+        name: "Journeys",
         id: "sos-journeys",
         data: journeysGeoJSON,
         clickable: true,
