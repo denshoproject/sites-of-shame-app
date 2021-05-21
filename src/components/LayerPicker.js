@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import { Context } from "../store";
 import "./LayerPicker.scss";
+import FamilyDropdown from "./FamilyDropdown";
 
 const LayerPicker = () => {
   const { state, dispatch } = useContext(Context);
@@ -13,7 +14,9 @@ const LayerPicker = () => {
 
   return (
     <div className="layer-picker">
+      <FamilyDropdown />
       <div className="layer-list">
+        <h4>Facilities</h4>
         {layers.map((layer) => (
           <div
             key={layer.id}
