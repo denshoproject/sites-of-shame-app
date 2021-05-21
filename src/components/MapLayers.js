@@ -15,6 +15,20 @@ const facilitiesToGeoJSON = (facilities) => {
   );
 };
 
+const fetchJourneys = () => csv("./data/family-journeys.csv");
+
+const journeysToGeoJSON = (journeys) => {
+  return turf.featureCollection(
+    journeys
+      .map((j) => {
+        if (!j.latitude || !j.longitude)
+          return console.error("Journey missing latitude or longitude", j);
+        else return turf.point([+j.longitude, +j.latitude], j);
+      })
+      .filter((journey) => typeof journey != "undefined")
+  );
+};
+
 const MapLayers = () => {
   const { state, dispatch } = useContext(Context);
 
@@ -29,7 +43,7 @@ const MapLayers = () => {
         layerType: "circle",
         sourceType: "geojson",
         paint: {
-          "circle-radius": 50,
+          "circle-radius": 20,
           "circle-color": "red",
           "circle-stroke-color": "white",
           "circle-stroke-width": 1,
@@ -54,6 +68,31 @@ const MapLayers = () => {
             name: "EAIS",
           },
         ],
+      };
+      dispatch({ type: "add layer", payload: newLayer });
+    });
+  }, [dispatch]);
+
+  useEffect(() => {
+    // Load CSV, convert to GeoJSON, add to the layers in the store
+    fetchJourneys().then((journeys) => {
+      const journeysGeoJSON = journeysToGeoJSON(journeys);
+      console.log({ journeysGeoJSON });
+      const newLayer = {
+        name: "journeys",
+        id: "sos-journeys",
+        data: journeysGeoJSON,
+        layerType: "circle",
+        sourceType: "geojson",
+        paint: {
+          "circle-radius": 20,
+          "circle-color": "blue",
+          "circle-stroke-color": "white",
+          "circle-stroke-width": 1,
+          "circle-opacity": 0.5,
+        },
+        enabled: true,
+        layerLegend: [],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });
