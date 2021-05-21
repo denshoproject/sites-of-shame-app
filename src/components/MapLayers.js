@@ -85,7 +85,6 @@ const MapLayers = () => {
     // Load CSV, convert to GeoJSON, add to the layers in the store
     fetchJourneys().then((journeys) => {
       const journeysGeoJSON = journeysToGeoJSON(journeys);
-      console.log({ journeysGeoJSON });
       const newLayer = {
         name: "journeys",
         id: "sos-journeys",
