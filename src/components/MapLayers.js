@@ -30,7 +30,16 @@ const MapLayers = () => {
         sourceType: "geojson",
         paint: {
           "circle-radius": 50,
-          "circle-color": "red",
+          // "circle-color": "red",
+          "circle-color": {
+            property: "sos_category1",
+            type: "categorical",
+            stops: [
+              ["wra", "red"],
+              ["eais", "blue"],
+              ["hawaii", "green"],
+            ],
+          },
           "circle-stroke-color": "white",
           "circle-stroke-width": 1,
           "circle-opacity": 0.5,

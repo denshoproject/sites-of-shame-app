@@ -14,6 +14,19 @@ const initialState = {
       enabled: true,
       layerLegend: [],
     },
+    {
+      name: "Transfer Orders",
+      id: "transfer orders",
+      data: "./data/transfer-orders.geojson",
+      layerType: "line",
+      sourceType: "geojson",
+      paint: {
+        "line-width": 3,
+        "line-color": "gray",
+      },
+      enabled: true,
+      layerLegend: [],
+    },
   ],
 };
 
