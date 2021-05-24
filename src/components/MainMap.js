@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import ReactMapboxGl from "react-mapbox-gl";
+import ReactMapboxGl, { ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { constants } from "../constants";
 
@@ -63,6 +63,7 @@ const MainMap = () => {
         onMoveEnd={handleMoveEnd}
         onClick={handleClick}
       >
+        <ZoomControl position="bottom-right" />
         <MapLayers />
       </Map>
     </div>
