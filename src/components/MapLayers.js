@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from "react";
 
+import FARLayer from "./FARLayer";
 import GeoJsonLayer from "./GeoJsonLayer";
 import { Context } from "../store";
 import * as turf from "@turf/turf";
 import { csv } from "d3";
+import { constants } from "../constants";
 
-const fetchFacilities = () => csv("./data/facilities.csv");
+const fetchFacilities = () => csv(constants.DATA_PATH + "facilities.csv");
 
 const facilitiesToGeoJSON = (facilities) => {
   return turf.featureCollection(
@@ -15,7 +17,7 @@ const facilitiesToGeoJSON = (facilities) => {
   );
 };
 
-const fetchJourneys = () => csv("./data/family-journeys.csv");
+const fetchJourneys = () => csv(constants.DATA_PATH + "family-journeys.csv");
 
 const journeysToGeoJSON = (journeys) => {
   return turf.featureCollection(
@@ -174,6 +176,9 @@ const MapLayers = () => {
       before = enabledLayers[i - 1].id;
     }
 
+    if (layer.id === "final accountability records") {
+      return <FARLayer key={layer.id} layer={layer} before={before} />;
+    }
     if (layer.sourceType === "geojson") {
       return <GeoJsonLayer key={layer.id} layer={layer} before={before} />;
     }
