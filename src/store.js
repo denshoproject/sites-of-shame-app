@@ -3,6 +3,11 @@ import React, { createContext, useReducer } from "react";
 const initialState = {
   clickedFeature: null,
 
+  mapState: {
+    center: [-93, 38],
+    zoom: [4],
+  },
+
   layers: [
     {
       name: "Exclusion Orders",
@@ -73,6 +78,14 @@ const reducer = (state, action) => {
             enabled: false,
           };
         }),
+      };
+    case "set mapState":
+      return {
+        ...state,
+        mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
       };
     case "add layer":
       return {
