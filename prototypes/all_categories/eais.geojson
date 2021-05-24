@@ -1,0 +1,651 @@
+    {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Santa Fe",
+        "encyc_url": "https://encyclopedia.densho.org/Santa_Fe_(detention_facility)/",
+        "date_opened": "February 1942",
+        "date_closed": "September 1946",
+        "peak_population": 2100
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.937799,
+          35.6869752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Fort Lincoln (Bismarck)",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Lincoln_(Bismarck)_(detention_facility)/",
+        "date_opened": "December 7, 1941",
+        "date_closed": "March 6, 1946",
+        "peak_population": 1518
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.7837392,
+          46.8083268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Crystal City",
+        "encyc_url": "https://encyclopedia.densho.org/Crystal_City_(detention_facility)/",
+        "date_opened": "November 2, 1942",
+        "date_closed": "January 1948",
+        "peak_population": 4000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.8281104,
+          28.6774795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Fort Missoula",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Missoula_(detention_facility)/",
+        "date_opened": "December 18, 1941",
+        "date_closed": "July 1, 1944",
+        "peak_population": 2003
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.019501,
+          46.8605189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "5",
+        "name": "McNeil Island Federal Penitentiary",
+        "encyc_url": "https://encyclopedia.densho.org/McNeil_Island_Penitentiary_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6815078,
+          47.2133614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Lordsburg",
+        "encyc_url": "https://encyclopedia.densho.org/Lordsburg_(detention_facility)/",
+        "date_opened": "June 15, 1942",
+        "date_closed": "1944",
+        "peak_population": 2500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.7086649,
+          32.3503605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Fort Stanton",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Stanton_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5230362,
+          33.495914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Kenedy",
+        "encyc_url": "https://encyclopedia.densho.org/Kenedy_(detention_facility)/",
+        "date_opened": "April 1, 1942",
+        "date_closed": "September 1945",
+        "peak_population": 2000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.8486123,
+          28.8191468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Sill",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Sill_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "June 24, 1942",
+        "peak_population": 707
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5090089,
+          34.70455949999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Stringtown",
+        "encyc_url": "https://encyclopedia.densho.org/Stringtown_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 176
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.05332519999999,
+          34.46676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "5",
+        "name": "Leavenworth Federal Penitentiary",
+        "encyc_url": "https://encyclopedia.densho.org/Leavenworth_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9224637,
+          39.3111112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Camp McCoy",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_McCoy_(detention_facility)/",
+        "date_opened": "March 1, 1942",
+        "date_closed": "",
+        "peak_population": 293
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.68835519999999,
+          44.012716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "Ellis Island",
+        "encyc_url": "https://encyclopedia.densho.org/Ellis_Island_(detention_facility)/",
+        "date_opened": "December 1, 1941",
+        "date_closed": "June 1944",
+        "peak_population": 608
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.03955959999999,
+          40.6994721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Camp Forrest",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Forrest_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.20943419999999,
+          35.3620235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Seagoville",
+        "encyc_url": "https://encyclopedia.densho.org/Seagoville_(detention_facility)/",
+        "date_opened": "April 12, 1942",
+        "date_closed": "June 30, 1945",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.53832279999999,
+          32.6395776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "Sharp Park",
+        "encyc_url": "https://encyclopedia.densho.org/Sharp_Park_(detention_facility)/",
+        "date_opened": "March 30, 1942",
+        "date_closed": "1946",
+        "peak_population": 379
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4863492,
+          37.6322976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Kooskia",
+        "encyc_url": "https://encyclopedia.densho.org/Kooskia_(detention_facility)/",
+        "date_opened": "May 1943",
+        "date_closed": "May 1945",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.9779188,
+          46.1448942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "3",
+        "name": "Old Raton Ranch",
+        "encyc_url": "https://encyclopedia.densho.org/Old_Raton_(detention_facility)/",
+        "date_opened": "January 23, 1942",
+        "date_closed": "December 18, 1942",
+        "peak_population": 32
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.3838716,
+          33.4920276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Camp Blanding",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Blanding_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 343
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.1098275,
+          29.9441298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Camp Livingston",
+        "encyc_url": "https://encyclopedia.densho.org/Camp_Livingston_(detention_facility)/",
+        "date_opened": "June 8, 1942",
+        "date_closed": "",
+        "peak_population": 1123
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4451371,
+          31.3112936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Camp Florence",
+        "encyc_url": "https://encyclopedia.densho.org/Florence_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.3873431,
+          33.0314508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Bliss",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Bliss_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 91
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.4336693,
+          31.8072113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Howard",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Howard_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.44496029999999,
+          39.2073308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Lewis",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Lewis_(detention_facility)/",
+        "date_opened": "1942",
+        "date_closed": "3/30/1943",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5647222,
+          47.1144444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort McDowell",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_McDowell_/_Angel_Island_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 199
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4227496,
+          37.8627046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Meade",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Meade_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 384
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.72686030000001,
+          39.1135041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Richardson",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Richardson_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.68833,
+          61.25444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Fort Sam Houston",
+        "encyc_url": "https://encyclopedia.densho.org/Fort_Sam_Houston_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 106
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.43076,
+          29.4766354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "7",
+        "name": "Griffith Park",
+        "encyc_url": "https://encyclopedia.densho.org/Griffith_Park_(detention_facility)/",
+        "date_opened": "March 1942",
+        "date_closed": "",
+        "peak_population": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.3089661,
+          34.1808392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "East Boston",
+        "encyc_url": "https://encyclopedia.densho.org/East_Boston_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0388601,
+          42.37021370000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "San Francisco",
+        "encyc_url": "https://encyclopedia.densho.org/San_Francisco_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4194155,
+          37.7749295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "San Pedro",
+        "encyc_url": "https://encyclopedia.densho.org/San_Pedro_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2922461,
+          33.7360619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "Seattle",
+        "encyc_url": "https://encyclopedia.densho.org/Seattle_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3320708,
+          47.6062095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "eais",
+        "Category2": "8",
+        "name": "Tuna Canyon",
+        "encyc_url": "https://encyclopedia.densho.org/Tuna_Canyon_(detention_facility)/",
+        "date_opened": "",
+        "date_closed": "",
+        "peak_population": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.3082747,
+          34.2596475
+        ]
+      }
+    }
+  ]
+}

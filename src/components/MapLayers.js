@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 
+import FARLayer from "./FARLayer";
 import GeoJsonLayer from "./GeoJsonLayer";
 import { Context } from "../store";
 import * as turf from "@turf/turf";
@@ -125,6 +126,9 @@ const MapLayers = () => {
       before = enabledLayers[i - 1].id;
     }
 
+    if (layer.id === "final accountability records") {
+      return <FARLayer key={layer.id} layer={layer} before={before} />;
+    }
     if (layer.sourceType === "geojson") {
       return <GeoJsonLayer key={layer.id} layer={layer} before={before} />;
     }
