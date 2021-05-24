@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import * as d3 from "d3";
 
-import { constants } from "../constants";
-import { Context } from "../store";
+import { constants } from "constants.js";
+import { Context } from "store";
 import "./FARPicker.scss";
 
 const FARPicker = () => {

@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import { constants } from "./constants";
+import { constants } from "constants.js";
 
 const initialState = {
   clickedFeature: null,

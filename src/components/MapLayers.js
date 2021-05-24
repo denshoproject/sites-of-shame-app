@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
-
-import FARLayer from "./FARLayer";
-import GeoJsonLayer from "./GeoJsonLayer";
-import { Context } from "../store";
 import * as turf from "@turf/turf";
 import { csv } from "d3";
-import { constants } from "../constants";
+
+import FARLayer from "components/FARLayer";
+import GeoJsonLayer from "components/GeoJsonLayer";
+import { Context } from "store";
+import { constants } from "constants.js";
 
 const fetchFacilities = () => csv(constants.DATA_PATH + "facilities.csv");
 

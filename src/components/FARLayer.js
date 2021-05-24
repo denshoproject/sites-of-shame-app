@@ -3,8 +3,8 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { constants } from "../constants";
-import { Context } from "../store";
+import { constants } from "constants.js";
+import { Context } from "store";
 
 const FARLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);

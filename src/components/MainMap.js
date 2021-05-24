@@ -1,11 +1,11 @@
 import React, { useContext, useRef } from "react";
 import ReactMapboxGl, { ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { constants } from "../constants";
 
-import { Context } from "../store";
-import LayerPicker from "./LayerPicker";
-import MapLayers from "./MapLayers";
+import { constants } from "constants.js";
+import { Context } from "store";
+import LayerPicker from "components/LayerPicker";
+import MapLayers from "components/MapLayers";
 import "./MainMap.scss";
 
 const Map = ReactMapboxGl({

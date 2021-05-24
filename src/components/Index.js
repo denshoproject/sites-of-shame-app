@@ -1,6 +1,6 @@
 import React from "react";
 
-import MainMap from "./MainMap";
+import MainMap from "components/MainMap";
 import "./Index.scss";
 
 const Index = () => {
