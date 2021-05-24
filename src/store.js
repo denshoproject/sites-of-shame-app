@@ -1,13 +1,25 @@
 import React, { createContext, useReducer } from "react";
+import { constants } from "./constants";
 
 const initialState = {
   clickedFeature: null,
+
+  mapState: {
+    center: [-93, 38],
+    zoom: [4],
+  },
+
+  far: {
+    index: null,
+    selectedCamp: null,
+    campData: {},
+  },
 
   layers: [
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: "./data/exclusion-orders.geojson",
+      data: constants.DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
       layerType: "fill",
       sourceType: "geojson",
@@ -20,9 +32,15 @@ const initialState = {
       layerLegend: [],
     },
     {
+      name: "Final Accountability Records",
+      id: "final accountability records",
+      clickable: true,
+      layerLegend: [],
+    },
+    {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: "./data/transfer-orders.geojson",
+      data: constants.DATA_PATH + "transfer-orders.geojson",
       clickable: true,
       layerType: "line",
       sourceType: "geojson",
@@ -38,6 +56,33 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "set far index":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          index: action.index,
+        },
+      };
+    case "set far selectedCamp":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          selectedCamp: action.selectedCamp,
+        },
+      };
+    case "set far camp data":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          campData: {
+            ...state.far.campData,
+            [action.camp]: action.data,
+          },
+        },
+      };
     case "set clickedFeature":
       return {
         ...state,
@@ -75,6 +120,14 @@ const reducer = (state, action) => {
             enabled: false,
           };
         }),
+      };
+    case "set mapState":
+      return {
+        ...state,
+        mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
       };
     case "add layer":
       return {
