@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import classNames from "classnames";
 
 import { Context } from "../store";
+import FARPicker from "./FARPicker";
 import "./LayerPicker.scss";
 
 const LayerPicker = () => {
@@ -21,9 +22,13 @@ const LayerPicker = () => {
               layer: true,
               enabled: layer.enabled,
             })}
-            onClick={() => handleClick(layer)}
           >
-            <div className="layer-name">{layer.name}</div>
+            <div className="layer-name" onClick={() => handleClick(layer)}>
+              {layer.name}
+            </div>
+            {layer.id === "final accountability records" && layer.enabled ? (
+              <FARPicker />
+            ) : null}
             {layer.layerLegend.length ? (
               <ol className="layer-legend-items">
                 {layer.layerLegend.map((legend) => (
