@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import * as d3 from "d3";
 
+import { constants } from "../constants";
 import { Context } from "../store";
 import "./FARPicker.scss";
 
@@ -8,7 +9,7 @@ const FARPicker = () => {
   const { state, dispatch } = useContext(Context);
   const { index } = state.far;
 
-  const fetchFarIndex = () => d3.csv("./data/far/index.csv");
+  const fetchFarIndex = () => d3.csv(`${constants.DATA_PATH}far/index.csv`);
 
   useEffect(() => {
     if (index) return;

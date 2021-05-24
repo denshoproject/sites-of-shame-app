@@ -3,6 +3,7 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
+import { constants } from "../constants";
 import { Context } from "../store";
 
 const FARLayer = ({ before, layer }) => {
@@ -15,7 +16,8 @@ const FARLayer = ({ before, layer }) => {
     selectedCampRow = index.filter((row) => row.slug === selectedCamp)[0];
   }
 
-  const fetchFarCampData = (camp) => d3.csv(`./data/far/${camp}.csv`);
+  const fetchFarCampData = (camp) =>
+    d3.csv(`${constants.DATA_PATH}far/${camp}.csv`);
 
   // Load FAR data if needed
   useEffect(() => {
