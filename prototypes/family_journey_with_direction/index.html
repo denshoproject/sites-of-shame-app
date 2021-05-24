@@ -17,9 +17,9 @@
       width: 100%; 
       }
 		.mapboxgl-popup {
-      width: 400px;
-      height: 200px;
-      font: 12px/20px Helvetica;
+      width: 450px;
+      height: 220px;
+      font: 12px Helvetica;
       }
 	  </style>
 </head>
@@ -30,10 +30,10 @@
 <script type="text/javascript">
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhbWVuIiwiYSI6ImNrb2N5bHh4azAxc2Eydmxrb2kzc2J6a3oifQ.RGkRsYuGNbsO3vwtZLV5WQ';
 var map = new mapboxgl.Map({
-	container: 'map', // container id
-	style: 'mapbox://styles/stamen/ckocyn94d0vd317rxcj4u84yx', // style URL
-	center: [-88, 48], // starting position [lng, lat]
-	zoom: 3 // starting zoom
+	container: 'map', 
+	style: 'mapbox://styles/stamen/ckocyn94d0vd317rxcj4u84yx', 
+	center: [-88, 48], 
+	zoom: 3 
 });
 
 //Points that are specific to the last location on each route
@@ -76,7 +76,6 @@ map.addSource('route', {
 'type': 'geojson',
 'data': {
 'type': 'Feature',
-'properties': {},
 'geometry': {
 'type': 'LineString',
 'coordinates': [
@@ -112,7 +111,6 @@ map.addSource('route2', {
 'type': 'geojson',
 'data': {
 'type': 'Feature',
-'properties': {},
 'geometry': {
 'type': 'LineString',
 'coordinates': [
@@ -161,7 +159,6 @@ map.addSource('route3', {
 'type': 'geojson',
 'data': {
 'type': 'Feature',
-'properties': {},
 'geometry': {
 'type': 'LineString',
 'coordinates': [
@@ -212,7 +209,6 @@ map.addSource('route4', {
 'type': 'geojson',
 'data': {
 'type': 'Feature',
-'properties': {},
 'geometry': {
 'type': 'LineString',
 'coordinates': [
@@ -245,7 +241,6 @@ map.addSource('route5', {
 'type': 'geojson',
 'data': {
 'type': 'Feature',
-'properties': {},
 'geometry': {
 'type': 'LineString',
 'coordinates': [
@@ -272,26 +267,6 @@ map.addLayer({
 });
 
 //Adding circle on last location on route
-// map.addSource('portland', {
-// 'type': 'geojson',
-// 'data': portland
-// })
-
-// map.addLayer({
-// 'id': 'portland',
-// 'source': 'portland',
-// 'type': 'circle',
-
-// paint: {
-//     'circle-radius': 12,
-//     'circle-color': 'white',
-//     'circle-stroke-color': 'gray',
-//     'circle-stroke-width': 3,
-//     'circle-opacity': 1
-//   }
-// })
-
-//Adding circle on last location on route
 map.addSource('denver', {
 'type': 'geojson',
 'data': denver
@@ -309,136 +284,85 @@ paint: {
   }
 })
 
-const url = './img/arrow.png'
-    map.loadImage(url, (err, image) => {
-      if (err) { return; }
-      map.addImage('arrow', image);
+const img = './img/arrow.png'
+
+map.loadImage(img, (error, arrow_image) => {
+      if (error) throw error;
+      map.addImage('arrow', arrow_image);
       map.addLayer({
-        'id': 'arrowId',
+        'id': 'arrow_id',
         'type': 'symbol',
         'source': 'route',
         'layout': {
-          'symbol-placement': 'point',
-          'symbol-spacing': 10,
-          'icon-allow-overlap': false,
-          // 'icon-ignore-placement': true,
+          'symbol-spacing': 15,
           'icon-image': 'arrow',
           'icon-size': 0.04,
-          'visibility': 'visible'
         }
       });
 
       map.addLayer({
-        'id': 'arrowId2',
+        'id': 'arrow_id_second',
         'type': 'symbol',
         'source': 'route',
         'layout': {
           'symbol-placement': 'line',
-          'symbol-spacing': 10,
-          'icon-allow-overlap': false,
-          // 'icon-ignore-placement': true,
+          'symbol-spacing': 15,
           'icon-image': 'arrow',
           'icon-size': 0.04,
-          'visibility': 'visible'
         }
       });
     });
 
 //Create popups for info about each individual journey
 
-// Create a popup, but don't add it to the map yet.
 var popup = new mapboxgl.Popup({
-closeButton: false,
-closeOnClick: false
 });
 
 map.on('mouseenter', 'route', function (e) {
-// Change the cursor style as a UI indicator.
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Masuo Yasui (1886–1957)</strong><br>Arrested after attack on Pearl Harbor and held first at the Multnomah County Jail in Portland, then Missoula, Ft. Sill, Livingston, and Santa Fe. He remained imprisoned until January 1946 when he rejoined his wife in Denver."
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
-// Populate the popup and set its coordinates
-// based on the feature found.
 popup.setLngLat(e.lngLat).setHTML(description + "<br><img src='masuo.jpg' style='height:170px;'></img").addTo(map);
 });
 map.on('mouseleave', 'route', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 
 map.on('mouseenter', 'route2', function (e) {
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Shidzuyo (1886–1960) </strong><br>Portland and Tule Lake; resettled in Great Falls, Montana, May 1943."
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
 popup.setLngLat(e.lngLat).setHTML(description).addTo(map);
 });
 map.on('mouseleave', 'route2', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 
 map.on('mouseenter', 'route3', function (e) {
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Ray Tsuyoshi (1915–89) </strong><br>Portland and Tule Lake, then to Heart Mountain with wife Mikie in 1944, leaving for Idaho later that year; moved back to Hood River after the war."
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
 popup.setLngLat(e.lngLat).setHTML(description + "<br><img src='ray.jpg' style='height:150px;'></img").addTo(map);
 });
 map.on('mouseleave', 'route3', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 
 map.on('mouseenter', 'route4', function (e) {
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Minoru (1916–86) </strong><br> Portland and Minidoka; left for Chicago in June 1944. Settled in Denver after the war and became attorney and director of human relations commission."
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
 popup.setLngLat(e.lngLat).setHTML(description + "<br><img src='minoru.jpg' style='height:150px;'></img").addTo(map);
 });
 map.on('mouseleave', 'route4', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 
 map.on('mouseenter', 'route5', function (e) {
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Homer (1924– ) </strong><br> Portland and Tule Lake; left to go to school in Denver,  Sept. 1942. Became physician in Portland who was active in JA community there."
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
 popup.setLngLat(e.lngLat).setHTML(description).addTo(map);
 });
 map.on('mouseleave', 'route5', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 
 map.on('mouseenter', 'route6', function (e) {
-map.getCanvas().style.cursor = 'pointer';
-var coordinates = e.features[0].geometry.coordinates.slice();
 var description = "<strong>Yuka Yasui Fujikura (1927– ) </strong><br>  Portland and Tule Lake; left to go to school in Denver, Feb. '42; became public health administrator in Japan and Maryland."
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
 popup.setLngLat(e.lngLat).setHTML(description).addTo(map);
 });
 map.on('mouseleave', 'route6', function () {
-map.getCanvas().style.cursor = '';
 popup.remove();
 });
 });

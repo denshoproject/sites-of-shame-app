@@ -41,7 +41,6 @@ map.addLayer({
 'id': 'eo',
 'type': 'fill',
 'source': 'eo',
-'layout': {},
 'paint': {
 'fill-color': 'gray', 
 'fill-opacity': 0.5
@@ -52,7 +51,6 @@ map.addLayer({
 'id': 'outline',
 'type': 'line',
 'source': 'eo',
-'layout': {},
 'paint': {
 'line-color': '#fff',
 'line-width': 1
@@ -63,7 +61,6 @@ var popup = new mapboxgl.Popup({
 });
 
 map.on('click', 'eo', function (e) {
-var coordinates = e.features[0].geometry.coordinates.slice();
 var name = e.features[0].properties.Name
 var description = e.features[0].properties.description
 popup.setLngLat(e.lngLat).setHTML("<strong>" + name + "</strong><br>" + description).addTo(map);
