@@ -70,30 +70,29 @@ map.on('load', function () {
     .then(data => {
       const transformed = data.map(row => {
         return {
-          preevacuation_latitude: +row.preevacuation_latitude,
-          preevacuation_longitude: +row.preevacuation_longitude,
-          departure_latitude: +row.departure_latitude,
-          departure_longitude: +row.departure_longitude,
+          pre_lat: +row.pre_lat,
+          pre_lng: +row.pre_lng,
+          dest_lat: +row.dest_lat,
+          dest_lng: +row.dest_lng,
           date_of_final_departure: dayjs(row.date_of_final_departure).toDate()
         };
       });
-    
       dateExtent = d3.extent(transformed.map(d => d.date_of_final_departure));
       dateRange = d3.timeMonth.range(...dateExtent);
       dateSlider.setAttribute('max', dateRange.length - 1);
-    
+
       const preevacuationPoints = {
         type: 'FeatureCollection',
         features: transformed
-          .filter(row => row.preevacuation_longitude && row.preevacuation_latitude)
+          .filter(row => row.pre_lng && row.pre_lat)
           .map(row => ({
             type: 'Feature',
             properties: {},
             geometry: {
               type: 'Point',
               coordinates: [
-                row.preevacuation_longitude,
-                row.preevacuation_latitude
+                row.pre_lng,
+                row.pre_lat
               ]
             }
           }))
@@ -151,20 +150,26 @@ map.on('load', function () {
       const destinationPoints = {
         type: 'FeatureCollection',
         features: transformed
-          .filter(row => row.departure_longitude && row.departure_latitude)
-          .map(row => ({
-            type: 'Feature',
-            properties: {
-              date: row.date_of_final_departure.toISOString()
-            },
-            geometry: {
-              type: 'Point',
-              coordinates: [
-                row.departure_longitude,
-                row.departure_latitude
-              ]
+          .filter(row => row.dest_lng && row.dest_lat)
+          .map(row => {
+            let date;
+            try {
+              date = row.date_of_final_departure.toISOString();
+            } catch(e) {
+              console.log(row);
             }
-          }))
+            return {
+              type: 'Feature',
+              properties: { date },
+              geometry: {
+                type: 'Point',
+                coordinates: [
+                  row.dest_lng,
+                  row.dest_lat
+                ]
+              }
+            };
+          })
       };
     
       map.addSource('destination-points', {
