@@ -8,6 +8,12 @@ const initialState = {
     zoom: [4],
   },
 
+  far: {
+    index: null,
+    selectedCamp: null,
+    campData: {},
+  },
+
   layers: [
     {
       name: "Exclusion Orders",
@@ -20,6 +26,12 @@ const initialState = {
         "fill-color": "salmon",
       },
       enabled: true,
+      layerLegend: [],
+    },
+    {
+      name: "Final Accountability Records",
+      id: "final accountability records",
+      clickable: true,
       layerLegend: [],
     },
     {
@@ -41,6 +53,33 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "set far index":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          index: action.index,
+        },
+      };
+    case "set far selectedCamp":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          selectedCamp: action.selectedCamp,
+        },
+      };
+    case "set far camp data":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          campData: {
+            ...state.far.campData,
+            [action.camp]: action.data,
+          },
+        },
+      };
     case "set clickedFeature":
       return {
         ...state,
