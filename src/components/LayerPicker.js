@@ -23,18 +23,20 @@ const LayerPicker = () => {
             })}
             onClick={() => handleClick(layer)}
           >
-            {layer.name}
-            {layer.layerLegend.map((legend) => (
-              <li key={legend.color} className="layer-legend-item">
-                <span
-                  style={{ backgroundColor: legend.color }}
-                  className="color-circle"
-                >
-                  &nbsp;
-                </span>
-                {legend.name}
-              </li>
-            ))}
+            <div className="layer-name">{layer.name}</div>
+            {layer.layerLegend.length ? (
+              <ol className="layer-legend-items">
+                {layer.layerLegend.map((legend) => (
+                  <li key={legend.color} className="layer-legend-item">
+                    <span
+                      style={{ backgroundColor: legend.color }}
+                      className="color-circle"
+                    />
+                    {legend.name}
+                  </li>
+                ))}
+              </ol>
+            ) : null}
           </div>
         ))}
       </div>
