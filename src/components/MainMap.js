@@ -29,7 +29,6 @@ const MainMap = () => {
 
   const handleMoveEnd = (map) => {
     const center = map.getCenter();
-    console.log("move end", map);
     dispatch({
       type: "set mapState",
       center: [center.lng, center.lat],
