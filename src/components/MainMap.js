@@ -60,7 +60,7 @@ const MainMap = () => {
           width: "100%",
         }}
         center={mapState.center}
-        zoom={[mapState.zoom]}
+        zoom={mapState.zoom}
         onMoveEnd={handleMoveEnd}
         onClick={handleClick}
       >
