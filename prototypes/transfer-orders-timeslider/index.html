@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Map - Transfer Orders</title>
+  <title>Map - Transfer Orders with time slider</title>
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
     <style>
@@ -21,12 +21,9 @@
             position: absolute;
             width: 25%;
             top: 0;
-            left: 0;
+            right: 0;
             padding: 10px;
-        }
-        .map-overlay2 .map-overlay-inner {
             background-color: #fff;
-            padding: 10px;
         }
  
 	</style>
@@ -35,10 +32,10 @@
   <div id="map"></div>
 
   <div class="map-overlay2">
-    <div class="map-overlay-inner">
+    <div>
     <h2>Transfer Orders (May - Oct 1942)</h2>
     <label id="month"></label>
-    <input id="slider" type="range" min="1" max="6" step="1" value="1">
+    <input id="monthslider" type="range" min="1" max="6" step="1" value="1">
     <div id="monthtitle">
     </div>
     </div>
@@ -53,13 +50,10 @@ var map = new mapboxgl.Map({
 	zoom: 3 
 });
 
-document.getElementById('slider').addEventListener('input', function(e) {
+document.getElementById('monthslider').addEventListener('input', (e) =>  {
   var month = parseInt(e.target.value);
   map.setFilter('route', ['==', ['number', ['get', 'month']], month]);
-  month == 1 ? content.innerHTML = "<p>May 1942</p>" : month == 2 ? content.innerHTML = "<p>June 1942</p>" : month == 3 ? content.innerHTML = "<p>July 1942</p>" : month == 4 ? content.innerHTML = "<p>August 1942</p>" : month == 5 ? content.innerHTML = "<p>September 1942</p>" : content.innerHTML = "<p>October 1942</p>"
 });
-
-
 
 map.on('load', function () {
 
