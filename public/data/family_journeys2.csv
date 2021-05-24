@@ -1,0 +1,24 @@
+family_id,person_id,step,location1,latitude1,longitude1,location2,latitude2,longitude2,family_name,person_name,date,individual_description
+uno,uno-1,1,Griffith Park,34.1808392,-118.3089661,Missoula,46.8605189,-114.019501,Uno,George Kumemaro Uno,,"interned (likely because of Buddy); Griffith Park, then Missoula, Lordsburg, Santa Fe, Ft. Lincoln, eventually reuniting with family at Crystal City. Remained at Crystal City with Buddy until Sept. 1947. Upon release, joined family in LA in Roger Young Village housing project, located right behind Griffith Park, where his internment odyssey had started."
+uno,uno-1,2,Missoula,46.8605189,-114.019501,Lordsburg,32.3503605,-108.7086649,Uno,George Kumemaro Uno,,
+uno,uno-1,3,Lordsburg,32.3503605,-108.7086649,Santa Fe,35.6869752,-105.937799,Uno,George Kumemaro Uno,,
+uno,uno-1,4,Santa Fe,35.6869752,-105.937799,Ft. Lincoln,46.8083268,-100.7837392,Uno,George Kumemaro Uno,,
+uno,uno-1,5,Ft. Lincoln,46.8083268,-100.7837392,Crystal City,28.6774795,-99.8281104,Uno,George Kumemaro Uno,,
+uno,uno-1,6,Crystal City,28.6774795,-99.8281104,Griffith Park,34.1808392,-118.3089661,Uno,George Kumemaro Uno,,
+uno,uno-2,1,Santa Anita and Amache,34.1397292,-118.0353449,Crystal City,28.6774795,-99.8281104,Uno,Riki Kita Uno,1944-03-01,"Santa Anita and Amache; left for Crystal City in Mar. '44 with three youngest kids (Robert, Edison, and Kay) to rejoin George; eventually returned to LA"
+uno,uno-2,2,Crystal City,28.6774795,-99.8281104,LA,34.1808392,-118.3089661,,Riki Kita Uno,,
+uno,Uno-5,1,Santa Anita and Amache,34.1397292,-118.0353449,Minneapolis,44.9802,-93.265,Uno,Hana Mei Uno Shepard,,Santa Anita and Amache; left for Minneapolis in June '45
+uno,uno-6,1,Santa Anita,34.1397292,-118.0353449,Heart Mountain,44.52634220000000,-109.0565308,Uno,Amy Uno Ishii,,"Santa Anita, where she married Alfred Tanaka; then to Heart Mountain. Left for Chicago with Alfred and baby daughter Arlene in Mar. '44. Returned to LA in '46."
+uno,uno-6,2,Heart Mountain,44.52634220000000,-109.0565308,Chicago,41.8743,-87.6223,Uno,Amy Uno Ishii,,
+uno,uno-6,3,Chicago,41.8743,-87.6223,LA,34.1808392,-118.3089661,Uno,Amy Uno Ishii,,
+uno,uno-8,1,Santa Anita and Amache,34.1397292,-118.0353449,Denver,39.7468,-104.9167,Uno,Ernest Nobumaro,,"Santa Anita and Amache; left for Denver, July '43, later joins 442nd"
+yasui,yasui-1,1,Portland,45.5234515,-122.6762071,Missoula,46.8605189,-114.019501,Yasui,Masuo Yasui,,
+yasui,yasui-1,2,Missoula,46.8605189,-114.019501,Ft. Sill,34.70455950000000,-98.5090089,Yasui,Masuo Yasui,,
+yasui,yasui-1,3,Ft. Sill,34.70455950000000,-98.5090089,Livingston,31.3112936,-92.4451371,Yasui,Masuo Yasui,,
+yasui,yasui-1,4,Livingston,31.3112936,-92.4451371,Santa Fe,35.6869752,-105.937799,Yasui,Masuo Yasui,,
+yasui,yasui-1,5,Santa Fe,35.6869752,-105.937799,Denver,39.7468,-104.9167,Yasui,Masuo Yasui,,
+yasui,yasui-2,1,Portland,45.5234515,-122.6762071,Tule Lake,41.8882132,-121.3722116,Yasui,Shidzuyo,,"Portland and Tule Lake; resettled in Great Falls, Montana, May 1943"
+yasui,yasui-2,2,Tule Lake,41.8882132,-121.3722116,"Great Falls, Montana",47.5048,-111.2985,Yasui,Shidzuyo,,
+yasui,yasui-3,1,Portland,45.5234515,-122.6762071,Tule Lake,41.8882132,-121.3722116,Yasui,Ray Tsuyoshi,,
+yasui,yasui-3,2,Tule Lake,41.8882132,-121.3722116,Heart Mountain,44.52634220000000,-109.0565308,Yasui,Ray Tsuyoshi,,
+yasui,yasui-3,3,Heart Mountain,44.52634220000000,-109.0565308,Hood River,45.7091,-121.5212,Yasui,Ray Tsuyoshi,,
