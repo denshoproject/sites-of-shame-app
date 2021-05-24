@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { constants } from "./constants";
 
 const initialState = {
   clickedFeature: null,
@@ -7,7 +8,7 @@ const initialState = {
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: "./data/exclusion-orders.geojson",
+      data: constants.DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
       layerType: "fill",
       sourceType: "geojson",
@@ -20,7 +21,7 @@ const initialState = {
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: "./data/transfer-orders.geojson",
+      data: constants.DATA_PATH + "transfer-orders.geojson",
       clickable: true,
       layerType: "line",
       sourceType: "geojson",
