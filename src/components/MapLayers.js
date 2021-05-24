@@ -19,12 +19,14 @@ const facilitiesToGeoJSON = (facilities) => {
 const fetchJourneys = () => csv("./data/family-journeys.csv");
 
 const journeysToGeoJSON = (journeys) => {
-  return turf.featureCollection(
+  //return turf.featureCollection(
+  return turf.lineString(
     journeys
       .map((j) => {
         if (!j.latitude || !j.longitude)
           return console.error("Journey missing latitude or longitude", j);
-        else return turf.point([+j.longitude, +j.latitude], j);
+        // else return turf.point([+j.longitude, +j.latitude], j);
+        else return [+j.longitude, +j.latitude];
       })
       .filter((journey) => typeof journey != "undefined")
   );
@@ -92,14 +94,11 @@ const MapLayers = () => {
         id: "sos-journeys",
         data: journeysGeoJSON,
         clickable: true,
-        layerType: "circle",
+        layerType: "line",
         sourceType: "geojson",
         paint: {
-          "circle-radius": 20,
-          "circle-color": "blue",
-          "circle-stroke-color": "white",
-          "circle-stroke-width": 1,
-          "circle-opacity": 0.5,
+          "line-width": 2,
+          "line-color": "#999",
         },
         enabled: true,
         layerLegend: [],
