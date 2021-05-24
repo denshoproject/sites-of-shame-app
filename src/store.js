@@ -4,6 +4,11 @@ import { constants } from "./constants";
 const initialState = {
   clickedFeature: null,
 
+  mapState: {
+    center: [-93, 38],
+    zoom: [4],
+  },
+
   far: {
     index: null,
     selectedCamp: null,
@@ -113,6 +118,14 @@ const reducer = (state, action) => {
             enabled: false,
           };
         }),
+      };
+    case "set mapState":
+      return {
+        ...state,
+        mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
       };
     case "add layer":
       return {

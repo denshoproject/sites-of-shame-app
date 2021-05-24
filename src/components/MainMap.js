@@ -16,10 +16,25 @@ const Map = ReactMapboxGl({
 const MainMap = () => {
   const { state, dispatch } = useContext(Context);
   const clickableLayerIds = useRef();
+  const { mapState } = state;
 
   clickableLayerIds.current = state.layers
     .filter(({ clickable, enabled }) => clickable && enabled)
     .map(({ id }) => id);
+
+  state.mapConfig = {
+    center: [-93, 38],
+    zoom: [4],
+  };
+
+  const handleMoveEnd = (map) => {
+    const center = map.getCenter();
+    dispatch({
+      type: "set mapState",
+      center: [center.lng, center.lat],
+      zoom: [map.getZoom()],
+    });
+  };
 
   const handleClick = (map, event) => {
     const features = map.queryRenderedFeatures(event.point, {
@@ -43,8 +58,9 @@ const MainMap = () => {
           height: "100%",
           width: "100%",
         }}
-        center={[-93, 38]}
-        zoom={[4]}
+        center={mapState.center}
+        zoom={mapState.zoom}
+        onMoveEnd={handleMoveEnd}
         onClick={handleClick}
       >
         <MapLayers />
