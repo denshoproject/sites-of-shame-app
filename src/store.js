@@ -12,7 +12,9 @@ const initialState = {
       layerType: "fill",
       sourceType: "geojson",
       paint: {
-        "fill-color": "salmon",
+        "fill-color": "gray",
+        "fill-outline-color": "white",
+        "fill-opacity": 0.8,
       },
       enabled: true,
       layerLegend: [],
