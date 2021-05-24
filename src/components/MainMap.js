@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import ReactMapboxGl from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { constants } from "../constants";
 
 import { Context } from "../store";
 import LayerPicker from "./LayerPicker";
@@ -8,8 +9,7 @@ import MapLayers from "./MapLayers";
 import "./MainMap.scss";
 
 const Map = ReactMapboxGl({
-  accessToken:
-    "pk.eyJ1IjoiZWpmb3giLCJhIjoiY2lyZjd0bXltMDA4b2dma3JzNnA0ajh1bSJ9.iCmlE7gmJubz2RtL4RFzIw",
+  accessToken: constants.MAPBOX_ACCESS_TOKEN,
   scrollZoom: false,
 });
 
@@ -53,7 +53,7 @@ const MainMap = () => {
       </div>
       <Map
         // eslint-disable-next-line
-        style="mapbox://styles/mapbox/streets-v11"
+        style={constants.MAPBOX_BASE_LAYER}
         containerStyle={{
           height: "100%",
           width: "100%",
