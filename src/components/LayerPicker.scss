@@ -11,7 +11,6 @@
 
   .layer {
     background-color: #466086;
-    padding: 1em;
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -22,25 +21,40 @@
     }
   }
 
-  .layer-legend-item {
-    font-weight: normal;
-    list-style: none;
-    padding: 0.25em 1em 0.25em 1em;
-    margin: 0em -1em 0em -1em;
+  .layer-name {
+    padding: 1em;
+    padding-bottom: 0.25em;
+
+    &:last-child {
+      padding-bottom: 1em;
+    }
+  }
+
+  .layer-legend-items {
     background-color: white;
-    color: black;
-  }
-
-  .layer-legend-item:first-child {
-    padding-top: 1em;
-    margin-top: 0.5em;
-  }
-
-  .layer-legend-item:last-child {
-    margin-bottom: -1em;
-    padding-bottom: 1em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    color: black;
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .layer-legend-item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0.25em 1em;
+
+    &:first-child {
+      padding-top: 1em;
+      margin-top: 0.5em;
+    }
+
+    &:last-child {
+      padding-bottom: 1em;
+    }
   }
 
   .color-circle {
