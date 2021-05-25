@@ -12,11 +12,16 @@ export const stateToQuery = (state) => {
     lng: state.mapState.center[0].toFixed(4),
     zoom: state.mapState.zoom[0],
   };
-  window.location.hash = queryString.stringify(queryState);
+  window.history.replaceState(
+    null,
+    null,
+    "?" + queryString.stringify(queryState)
+  );
 };
 
 export const queryToState = (initialState) => {
-  const queryState = queryString.parse(window.location.hash);
+  const queryState = queryString.parse(window.location.search);
+  console.log(queryState);
   const stateUpdates = {};
 
   if (queryState.zoom) {
