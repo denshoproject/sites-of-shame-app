@@ -21,7 +21,6 @@ export const stateToQuery = (state) => {
 
 export const queryToState = (initialState) => {
   const queryState = queryString.parse(window.location.search);
-  console.log(queryState);
   const stateUpdates = {};
 
   if (queryState.zoom) {
