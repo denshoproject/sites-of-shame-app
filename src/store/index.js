@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import { constants } from "constants.js";
+import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
   clickedFeature: null,
@@ -54,7 +55,7 @@ const initialState = {
   ],
 };
 
-const reducer = (state, action) => {
+const getNewState = (state, action) => {
   switch (action.type) {
     case "set far index":
       return {
@@ -139,8 +140,14 @@ const reducer = (state, action) => {
   }
 };
 
+const reducer = (state, action) => {
+  const newState = getNewState(state, action);
+  stateToQuery(newState);
+  return newState;
+};
+
 const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, queryToState(initialState));
   return (
     <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>
   );
