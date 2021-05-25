@@ -35,7 +35,7 @@ const initialState = {
     {
       name: "Final Accountability Records",
       id: "final accountability records",
-      clickable: true,
+      clickable: false,
       layerLegend: [],
     },
     {

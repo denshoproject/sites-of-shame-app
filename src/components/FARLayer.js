@@ -90,9 +90,15 @@ const FARLayer = ({ before, layer }) => {
           data: preLines,
         }}
       />
+
+      {
+        // NB: One of the layers needs to have the FAR Layer id, otherwise the
+        // before prop won't work for other layers. We do this here with the
+        // first layer.
+      }
       <Layer
         type="line"
-        id={`${layer.id}-preLines`}
+        id={`${layer.id}`}
         sourceId={`${layer.id}-preLines`}
         before={before}
         paint={{
