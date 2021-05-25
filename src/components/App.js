@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" exact>
+        <Route path="/">
           <Index />
         </Route>
       </Switch>
