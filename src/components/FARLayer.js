@@ -8,7 +8,7 @@ import { Context } from "store";
 
 const FARLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);
-  const { index, selectedCamp, campData } = state.far;
+  const { campData, destVisible, index, preVisible, selectedCamp } = state.far;
   const selectedCampData = campData[selectedCamp];
   let selectedCampRow = null;
 
@@ -90,7 +90,6 @@ const FARLayer = ({ before, layer }) => {
           data: preLines,
         }}
       />
-
       {
         // NB: One of the layers needs to have the FAR Layer id, otherwise the
         // before prop won't work for other layers. We do this here with the
@@ -106,8 +105,10 @@ const FARLayer = ({ before, layer }) => {
           "line-color": "green",
           "line-opacity": 0.25,
         }}
+        layout={{
+          visibility: preVisible ? "visible" : "none",
+        }}
       />
-
       <Source
         id={`${layer.id}-destLines`}
         geoJsonSource={{
@@ -125,8 +126,10 @@ const FARLayer = ({ before, layer }) => {
           "line-color": "blue",
           "line-opacity": 0.25,
         }}
+        layout={{
+          visibility: destVisible ? "visible" : "none",
+        }}
       />
-
       <Source
         id={`${layer.id}-prePoints`}
         geoJsonSource={{
@@ -143,8 +146,11 @@ const FARLayer = ({ before, layer }) => {
           "circle-radius": 3,
           "circle-color": "orange",
         }}
+        layout={{
+          visibility: preVisible ? "visible" : "none",
+        }}
       />
-
+      />
       <Source
         id={`${layer.id}-destPoints`}
         geoJsonSource={{
@@ -160,6 +166,9 @@ const FARLayer = ({ before, layer }) => {
         paint={{
           "circle-radius": 3,
           "circle-color": "yellow",
+        }}
+        layout={{
+          visibility: destVisible ? "visible" : "none",
         }}
       />
     </>

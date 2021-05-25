@@ -12,8 +12,10 @@ const initialState = {
 
   far: {
     index: null,
-    selectedCamp: null,
+    selectedCamp: "",
     campData: {},
+    preVisible: true,
+    destVisible: true,
   },
 
   layers: [
@@ -63,6 +65,22 @@ const getNewState = (state, action) => {
         far: {
           ...state.far,
           index: action.index,
+        },
+      };
+    case "set far preVisible":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          preVisible: action.preVisible,
+        },
+      };
+    case "set far destVisible":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          destVisible: action.destVisible,
         },
       };
     case "set far selectedCamp":
