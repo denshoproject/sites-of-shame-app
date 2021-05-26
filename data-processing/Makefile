@@ -1,9 +1,11 @@
 # Clean up original FAR data to get a file to geocode
 far-get-geocode-file:
-	csvsql --query "select trim(\"pre-evacuation_address\") || trim(\"pre-evacuation_state\") as pre_location_id, trim(\"final_departure_destination\") || trim(\"final_departure_state\") as departure_location_id, * from 'far_exitdestinations'" input/far_exitdestinations.csv > output/far_exitdestinations_with_ids.csv
-	csvsql --query "select trim(\"pre-evacuation_address\") as city, trim(\"pre-evacuation_state\") as state from 'far_exitdestinations' group by city, state" input/far_exitdestinations.csv > output/far_exitdestinations_to_geocode_raw.csv
+	rm -f output/far_exitdestinations_to_geocode.csv
+	csvsql --query "select trim(\"pre-exclusion_address\") || trim(\"pre-exclusion_state\") as pre_location_id, trim(\"final_departure_destination\") || trim(\"final_departure_state\") as departure_location_id, * from 'far_exitdestinations'" input/far_exitdestinations.csv > output/far_exitdestinations_with_ids.csv
+	csvsql --query "select trim(\"pre-exclusion_address\") as city, trim(\"pre-exclusion_state\") as state from 'far_exitdestinations' group by city, state" input/far_exitdestinations.csv > output/far_exitdestinations_to_geocode_raw.csv
 	csvsql --query "select trim(\"final_departure_destination\") as city, trim(\"final_departure_state\") as state from 'far_exitdestinations' group by city, state" input/far_exitdestinations.csv | tail -n +2 >> output/far_exitdestinations_to_geocode_raw.csv
 	csvsort output/far_exitdestinations_to_geocode_raw.csv | uniq > output/far_exitdestinations_to_geocode.csv
+	rm -f output/far_exitdestinations_to_geocode_raw.csv
 
 # Geocode the FAR locations
 far-geocode:
@@ -26,6 +28,6 @@ far-join:
 far-split:
 	sqlite3 far.db "select distinct camp from joined" |\
 		xargs -I % /bin/bash -c \
-		'csvsql --db "sqlite:///far.db" --query "select far_id, camp, \"pre-evacuation_address\" as pre_city, \"pre-evacuation_state\" as pre_state, final_departure_destination as dest_city, final_departure_state as dest_state, date_of_final_departure, pre_lat, pre_lng, dest_lat, dest_lng from joined where camp = \"%\"" > output/`sed "s/[[:digit:]]\+-//" <<< %`.csv'
+		'csvsql --db "sqlite:///far.db" --query "select far_id, camp, \"pre-exclusion_address\" as pre_city, \"pre-exclusion_state\" as pre_state, final_departure_destination as dest_city, final_departure_state as dest_state, date_of_final_departure, pre_lat, pre_lng, dest_lat, dest_lng from joined where camp = \"%\"" > output/`sed "s/[[:digit:]]\+-//" <<< %`.csv'
 
 far: far-get-geocode-file far-geocode far-join far-split

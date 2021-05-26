@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from "react";
-
-import FARLayer from "./FARLayer";
-import GeoJsonLayer from "./GeoJsonLayer";
-import { Context } from "../store";
 import * as turf from "@turf/turf";
 import { csv, group } from "d3";
 
-const fetchFacilities = () => csv("./data/facilities.csv");
+import FARLayer from "components/FARLayer";
+import GeoJsonLayer from "components/GeoJsonLayer";
+import { Context } from "store";
+import { constants } from "constants.js";
+
+const fetchFacilities = () => csv(constants.DATA_PATH + "facilities.csv");
 
 const facilitiesToGeoJSON = (facilities) => {
   return turf.featureCollection(
@@ -16,7 +17,7 @@ const facilitiesToGeoJSON = (facilities) => {
   );
 };
 
-const fetchJourneys = () => csv("./data/family-journeys.csv");
+const fetchJourneys = () => csv(constants.DATA_PATH + "family-journeys.csv");
 
 const journeysToGeoJSON = (journeys) => {
   const familyJourneys = group(
@@ -84,37 +85,62 @@ const MapLayers = () => {
         layerType: "circle",
         sourceType: "geojson",
         paint: {
-          "circle-radius": 50,
+          "circle-radius": [
+            "/",
+            ["to-number", ["get", "peak_population"]],
+            500,
+          ],
           "circle-color": {
-            property: "sos_category1",
+            property: "sos_category",
             type: "categorical",
             stops: [
-              ["wra", "red"],
-              ["eais", "blue"],
-              ["hawaii", "green"],
+              ["Concentration Camp", "#ff7b54"],
+              ["Temporary Assembly Center", "#FFB26B"],
+              ["Department of Justice Internment Camp", "#ffd56b"],
+              ["Citizen Isolation Center", "#939b62"],
+              ["US Federal Prison", "#faf2da"],
+              ["Additional Facility", "#8e9775"],
+              ["US Army Internment Camp", "#4a503d"],
+              ["Immigration Detention Station", "#e28f83"],
             ],
           },
           "circle-stroke-color": "white",
           "circle-stroke-width": 1,
-          "circle-opacity": 0.5,
+          "circle-opacity": 1,
         },
         enabled: true,
         layerLegend: [
           {
-            color: "red",
-            name: "Incarceration Camp",
+            color: "#ff7b54",
+            name: "Concentration Camp",
           },
           {
-            color: "pink",
+            color: "#FFB26B",
             name: "Temporary Assembly Center",
           },
           {
-            color: "salmon",
+            color: "#ffd56b",
+            name: "Department of Justice Internment Camp",
+          },
+          {
+            color: "#939b62",
             name: "Citizen Isolation Center",
           },
           {
-            color: "orange",
-            name: "EAIS",
+            color: "#faf2da",
+            name: "US Federal Prison",
+          },
+          {
+            color: "#8e9775",
+            name: "Additional Facility",
+          },
+          {
+            color: "#4a503d",
+            name: "US Army Internment Camp",
+          },
+          {
+            color: "#e28f83",
+            name: "US Army Internment Camp",
           },
         ],
       };

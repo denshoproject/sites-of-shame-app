@@ -1,24 +1,35 @@
 import React, { createContext, useReducer } from "react";
+import { constants } from "constants.js";
+import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
   clickedFeature: null,
 
+  mapState: {
+    center: [-93, 38],
+    zoom: [4],
+  },
+
   far: {
     index: null,
-    selectedCamp: null,
+    selectedCamp: "",
     campData: {},
+    preVisible: true,
+    destVisible: true,
   },
 
   layers: [
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: "./data/exclusion-orders.geojson",
+      data: constants.DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
       layerType: "fill",
       sourceType: "geojson",
       paint: {
-        "fill-color": "salmon",
+        "fill-color": "gray",
+        "fill-outline-color": "white",
+        "fill-opacity": 0.8,
       },
       enabled: true,
       layerLegend: [],
@@ -26,13 +37,13 @@ const initialState = {
     {
       name: "Final Accountability Records",
       id: "final accountability records",
-      clickable: true,
+      clickable: false,
       layerLegend: [],
     },
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: "./data/transfer-orders.geojson",
+      data: constants.DATA_PATH + "transfer-orders.geojson",
       clickable: true,
       layerType: "line",
       sourceType: "geojson",
@@ -46,7 +57,7 @@ const initialState = {
   ],
 };
 
-const reducer = (state, action) => {
+const getNewState = (state, action) => {
   switch (action.type) {
     case "set far index":
       return {
@@ -54,6 +65,22 @@ const reducer = (state, action) => {
         far: {
           ...state.far,
           index: action.index,
+        },
+      };
+    case "set far preVisible":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          preVisible: action.preVisible,
+        },
+      };
+    case "set far destVisible":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          destVisible: action.destVisible,
         },
       };
     case "set far selectedCamp":
@@ -113,6 +140,14 @@ const reducer = (state, action) => {
           };
         }),
       };
+    case "set mapState":
+      return {
+        ...state,
+        mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
+      };
     case "add layer":
       return {
         ...state,
@@ -123,8 +158,14 @@ const reducer = (state, action) => {
   }
 };
 
+const reducer = (state, action) => {
+  const newState = getNewState(state, action);
+  stateToQuery(newState);
+  return newState;
+};
+
 const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, queryToState(initialState));
   return (
     <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>
   );

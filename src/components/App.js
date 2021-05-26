@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Index from "../components/Index";
+import Index from "components/Index";
 import "./App.scss";
 
 const App = () => {

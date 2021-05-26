@@ -1,0 +1,47 @@
+  {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "hawaii",
+        "Category2": "7",
+        "name": "Sand Island",
+        "encyc_url": "https://encyclopedia.densho.org/Sand_Island_(detention_facility)/",
+        "encyc_article_title": "Sand Island (detention facility)",
+        "date_opened": "December 1941",
+        "date_closed": "March 1, 1943",
+        "peak_population": "300",
+        "location_name": "Sand Island, Oahu, Hawaii"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.8778435,
+          21.3064413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Category1": "hawaii",
+        "Category2": "7",
+        "name": "Honouliuli",
+        "encyc_url": "https://encyclopedia.densho.org/Honouliuli_(detention_facility)/",
+        "encyc_article_title": "Honouliuli (detention facility)",
+        "date_opened": "February 1943",
+        "date_closed": "1945",
+        "peak_population": "320",
+        "location_name": "Honouliuli, Oahu, Hawaii"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -158.0361111,
+          21.3677778
+        ]
+      }
+    }
+  ]
+}

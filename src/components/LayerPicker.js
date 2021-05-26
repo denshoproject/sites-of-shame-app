@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import classNames from "classnames";
 
-import { Context } from "../store";
-import FARPicker from "./FARPicker";
+import { Context } from "store";
+import FARPicker from "components/FARPicker";
 import "./LayerPicker.scss";
 
 const LayerPicker = () => {

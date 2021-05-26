@@ -3,11 +3,12 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { Context } from "../store";
+import { constants } from "constants.js";
+import { Context } from "store";
 
 const FARLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);
-  const { index, selectedCamp, campData } = state.far;
+  const { campData, destVisible, index, preVisible, selectedCamp } = state.far;
   const selectedCampData = campData[selectedCamp];
   let selectedCampRow = null;
 
@@ -15,7 +16,8 @@ const FARLayer = ({ before, layer }) => {
     selectedCampRow = index.filter((row) => row.slug === selectedCamp)[0];
   }
 
-  const fetchFarCampData = (camp) => d3.csv(`./data/far/${camp}.csv`);
+  const fetchFarCampData = (camp) =>
+    d3.csv(`${constants.DATA_PATH}far/${camp}.csv`);
 
   // Load FAR data if needed
   useEffect(() => {
@@ -88,9 +90,14 @@ const FARLayer = ({ before, layer }) => {
           data: preLines,
         }}
       />
+      {
+        // NB: One of the layers needs to have the FAR Layer id, otherwise the
+        // before prop won't work for other layers. We do this here with the
+        // first layer.
+      }
       <Layer
         type="line"
-        id={`${layer.id}-preLines`}
+        id={`${layer.id}`}
         sourceId={`${layer.id}-preLines`}
         before={before}
         paint={{
@@ -98,8 +105,10 @@ const FARLayer = ({ before, layer }) => {
           "line-color": "green",
           "line-opacity": 0.25,
         }}
+        layout={{
+          visibility: preVisible ? "visible" : "none",
+        }}
       />
-
       <Source
         id={`${layer.id}-destLines`}
         geoJsonSource={{
@@ -117,8 +126,10 @@ const FARLayer = ({ before, layer }) => {
           "line-color": "blue",
           "line-opacity": 0.25,
         }}
+        layout={{
+          visibility: destVisible ? "visible" : "none",
+        }}
       />
-
       <Source
         id={`${layer.id}-prePoints`}
         geoJsonSource={{
@@ -135,8 +146,11 @@ const FARLayer = ({ before, layer }) => {
           "circle-radius": 3,
           "circle-color": "orange",
         }}
+        layout={{
+          visibility: preVisible ? "visible" : "none",
+        }}
       />
-
+      />
       <Source
         id={`${layer.id}-destPoints`}
         geoJsonSource={{
@@ -152,6 +166,9 @@ const FARLayer = ({ before, layer }) => {
         paint={{
           "circle-radius": 3,
           "circle-color": "yellow",
+        }}
+        layout={{
+          visibility: destVisible ? "visible" : "none",
         }}
       />
     </>
