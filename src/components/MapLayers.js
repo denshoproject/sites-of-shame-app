@@ -4,7 +4,7 @@ import FARLayer from "./FARLayer";
 import GeoJsonLayer from "./GeoJsonLayer";
 import { Context } from "../store";
 import * as turf from "@turf/turf";
-import { csv } from "d3";
+import { csv, group } from "d3";
 
 const fetchFacilities = () => csv("./data/facilities.csv");
 
@@ -19,17 +19,54 @@ const facilitiesToGeoJSON = (facilities) => {
 const fetchJourneys = () => csv("./data/family-journeys.csv");
 
 const journeysToGeoJSON = (journeys) => {
+  const familyJourneys = group(
+    journeys,
+    (d) => d.family_id,
+    (d) => d.person_id
+  );
+
+  let allJourneyLines = [];
+
+  // console.log({ familyJourneys });
+  let familyFeatureCollections = [];
   //return turf.featureCollection(
-  return turf.lineString(
-    journeys
-      .map((j) => {
+
+  familyJourneys.forEach((family) => {
+    // For each family (uno and yasui)
+    // console.log({ family });
+
+    let familyFeatureCollection = [];
+
+    // Look at every person in this family
+    family.forEach((personSteps, i) => {
+      // console.log({personSteps})
+      const personLineCoords = [];
+
+      // Look at every step that person took
+      personSteps.map((j, i) => {
+        // console.log({j, i})
         if (!j.latitude || !j.longitude)
           return console.error("Journey missing latitude or longitude", j);
         // else return turf.point([+j.longitude, +j.latitude], j);
-        else return [+j.longitude, +j.latitude];
-      })
-      .filter((journey) => typeof journey != "undefined")
-  );
+        // Add the coordinates to this person's line
+        else personLineCoords.push([+j.longitude, +j.latitude]);
+      });
+
+      if (personLineCoords.length > 1) {
+        const line = turf.lineString(personLineCoords, {
+          family_id: personSteps[0].family_id,
+          person_id: personSteps[0].person_id,
+        });
+        familyFeatureCollection.push(line);
+        allJourneyLines.push(line);
+        // console.log('line --->', line, personLineCoords)
+      }
+    });
+  });
+
+  familyFeatureCollections = turf.featureCollection(allJourneyLines);
+  console.log({ familyFeatureCollections });
+  return familyFeatureCollections;
 };
 
 const MapLayers = () => {
@@ -97,8 +134,27 @@ const MapLayers = () => {
         layerType: "line",
         sourceType: "geojson",
         paint: {
-          "line-width": 2,
-          "line-color": "#999",
+          "line-width": 4,
+          "line-color": {
+            property: "person_id",
+            type: "categorical",
+            stops: [
+              ["uno-1", "purple"],
+              ["uno-2", "salmon"],
+              ["uno-3", "firebrick"],
+              ["uno-4", "coral"],
+              ["uno-5", "gold"],
+              ["uno-6", "peachpuff"],
+              ["uno-7", "palegoldenrod"],
+              ["uno-8", "fuchsia"],
+              ["uno-9", "orchid"],
+              ["uno-10", "blueviolet"],
+              ["uno-11", "pink"],
+              ["yasui-1", "pink"],
+              ["yasui-2", "pink"],
+              ["yasui-3", "pink"],
+            ],
+          },
         },
         enabled: true,
         layerLegend: [],
