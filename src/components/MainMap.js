@@ -6,6 +6,7 @@ import { constants } from "constants.js";
 import { Context } from "store";
 import LayerPicker from "components/LayerPicker";
 import MapLayers from "components/MapLayers";
+import PopupSwitch from "components/PopupSwitch";
 import "./MainMap.scss";
 
 const Map = ReactMapboxGl({
@@ -43,6 +44,7 @@ const MainMap = () => {
     dispatch({
       type: "set clickedFeature",
       clickedFeature: features[0] || null,
+      clickedFeatureLngLat: event.lngLat || null,
     });
   };
 
@@ -64,6 +66,7 @@ const MainMap = () => {
         onClick={handleClick}
       >
         <ZoomControl position="bottom-right" />
+        <PopupSwitch />
         <MapLayers />
       </Map>
     </div>

@@ -1,0 +1,18 @@
+@import "~scss/_variables.scss";
+
+.popup-switch {
+  .popup-content {
+    font-family: $body-font-family;
+    line-height: 1.1em;
+    max-width: 400px;
+    text-align: left;
+
+    .popup-row {
+      margin-bottom: 0.5em;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

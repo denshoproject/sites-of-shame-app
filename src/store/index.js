@@ -4,6 +4,7 @@ import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
   clickedFeature: null,
+  clickedFeatureLngLat: null,
 
   mapState: {
     center: [-93, 38],
@@ -106,6 +107,7 @@ const getNewState = (state, action) => {
       return {
         ...state,
         clickedFeature: action.clickedFeature,
+        clickedFeatureLngLat: action.clickedFeatureLngLat,
       };
     case "toggle layer":
       return {
