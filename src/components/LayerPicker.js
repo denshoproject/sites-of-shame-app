@@ -28,7 +28,7 @@ const LayerPicker = () => {
               {layer.name}
             </div>
             {layer.id === "far" && layer.enabled ? <FARPicker /> : null}
-            {layer.layerLegend.length ? (
+            {layer.layerLegend && layer.layerLegend.length ? (
               <ol className="layer-legend-items">
                 {layer.layerLegend.map((legend) => (
                   <li key={legend.color} className="layer-legend-item">

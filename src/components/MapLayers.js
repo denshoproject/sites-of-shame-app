@@ -69,7 +69,7 @@ const MapLayers = () => {
           "circle-stroke-width": 1,
           "circle-opacity": 1,
         },
-        enabled: true,
+        enabled: false,
         layerLegend: [
           {
             color: "#ff7b54",
@@ -127,7 +127,7 @@ const MapLayers = () => {
           "circle-stroke-width": 1,
           "circle-opacity": 0.5,
         },
-        enabled: true,
+        enabled: false,
         layerLegend: [],
       };
       dispatch({ type: "add layer", payload: newLayer });

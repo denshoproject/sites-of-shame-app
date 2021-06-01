@@ -41,6 +41,16 @@ export const queryToState = (initialState) => {
       ...layer,
       enabled: enabledLayers.indexOf(layer.id) >= 0,
     }));
+    const stateLayerIds = stateUpdates.layers.map(({ id }) => id);
+
+    // If a layer is enabled that is not in the initial state, add a stub
+    enabledLayers.forEach((layer) => {
+      if (stateLayerIds.indexOf(layer) >= 0) return;
+      stateUpdates.layers.push({
+        id: layer,
+        enabled: true,
+      });
+    });
   }
 
   return {

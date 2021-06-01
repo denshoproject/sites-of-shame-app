@@ -157,11 +157,31 @@ const getNewState = (state, action) => {
           zoom: action.zoom,
         },
       };
-    case "add layer":
+    case "add layer": {
+      // First try to update the layer if it already exists. This might be
+      // because the layer was included in the URL query params.
+      let layerUpdated = false;
+      let newLayers = state.layers.map((layer) => {
+        if (layer.id === action.payload.id) {
+          layerUpdated = true;
+          return {
+            ...action.payload,
+            ...layer,
+          };
+        }
+        return layer;
+      });
+
+      // If it wasn't already included, push it onto the array.
+      if (!layerUpdated) {
+        newLayers.push(action.payload);
+      }
+
       return {
         ...state,
-        layers: [...state.layers, action.payload],
+        layers: newLayers,
       };
+    }
     default:
       return state;
   }
