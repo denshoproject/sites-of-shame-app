@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Popup } from "react-mapbox-gl";
 
 import FacilityPopup from "components/FacilityPopup";
+import TransferOrderPopup from "components/TransferOrderPopup";
 import FARPopup from "components/FARPopup";
 import ExclusionOrderPopup from "components/ExclusionOrderPopup";
 import { Context } from "store";
@@ -20,6 +21,9 @@ const PopupSwitch = () => {
       <div className="popup-content">
         {layerId === "sos-facilities" ? (
           <FacilityPopup feature={clickedFeature} />
+        ) : null}
+        {layerId === "transfer orders" ? (
+          <TransferOrderPopup feature={clickedFeature} />
         ) : null}
         {layerId === "exclusion orders" ? (
           <ExclusionOrderPopup feature={clickedFeature} />
