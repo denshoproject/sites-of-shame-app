@@ -37,8 +37,14 @@ const initialState = {
     },
     {
       name: "Final Accountability Records",
-      id: "final accountability records",
+      id: "far",
       clickable: false,
+      clickableSublayers: [
+        "far-destLines",
+        "far-destPoints",
+        "far-preLines",
+        "far-prePoints",
+      ],
       layerLegend: [],
     },
     {

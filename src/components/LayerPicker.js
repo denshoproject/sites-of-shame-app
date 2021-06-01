@@ -27,9 +27,7 @@ const LayerPicker = () => {
             <div className="layer-name" onClick={() => handleClick(layer)}>
               {layer.name}
             </div>
-            {layer.id === "final accountability records" && layer.enabled ? (
-              <FARPicker />
-            ) : null}
+            {layer.id === "far" && layer.enabled ? <FARPicker /> : null}
             {layer.layerLegend.length ? (
               <ol className="layer-legend-items">
                 {layer.layerLegend.map((legend) => (

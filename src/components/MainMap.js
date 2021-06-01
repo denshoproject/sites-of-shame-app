@@ -22,6 +22,17 @@ const MainMap = () => {
     .filter(({ clickable, enabled }) => clickable && enabled)
     .map(({ id }) => id);
 
+  state.layers
+    .filter(({ enabled }) => enabled)
+    .forEach((layer) => {
+      if (layer.clickableSublayers) {
+        clickableLayerIds.current = [
+          ...clickableLayerIds.current,
+          ...layer.clickableSublayers,
+        ];
+      }
+    });
+
   state.mapConfig = {
     center: [-93, 38],
     zoom: [4],

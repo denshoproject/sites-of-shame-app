@@ -86,6 +86,25 @@ const FARLayer = ({ before, layer }) => {
 
   return (
     <>
+      {
+        // NB: One of the layers needs to have the FAR Layer id, otherwise the
+        // before prop won't work for other layers. We do this here with an
+        // empty first layer.
+      }
+      <Source
+        id={layer.id}
+        geoJsonSource={{
+          type: "geojson",
+          data: turf.featureCollection([]),
+        }}
+      />
+      <Layer
+        type="circle"
+        id={`${layer.id}`}
+        sourceId={`${layer.id}`}
+        before={before}
+        paint={{}}
+      />
       <Source
         id={`${layer.id}-preLines`}
         geoJsonSource={{
@@ -93,14 +112,9 @@ const FARLayer = ({ before, layer }) => {
           data: preLines,
         }}
       />
-      {
-        // NB: One of the layers needs to have the FAR Layer id, otherwise the
-        // before prop won't work for other layers. We do this here with the
-        // first layer.
-      }
       <Layer
         type="line"
-        id={`${layer.id}`}
+        id={`${layer.id}-preLines`}
         sourceId={`${layer.id}-preLines`}
         before={before}
         paint={{
@@ -146,7 +160,7 @@ const FARLayer = ({ before, layer }) => {
         sourceId={`${layer.id}-prePoints`}
         before={before}
         paint={{
-          "circle-radius": 3,
+          "circle-radius": 5,
           "circle-color": "#c4b15a",
         }}
         layout={{
@@ -167,7 +181,7 @@ const FARLayer = ({ before, layer }) => {
         sourceId={`${layer.id}-destPoints`}
         before={before}
         paint={{
-          "circle-radius": 3,
+          "circle-radius": 5,
           "circle-color": "#78bfcc",
         }}
         layout={{
