@@ -105,7 +105,7 @@ const FARLayer = ({ before, layer }) => {
         before={before}
         paint={{
           "line-width": 1,
-          "line-color": "green",
+          "line-color": "#e3cd68",
           "line-opacity": 0.25,
         }}
         layout={{
@@ -126,7 +126,7 @@ const FARLayer = ({ before, layer }) => {
         before={before}
         paint={{
           "line-width": 1,
-          "line-color": "blue",
+          "line-color": "#86d5e3",
           "line-opacity": 0.25,
         }}
         layout={{
@@ -147,7 +147,7 @@ const FARLayer = ({ before, layer }) => {
         before={before}
         paint={{
           "circle-radius": 3,
-          "circle-color": "orange",
+          "circle-color": "#c4b15a",
         }}
         layout={{
           visibility: preVisible ? "visible" : "none",
@@ -168,7 +168,7 @@ const FARLayer = ({ before, layer }) => {
         before={before}
         paint={{
           "circle-radius": 3,
-          "circle-color": "yellow",
+          "circle-color": "#78bfcc",
         }}
         layout={{
           visibility: destVisible ? "visible" : "none",

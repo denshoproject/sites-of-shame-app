@@ -3,4 +3,18 @@
   color: black;
   font-weight: normal;
   padding: 1em;
+
+  &-row {
+    margin-bottom: 0.25em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
