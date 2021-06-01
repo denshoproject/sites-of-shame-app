@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import ReactMapboxGl, { ZoomControl } from "react-mapbox-gl";
+import ReactMapboxGl, { Image, ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import { constants } from "constants.js";
@@ -7,6 +7,7 @@ import { Context } from "store";
 import LayerPicker from "components/LayerPicker";
 import MapLayers from "components/MapLayers";
 import PopupSwitch from "components/PopupSwitch";
+import DiagonalGrid from "img/diagonal-grid.png";
 import "./MainMap.scss";
 
 const Map = ReactMapboxGl({
@@ -77,6 +78,7 @@ const MainMap = () => {
       >
         <ZoomControl position="bottom-right" />
         <PopupSwitch />
+        <Image id="diagonal-grid" url={DiagonalGrid} />
         <MapLayers />
       </Map>
     </div>
