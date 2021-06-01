@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import { Context } from "store";
 import FARPicker from "components/FARPicker";
+import LegendCircle from "components/LegendCircle";
 import "./LayerPicker.scss";
 
 const LayerPicker = () => {
@@ -26,17 +27,12 @@ const LayerPicker = () => {
             <div className="layer-name" onClick={() => handleClick(layer)}>
               {layer.name}
             </div>
-            {layer.id === "final accountability records" && layer.enabled ? (
-              <FARPicker />
-            ) : null}
+            {layer.id === "far" && layer.enabled ? <FARPicker /> : null}
             {layer.layerLegend.length ? (
               <ol className="layer-legend-items">
                 {layer.layerLegend.map((legend) => (
                   <li key={legend.color} className="layer-legend-item">
-                    <span
-                      style={{ backgroundColor: legend.color }}
-                      className="color-circle"
-                    />
+                    <LegendCircle color={legend.color} />
                     {legend.name}
                   </li>
                 ))}

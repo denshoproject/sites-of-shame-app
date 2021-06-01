@@ -1,6 +1,6 @@
 export const constants = {
   MAPBOX_ACCESS_TOKEN:
-    "pk.eyJ1IjoiZWpmb3giLCJhIjoiY2lyZjd0bXltMDA4b2dma3JzNnA0ajh1bSJ9.iCmlE7gmJubz2RtL4RFzIw",
-  MAPBOX_BASE_LAYER: "mapbox://styles/mapbox/streets-v11",
+    "pk.eyJ1Ijoic3RhbWVuIiwiYSI6ImNrb2N5bHh4azAxc2Eydmxrb2kzc2J6a3oifQ.RGkRsYuGNbsO3vwtZLV5WQ",
+  MAPBOX_BASE_LAYER: "mapbox://styles/stamen/ckpe4cu851ns617t5430iy5hj",
   DATA_PATH: "./data/",
 };

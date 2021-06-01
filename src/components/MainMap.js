@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import ReactMapboxGl, { ZoomControl } from "react-mapbox-gl";
+import ReactMapboxGl, { Image, ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import { constants } from "constants.js";
@@ -7,11 +7,11 @@ import { Context } from "store";
 import LayerPicker from "components/LayerPicker";
 import MapLayers from "components/MapLayers";
 import PopupSwitch from "components/PopupSwitch";
+import DiagonalGrid from "img/diagonal-grid.png";
 import "./MainMap.scss";
 
 const Map = ReactMapboxGl({
   accessToken: constants.MAPBOX_ACCESS_TOKEN,
-  scrollZoom: false,
 });
 
 const MainMap = () => {
@@ -22,6 +22,17 @@ const MainMap = () => {
   clickableLayerIds.current = state.layers
     .filter(({ clickable, enabled }) => clickable && enabled)
     .map(({ id }) => id);
+
+  state.layers
+    .filter(({ enabled }) => enabled)
+    .forEach((layer) => {
+      if (layer.clickableSublayers) {
+        clickableLayerIds.current = [
+          ...clickableLayerIds.current,
+          ...layer.clickableSublayers,
+        ];
+      }
+    });
 
   state.mapConfig = {
     center: [-93, 38],
@@ -67,6 +78,7 @@ const MainMap = () => {
       >
         <ZoomControl position="bottom-right" />
         <PopupSwitch />
+        <Image id="diagonal-grid" url={DiagonalGrid} />
         <MapLayers />
       </Map>
     </div>

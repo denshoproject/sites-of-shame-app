@@ -101,7 +101,7 @@ const MapLayers = () => {
           },
           {
             color: "#e28f83",
-            name: "US Army Internment Camp",
+            name: "Immigration Detention Station",
           },
         ],
       };
@@ -151,7 +151,7 @@ const MapLayers = () => {
       before = enabledLayers[i - 1].id;
     }
 
-    if (layer.id === "final accountability records") {
+    if (layer.id === "far") {
       return <FARLayer key={layer.id} layer={layer} before={before} />;
     }
     if (layer.sourceType === "geojson") {

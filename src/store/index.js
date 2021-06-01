@@ -28,17 +28,24 @@ const initialState = {
       layerType: "fill",
       sourceType: "geojson",
       paint: {
-        "fill-color": "gray",
-        "fill-outline-color": "white",
-        "fill-opacity": 0.8,
+        "fill-color": "#BEC1C1",
+        "fill-outline-color": "#333",
+        "fill-opacity": 0.25,
+        "fill-pattern": "diagonal-grid",
       },
       enabled: true,
       layerLegend: [],
     },
     {
       name: "Final Accountability Records",
-      id: "final accountability records",
+      id: "far",
       clickable: false,
+      clickableSublayers: [
+        "far-destLines",
+        "far-destPoints",
+        "far-preLines",
+        "far-prePoints",
+      ],
       layerLegend: [],
     },
     {

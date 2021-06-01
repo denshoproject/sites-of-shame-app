@@ -70,19 +70,41 @@ const FARLayer = ({ before, layer }) => {
   const destLines = turf.featureCollection(
     selectedCampData
       ?.filter((row) => row.dest_lat && row.dest_lng)
-      ?.map((row) =>
-        turf.lineString(
+      ?.map((row) => {
+        let lng0 = selectedCampRow.lng;
+        let lng1 = row.dest_lng;
+        if (lng1 - lng0 >= 180) lng1 -= 360;
+        return turf.lineString(
           [
-            [selectedCampRow.lng, selectedCampRow.lat],
-            [row.dest_lng, row.dest_lat],
+            [lng0, selectedCampRow.lat],
+            [lng1, row.dest_lat],
           ],
           row
-        )
-      ) ?? []
+        );
+      }) ?? []
   );
 
   return (
     <>
+      {
+        // NB: One of the layers needs to have the FAR Layer id, otherwise the
+        // before prop won't work for other layers. We do this here with an
+        // empty first layer.
+      }
+      <Source
+        id={layer.id}
+        geoJsonSource={{
+          type: "geojson",
+          data: turf.featureCollection([]),
+        }}
+      />
+      <Layer
+        type="circle"
+        id={`${layer.id}`}
+        sourceId={`${layer.id}`}
+        before={before}
+        paint={{}}
+      />
       <Source
         id={`${layer.id}-preLines`}
         geoJsonSource={{
@@ -90,19 +112,14 @@ const FARLayer = ({ before, layer }) => {
           data: preLines,
         }}
       />
-      {
-        // NB: One of the layers needs to have the FAR Layer id, otherwise the
-        // before prop won't work for other layers. We do this here with the
-        // first layer.
-      }
       <Layer
         type="line"
-        id={`${layer.id}`}
+        id={`${layer.id}-preLines`}
         sourceId={`${layer.id}-preLines`}
         before={before}
         paint={{
           "line-width": 1,
-          "line-color": "green",
+          "line-color": "#e3cd68",
           "line-opacity": 0.25,
         }}
         layout={{
@@ -123,7 +140,7 @@ const FARLayer = ({ before, layer }) => {
         before={before}
         paint={{
           "line-width": 1,
-          "line-color": "blue",
+          "line-color": "#86d5e3",
           "line-opacity": 0.25,
         }}
         layout={{
@@ -143,8 +160,8 @@ const FARLayer = ({ before, layer }) => {
         sourceId={`${layer.id}-prePoints`}
         before={before}
         paint={{
-          "circle-radius": 3,
-          "circle-color": "orange",
+          "circle-radius": 5,
+          "circle-color": "#c4b15a",
         }}
         layout={{
           visibility: preVisible ? "visible" : "none",
@@ -164,8 +181,8 @@ const FARLayer = ({ before, layer }) => {
         sourceId={`${layer.id}-destPoints`}
         before={before}
         paint={{
-          "circle-radius": 3,
-          "circle-color": "yellow",
+          "circle-radius": 5,
+          "circle-color": "#78bfcc",
         }}
         layout={{
           visibility: destVisible ? "visible" : "none",

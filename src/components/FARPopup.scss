@@ -1,0 +1,9 @@
+.far-popup {
+  &-row {
+    margin-bottom: 0.25em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
