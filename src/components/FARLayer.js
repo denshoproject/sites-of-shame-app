@@ -70,15 +70,18 @@ const FARLayer = ({ before, layer }) => {
   const destLines = turf.featureCollection(
     selectedCampData
       ?.filter((row) => row.dest_lat && row.dest_lng)
-      ?.map((row) =>
-        turf.lineString(
+      ?.map((row) => {
+        let lng0 = selectedCampRow.lng;
+        let lng1 = row.dest_lng;
+        if (lng1 - lng0 >= 180) lng1 -= 360;
+        return turf.lineString(
           [
-            [selectedCampRow.lng, selectedCampRow.lat],
-            [row.dest_lng, row.dest_lat],
+            [lng0, selectedCampRow.lat],
+            [lng1, row.dest_lat],
           ],
           row
-        )
-      ) ?? []
+        );
+      }) ?? []
   );
 
   return (
