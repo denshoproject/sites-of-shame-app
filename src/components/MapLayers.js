@@ -101,7 +101,7 @@ const MapLayers = () => {
           },
           {
             color: "#e28f83",
-            name: "US Army Internment Camp",
+            name: "Immigration Detention Station",
           },
         ],
       };
