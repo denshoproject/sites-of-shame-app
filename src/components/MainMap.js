@@ -11,7 +11,6 @@ import "./MainMap.scss";
 
 const Map = ReactMapboxGl({
   accessToken: constants.MAPBOX_ACCESS_TOKEN,
-  scrollZoom: false,
 });
 
 const MainMap = () => {
