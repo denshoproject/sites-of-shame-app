@@ -3,7 +3,6 @@ import React from "react";
 import "./ExclusionOrderPopup.scss";
 
 const ExclusionOrderPopup = ({ feature }) => {
-  console.log(feature);
   const { properties } = feature;
 
   return (
