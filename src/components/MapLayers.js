@@ -31,6 +31,25 @@ const journeysToGeoJSON = (journeys) => {
   );
 };
 
+const fetchTransfers = () => csv(constants.DATA_PATH + "transfer-orders.csv");
+
+const transfersToGeoJSON = (journeys) => {
+  let coord1 = "";
+  let coord2 = "";
+  return turf.featureCollection(
+    journeys
+      .map((j) => {
+        if (!j.latitude1 || !j.longitude1 || !j.latitude2 || !j.longitude2)
+          return console.error("missing latitude or longitude", j);
+        else coord1 = [+j.longitude1, +j.latitude1];
+        coord2 = [+j.longitude2, +j.latitude2];
+        var finalcoordinate = [coord1, coord2];
+        return turf.lineString(finalcoordinate, j);
+      })
+      .filter((transfer) => typeof transfer != "undefined")
+  );
+};
+
 const MapLayers = () => {
   const { state, dispatch } = useContext(Context);
 
@@ -104,6 +123,29 @@ const MapLayers = () => {
             name: "Immigration Detention Station",
           },
         ],
+      };
+      dispatch({ type: "add layer", payload: newLayer });
+    });
+  }, [dispatch]);
+
+  useEffect(() => {
+    // Load CSV, convert to GeoJSON, add to the layers in the store
+    fetchTransfers().then((transfers) => {
+      const transfersGeoJSON = transfersToGeoJSON(transfers);
+      const newLayer = {
+        name: "Transfer Orders",
+        id: "transfers",
+        data: transfersGeoJSON,
+        clickable: true,
+        layerType: "line",
+        sourceType: "geojson",
+        paint: {
+          "line-color": "gray",
+          "line-width": 5,
+          "line-opacity": 0.6,
+        },
+        enabled: true,
+        layerLegend: [],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });

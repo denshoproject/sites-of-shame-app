@@ -48,20 +48,6 @@ const initialState = {
       ],
       layerLegend: [],
     },
-    {
-      name: "Transfer Orders",
-      id: "transfer orders",
-      data: constants.DATA_PATH + "transfer-orders.geojson",
-      clickable: true,
-      layerType: "line",
-      sourceType: "geojson",
-      paint: {
-        "line-width": 3,
-        "line-color": "gray",
-      },
-      enabled: true,
-      layerLegend: [],
-    },
   ],
 };
 
