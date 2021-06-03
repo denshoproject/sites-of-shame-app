@@ -3,6 +3,7 @@ import { Popup } from "react-mapbox-gl";
 
 import FacilityPopup from "components/FacilityPopup";
 import TransferOrderPopup from "components/TransferOrderPopup";
+import FamilyPopup from "components/FamilyPopup";
 import FARPopup from "components/FARPopup";
 import ExclusionOrderPopup from "components/ExclusionOrderPopup";
 import { Context } from "store";
@@ -27,6 +28,9 @@ const PopupSwitch = () => {
         ) : null}
         {layerId === "exclusion orders" ? (
           <ExclusionOrderPopup feature={clickedFeature} />
+        ) : null}
+        {layerId === "sos-journeys" ? (
+          <FamilyPopup feature={clickedFeature} />
         ) : null}
         {layerId.startsWith("far") ? (
           <FARPopup feature={clickedFeature} />

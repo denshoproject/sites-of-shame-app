@@ -3,7 +3,6 @@ import React from "react";
 import "./FacilityPopup.scss";
 
 const FacilityPopup = ({ feature }) => {
-  console.log(feature);
   const { properties } = feature;
 
   return (
