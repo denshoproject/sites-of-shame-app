@@ -6,7 +6,8 @@ import LayerPicker from "components/LayerPicker";
 import "./MainMap.scss";
 
 const MainMap = () => {
-  const { dispatch } = useContext(Context);
+  const { dispatch, state } = useContext(Context);
+  const { mapState } = state;
 
   const handleMoveEnd = (map) => {
     const center = map.getCenter();
@@ -18,7 +19,12 @@ const MainMap = () => {
   };
 
   return (
-    <BaseMap className="MainMap" onMoveEnd={handleMoveEnd}>
+    <BaseMap
+      className="MainMap"
+      onMoveEnd={handleMoveEnd}
+      center={mapState.center}
+      zoom={mapState.zoom}
+    >
       <div className="controls">
         <LayerPicker />
       </div>

@@ -14,10 +14,9 @@ const Map = ReactMapboxGl({
   accessToken: constants.MAPBOX_ACCESS_TOKEN,
 });
 
-const BaseMap = ({ children, className, onMoveEnd }) => {
+const BaseMap = ({ children, className, center, zoom, onMoveEnd }) => {
   const { state, dispatch } = useContext(Context);
   const clickableLayerIds = useRef();
-  const { mapState } = state;
 
   clickableLayerIds.current = state.layers
     .filter(({ clickable, enabled }) => clickable && enabled)
@@ -54,8 +53,8 @@ const BaseMap = ({ children, className, onMoveEnd }) => {
           height: "100%",
           width: "100%",
         }}
-        center={mapState.center}
-        zoom={mapState.zoom}
+        center={center}
+        zoom={zoom}
         onMoveEnd={onMoveEnd}
         onClick={handleClick}
       >
