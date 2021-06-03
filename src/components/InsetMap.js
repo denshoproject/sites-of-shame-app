@@ -2,17 +2,16 @@ import React, { useContext } from "react";
 
 import { Context } from "store";
 import BaseMap from "components/BaseMap";
-import LayerPicker from "components/LayerPicker";
-import "./MainMap.scss";
+import "./InsetMap.scss";
 
-const MainMap = () => {
+const InsetMap = () => {
   const { dispatch, state } = useContext(Context);
-  const { mapState } = state;
+  const { insetMapState } = state;
 
   const handleMoveEnd = (map) => {
     const center = map.getCenter();
     dispatch({
-      type: "set mapState",
+      type: "set insetMapState",
       center: [center.lng, center.lat],
       zoom: [map.getZoom()],
     });
@@ -20,17 +19,12 @@ const MainMap = () => {
 
   return (
     <BaseMap
-      center={mapState.center}
-      className="MainMap"
-      includeZoomControls={true}
+      center={insetMapState.center}
+      className="InsetMap"
       onMoveEnd={handleMoveEnd}
-      zoom={mapState.zoom}
-    >
-      <div className="controls">
-        <LayerPicker />
-      </div>
-    </BaseMap>
+      zoom={insetMapState.zoom}
+    />
   );
 };
 
-export default MainMap;
+export default InsetMap;

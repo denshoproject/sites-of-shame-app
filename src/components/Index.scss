@@ -6,4 +6,14 @@
     height: 100vh;
     width: 100%;
   }
+
+  .inset-map-container {
+    border: 1px solid #333;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+  }
 }

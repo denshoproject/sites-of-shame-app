@@ -14,7 +14,14 @@ const Map = ReactMapboxGl({
   accessToken: constants.MAPBOX_ACCESS_TOKEN,
 });
 
-const BaseMap = ({ children, className, center, zoom, onMoveEnd }) => {
+const BaseMap = ({
+  children,
+  className,
+  center,
+  includeZoomControls,
+  zoom,
+  onMoveEnd,
+}) => {
   const { state, dispatch } = useContext(Context);
   const clickableLayerIds = useRef();
 
@@ -58,7 +65,7 @@ const BaseMap = ({ children, className, center, zoom, onMoveEnd }) => {
         onMoveEnd={onMoveEnd}
         onClick={handleClick}
       >
-        <ZoomControl position="bottom-right" />
+        {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
         <PopupSwitch />
         <Image id="diagonal-grid" url={DiagonalGrid} />
         <MapLayers />

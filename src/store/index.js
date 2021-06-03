@@ -6,6 +6,11 @@ const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
 
+  insetMapState: {
+    center: [-157.329712, 21.079375],
+    zoom: [5],
+  },
+
   mapState: {
     center: [-93, 38],
     zoom: [4],
@@ -153,6 +158,14 @@ const getNewState = (state, action) => {
       return {
         ...state,
         mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
+      };
+    case "set insetMapState":
+      return {
+        ...state,
+        insetMapState: {
           center: action.center,
           zoom: action.zoom,
         },
