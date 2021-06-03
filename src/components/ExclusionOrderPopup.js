@@ -15,6 +15,22 @@ const ExclusionOrderPopup = ({ feature }) => {
           <span className="eo-meta">{properties.description}</span>
         </span>
       </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          Issued {properties["Issue Date"]}, Effective{" "}
+          {properties["Effective Date"]}
+        </span>
+      </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          {properties["Number of people excluded"]} people excluded
+        </span>
+      </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          Camp destination: {properties["WRA Camp Destination"]}
+        </span>
+      </div>
     </div>
   );
 };

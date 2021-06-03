@@ -1,4 +1,12 @@
 .eo-popup {
+  .eo-row {
+    margin-bottom: 0.5em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
   .eo-name {
     font-size: 1.2em;
     font-weight: bold;
