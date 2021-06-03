@@ -23,12 +23,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "bash -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
+    "build:staging": "REACT_APP_ENV=staging yarn build",
+    "build:production": "REACT_APP_ENV=production yarn build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "csv2geojson": "csv2geojson public/data/SoS.Facilities.Master.List.-.sos_facilities.csv > public/data/sos_facilities.geojson",
     "prototypes": "python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./prototypes",
-    "staging": "PUBLIC_URL=./ REACT_APP_ROUTER_MODE=hash react-scripts build --mode staging && python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./build"
+    "staging": "yarn build:staging && python3 scripts/deploy_studio_show.py --overwrite densho-sites-of-shame ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
