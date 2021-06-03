@@ -1,9 +1,16 @@
 .index {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+
+  .map-section {
+    height: 80vh;
+    position: relative;
+    width: 100%;
+  }
 
   .main-map-container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
   }
 
@@ -15,5 +22,9 @@
     bottom: 2rem;
     left: 2rem;
     z-index: 1000;
+  }
+
+  .timeline-container {
+    flex: 1 1 auto;
   }
 }

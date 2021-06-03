@@ -24,6 +24,10 @@ const initialState = {
     destVisible: true,
   },
 
+  data: {
+    facilities: { features: [] },
+  },
+
   layers: [
     {
       name: "Exclusion Orders",
@@ -72,6 +76,14 @@ const initialState = {
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "set facilities data":
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          facilities: action.facilities,
+        },
+      };
     case "set far index":
       return {
         ...state,

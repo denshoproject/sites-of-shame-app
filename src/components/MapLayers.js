@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import * as turf from "@turf/turf";
+import dayjs from "dayjs";
 import { csv } from "d3";
 
 import FARLayer from "components/FARLayer";
@@ -12,7 +13,11 @@ const fetchFacilities = () => csv(constants.DATA_PATH + "facilities.csv");
 const facilitiesToGeoJSON = (facilities) => {
   return turf.featureCollection(
     facilities.map((f) => {
-      return turf.point([f.geo_longitude, f.geo_latitude], f);
+      return turf.point([f.geo_longitude, f.geo_latitude], {
+        ...f,
+        date_closed: dayjs(f.date_closed).toDate(),
+        date_opened: dayjs(f.date_opened).toDate(),
+      });
     })
   );
 };
@@ -38,6 +43,7 @@ const MapLayers = () => {
     // Load CSV, convert to GeoJSON, add to the layers in the store
     fetchFacilities().then((facilities) => {
       const facilitiesGeoJSON = facilitiesToGeoJSON(facilities);
+      dispatch({ type: "set facilities data", facilities: facilitiesGeoJSON });
       const newLayer = {
         name: "Facilities",
         id: "sos-facilities",
