@@ -3,6 +3,7 @@ import * as turf from "@turf/turf";
 import { csv, group } from "d3";
 
 import FARLayer from "components/FARLayer";
+import FamilyLayer from "components/FamilyLayer";
 import GeoJsonLayer from "components/GeoJsonLayer";
 import { Context } from "store";
 import { constants } from "constants.js";

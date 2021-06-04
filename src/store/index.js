@@ -41,6 +41,12 @@ const initialState = {
       layerLegend: [],
     },
     {
+      name: "Family Journeys",
+      id: "family journeys",
+      clickable: false,
+      layerLegend: [],
+    },
+    {
       name: "Transfer Orders",
       id: "transfer orders",
       data: constants.DATA_PATH + "transfer-orders.geojson",
