@@ -31,6 +31,12 @@ const ExclusionOrderPopup = ({ feature }) => {
           Camp destination: {properties["WRA Camp Destination"]}
         </span>
       </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          <img src="https://media.densho.org/sitesofshame/EO-.pdf" />
+          {properties.Name.slice(21)}
+        </span>
+      </div>
     </div>
   );
 };
