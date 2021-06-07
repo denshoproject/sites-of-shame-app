@@ -6,24 +6,6 @@
   border-radius: 10px;
   width: 20em;
 
-  ol.layer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &-subsection {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
-
-    &:last-of-type {
-      border-bottom: 0;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  }
-
   .layer {
     background-color: #466086;
     border-radius: 10px;
@@ -39,32 +21,6 @@
   .layer-name {
     padding: 1em;
     padding-bottom: 0.25em;
-
-    &:last-child {
-      padding-bottom: 1em;
-    }
-  }
-
-  .layer-legend-items {
-    background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: black;
-    font-weight: normal;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .layer-legend-item {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-
-    &:first-child {
-      padding-top: 1em;
-      margin-top: 0.5em;
-    }
 
     &:last-child {
       padding-bottom: 1em;

@@ -44,7 +44,6 @@ const MapLayers = () => {
           "circle-opacity": 0.5,
         },
         enabled: false,
-        layerLegend: [],
       };
       dispatch({ type: "add layer", payload: newLayer });
     });

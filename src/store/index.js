@@ -28,6 +28,7 @@ const initialState = {
 
   facilities: {
     data: turf.featureCollection([]),
+    enabledCategories: ["WRA", "EAIS", "Hawaii"],
   },
 
   layers: [
@@ -45,7 +46,6 @@ const initialState = {
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
-      layerLegend: [],
     },
     {
       name: "Final Accountability Records",
@@ -57,7 +57,6 @@ const initialState = {
         "far-preLines",
         "far-prePoints",
       ],
-      layerLegend: [],
     },
     {
       name: "Transfer Orders",
@@ -71,7 +70,6 @@ const initialState = {
         "line-color": "gray",
       },
       enabled: true,
-      layerLegend: [],
     },
     {
       name: "Facilities",
@@ -79,39 +77,56 @@ const initialState = {
       clickable: true,
       layerType: "circle",
       sourceType: "geojson",
-      enabled: false,
-      layerLegend: [
+      enabled: true,
+      categories: [
         {
-          color: "#ff7b54",
-          name: "Concentration Camp",
+          name: "WRA",
+          value: "wra",
+          types: [
+            {
+              color: "#ff7b54",
+              name: "Concentration Camp",
+            },
+            {
+              color: "#FFB26B",
+              name: "Temporary Assembly Center",
+            },
+            {
+              color: "#8e9775",
+              name: "Additional Facility",
+            },
+            {
+              color: "#939b62",
+              name: "Citizen Isolation Center",
+            },
+          ],
         },
         {
-          color: "#FFB26B",
-          name: "Temporary Assembly Center",
+          name: "EAIS",
+          value: "eais",
+          types: [
+            {
+              color: "#ffd56b",
+              name: "Department of Justice Internment Camp",
+            },
+            {
+              color: "#e28f83",
+              name: "Immigration Detention Station",
+            },
+            {
+              color: "#4a503d",
+              name: "US Army Internment Camp",
+            },
+            {
+              color: "#faf2da",
+              name: "US Federal Prison",
+            },
+          ],
         },
         {
-          color: "#ffd56b",
-          name: "Department of Justice Internment Camp",
-        },
-        {
-          color: "#939b62",
-          name: "Citizen Isolation Center",
-        },
-        {
-          color: "#faf2da",
-          name: "US Federal Prison",
-        },
-        {
-          color: "#8e9775",
-          name: "Additional Facility",
-        },
-        {
-          color: "#4a503d",
-          name: "US Army Internment Camp",
-        },
-        {
-          color: "#e28f83",
-          name: "Immigration Detention Station",
+          name: "Hawaii",
+          value: "hawaii",
+          types: [],
         },
       ],
     },
@@ -169,6 +184,14 @@ const getNewState = (state, action) => {
         facilities: {
           ...state.facilities,
           data: action.data,
+        },
+      };
+    case "set facilities enabledCategories":
+      return {
+        ...state,
+        facilities: {
+          ...state.facilities,
+          enabledCategories: action.categories,
         },
       };
     case "set clickedFeature":

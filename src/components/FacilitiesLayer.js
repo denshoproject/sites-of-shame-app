@@ -8,7 +8,7 @@ import { Context } from "store";
 
 const FacilitiesLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);
-  const { data } = state.facilities;
+  const { data, enabledCategories } = state.facilities;
 
   const fetchFacilities = () => d3.csv(constants.DATA_PATH + "facilities.csv");
 
@@ -50,6 +50,14 @@ const FacilitiesLayer = ({ before, layer }) => {
     "circle-opacity": 1,
   };
 
+  let filter = [
+    "any",
+    ...enabledCategories.map((category) => {
+      const { value } = layer.categories.filter((c) => c.name === category)[0];
+      return ["==", ["get", "sos_system"], value];
+    }),
+  ];
+
   return (
     <>
       <Source
@@ -64,6 +72,7 @@ const FacilitiesLayer = ({ before, layer }) => {
         id={`${layer.id}`}
         sourceId={`${layer.id}`}
         before={before}
+        filter={filter}
         paint={paint}
       />
     </>

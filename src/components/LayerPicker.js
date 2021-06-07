@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import classNames from "classnames";
 
 import { Context } from "store";
 import FARPicker from "components/FARPicker";
+import FacilitiesPicker from "components/FacilitiesPicker";
 import LayerPickerSection from "components/LayerPickerSection";
 import LayerPickerSubsection from "components/LayerPickerSubsection";
-import LegendCircle from "components/LegendCircle";
 import "./LayerPicker.scss";
 
 const LayerPicker = () => {
@@ -55,28 +54,7 @@ const LayerPicker = () => {
         </LayerPickerSubsection>
       </LayerPickerSection>
       <LayerPickerSection name="Facilities">
-        <div className="layer-list">
-          {layers.map((layer) => (
-            <div
-              key={layer.id}
-              className={classNames({
-                layer: true,
-                enabled: layer.enabled,
-              })}
-            >
-              {layer.layerLegend && layer.layerLegend.length ? (
-                <ol className="layer-legend-items">
-                  {layer.layerLegend.map((legend) => (
-                    <li key={legend.color} className="layer-legend-item">
-                      <LegendCircle color={legend.color} />
-                      {legend.name}
-                    </li>
-                  ))}
-                </ol>
-              ) : null}
-            </div>
-          ))}
-        </div>
+        <FacilitiesPicker />
       </LayerPickerSection>
     </div>
   );
