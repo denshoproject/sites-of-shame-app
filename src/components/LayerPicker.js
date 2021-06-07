@@ -49,7 +49,7 @@ const LayerPicker = () => {
               checked={isEnabled("transfer orders")}
               onChange={() => toggleLayer("transfer orders")}
             />
-            Transfer orders
+            Transfers between WRA camps
           </label>
         </div>
       </LayerPickerSection>
