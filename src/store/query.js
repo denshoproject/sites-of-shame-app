@@ -7,11 +7,15 @@ export const stateToQuery = (state) => {
     .join("|");
 
   const queryState = {
+    farDestVisible: state.far.destVisible,
+    farPreVisible: state.far.preVisible,
+    farSelectedCamp: state.far.selectedCamp,
     lat: state.mapState.center[1].toFixed(4),
     layers,
     lng: state.mapState.center[0].toFixed(4),
     zoom: state.mapState.zoom[0],
   };
+
   window.history.replaceState(
     null,
     null,
@@ -51,6 +55,17 @@ export const queryToState = (initialState) => {
         enabled: true,
       });
     });
+  }
+
+  if (!stateUpdates.far) stateUpdates.far = { ...initialState.far };
+  if (queryState.farSelectedCamp) {
+    stateUpdates.far.selectedCamp = queryState.farSelectedCamp;
+  }
+  if (queryState.farDestVisible) {
+    stateUpdates.far.destVisible = queryState.farDestVisible === "true";
+  }
+  if (queryState.farPreVisible) {
+    stateUpdates.far.preVisible = queryState.farPreVisible === "true";
   }
 
   return {
