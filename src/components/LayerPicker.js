@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { Context } from "store";
 import FARPicker from "components/FARPicker";
 import LayerPickerSection from "components/LayerPickerSection";
+import LayerPickerSubsection from "components/LayerPickerSubsection";
 import LegendCircle from "components/LegendCircle";
 import "./LayerPicker.scss";
 
@@ -21,7 +22,7 @@ const LayerPicker = () => {
   return (
     <div className="layer-picker">
       <LayerPickerSection name="Journeys">
-        <div className="layer-picker-subsection">
+        <LayerPickerSubsection>
           <label>
             <input
               type="checkbox"
@@ -30,8 +31,8 @@ const LayerPicker = () => {
             />
             Family Journeys
           </label>
-        </div>
-        <div className="layer-picker-subsection">
+        </LayerPickerSubsection>
+        <LayerPickerSubsection>
           <label>
             <input
               type="checkbox"
@@ -41,8 +42,8 @@ const LayerPicker = () => {
             Final Accountability Records
           </label>
           <FARPicker />
-        </div>
-        <div className="layer-picker-subsection">
+        </LayerPickerSubsection>
+        <LayerPickerSubsection>
           <label>
             <input
               type="checkbox"
@@ -51,7 +52,7 @@ const LayerPicker = () => {
             />
             Transfer orders
           </label>
-        </div>
+        </LayerPickerSubsection>
       </LayerPickerSection>
       <LayerPickerSection name="Facilities">
         <div className="layer-list">

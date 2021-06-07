@@ -1,0 +1,11 @@
+.layer-picker-subsection {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+
+  &:last-of-type {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
