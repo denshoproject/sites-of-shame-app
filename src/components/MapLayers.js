@@ -146,7 +146,7 @@ const MapLayers = () => {
     .reverse();
 
   return enabledLayers.map((layer, i) => {
-    let before;
+    let before = "road-label";
     if (i > 0) {
       before = enabledLayers[i - 1].id;
     }
