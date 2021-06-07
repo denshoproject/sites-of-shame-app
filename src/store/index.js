@@ -19,6 +19,14 @@ const initialState = {
     destVisible: true,
   },
 
+  transfers: {
+    index: null,
+    transfers: "",
+    transferData: {},
+    // preVisible: true,
+    // destVisible: true,
+  },
+
   layers: [
     {
       name: "Exclusion Orders",
@@ -48,11 +56,24 @@ const initialState = {
       ],
       layerLegend: [],
     },
+    {
+      name: "Transfer Orders",
+      id: "transfer orders",
+      clickable: false,
+      layerLegend: [],
+    },
   ],
 };
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "set transfer orders":
+      return {
+        ...state,
+        transfers: {
+          ...state.transfers,
+        },
+      };
     case "set far index":
       return {
         ...state,
