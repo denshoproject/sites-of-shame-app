@@ -1,3 +1,5 @@
+@import "~scss/_variables.scss";
+
 .layer-picker {
   padding: 1.2rem;
   text-align: left;
@@ -7,6 +9,34 @@
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  &-section {
+    margin-bottom: 1em;
+
+    h3 {
+      background: $color-ui-blue;
+      color: white;
+      padding: 0.5em;
+      margin: 0;
+    }
+
+    &-body {
+      background: white;
+      padding: 1em 1em;
+    }
+  }
+
+  &-subsection {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 
   .layer {
@@ -45,7 +75,6 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    padding: 0.25em 1em;
 
     &:first-child {
       padding-top: 1em;
