@@ -167,7 +167,6 @@ const FARLayer = ({ before, layer }) => {
           visibility: preVisible ? "visible" : "none",
         }}
       />
-      />
       <Source
         id={`${layer.id}-destPoints`}
         geoJsonSource={{
