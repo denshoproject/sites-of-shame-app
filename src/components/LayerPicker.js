@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
 
 import { Context } from "store";
@@ -17,8 +17,6 @@ const LayerPicker = () => {
 
   const toggleLayer = (id) => dispatch({ type: "toggle layer", layerId: id });
   const isEnabled = (id) => enabledLayers.indexOf(id) >= 0;
-
-  const facilitiesLayer = layers.filter(({ id }) => id === "sos-facilities")[0];
 
   return (
     <div className="layer-picker">
