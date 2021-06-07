@@ -4,27 +4,12 @@
   padding: 1.2rem;
   text-align: left;
   border-radius: 10px;
+  width: 20em;
 
   ol.layer-list {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-
-  &-section {
-    margin-bottom: 1em;
-
-    h3 {
-      background: $color-ui-blue;
-      color: white;
-      padding: 0.5em;
-      margin: 0;
-    }
-
-    &-body {
-      background: white;
-      padding: 1em 1em;
-    }
   }
 
   &-subsection {
