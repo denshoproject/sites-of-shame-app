@@ -38,7 +38,7 @@ const LayerPicker = () => {
               checked={isEnabled("far")}
               onChange={() => toggleLayer("far")}
             />
-            Final Accountability Records
+            Location Before and After Camp
           </label>
           <FARPicker />
         </LayerPickerSubsection>
