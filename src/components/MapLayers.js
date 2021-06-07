@@ -3,19 +3,10 @@ import * as turf from "@turf/turf";
 import { csv } from "d3";
 
 import FARLayer from "components/FARLayer";
+import FacilitiesLayer from "components/FacilitiesLayer";
 import GeoJsonLayer from "components/GeoJsonLayer";
 import { Context } from "store";
 import { constants } from "constants.js";
-
-const fetchFacilities = () => csv(constants.DATA_PATH + "facilities.csv");
-
-const facilitiesToGeoJSON = (facilities) => {
-  return turf.featureCollection(
-    facilities.map((f) => {
-      return turf.point([f.geo_longitude, f.geo_latitude], f);
-    })
-  );
-};
 
 const fetchJourneys = () => csv(constants.DATA_PATH + "family-journeys.csv");
 
@@ -33,81 +24,6 @@ const journeysToGeoJSON = (journeys) => {
 
 const MapLayers = () => {
   const { state, dispatch } = useContext(Context);
-
-  useEffect(() => {
-    // Load CSV, convert to GeoJSON, add to the layers in the store
-    fetchFacilities().then((facilities) => {
-      const facilitiesGeoJSON = facilitiesToGeoJSON(facilities);
-      const newLayer = {
-        name: "Facilities",
-        id: "sos-facilities",
-        data: facilitiesGeoJSON,
-        clickable: true,
-        layerType: "circle",
-        sourceType: "geojson",
-        paint: {
-          "circle-radius": [
-            "/",
-            ["to-number", ["get", "peak_population"]],
-            500,
-          ],
-          "circle-color": {
-            property: "sos_category",
-            type: "categorical",
-            stops: [
-              ["Concentration Camp", "#ff7b54"],
-              ["Temporary Assembly Center", "#FFB26B"],
-              ["Department of Justice Internment Camp", "#ffd56b"],
-              ["Citizen Isolation Center", "#939b62"],
-              ["US Federal Prison", "#faf2da"],
-              ["Additional Facility", "#8e9775"],
-              ["US Army Internment Camp", "#4a503d"],
-              ["Immigration Detention Station", "#e28f83"],
-            ],
-          },
-          "circle-stroke-color": "white",
-          "circle-stroke-width": 1,
-          "circle-opacity": 1,
-        },
-        enabled: false,
-        layerLegend: [
-          {
-            color: "#ff7b54",
-            name: "Concentration Camp",
-          },
-          {
-            color: "#FFB26B",
-            name: "Temporary Assembly Center",
-          },
-          {
-            color: "#ffd56b",
-            name: "Department of Justice Internment Camp",
-          },
-          {
-            color: "#939b62",
-            name: "Citizen Isolation Center",
-          },
-          {
-            color: "#faf2da",
-            name: "US Federal Prison",
-          },
-          {
-            color: "#8e9775",
-            name: "Additional Facility",
-          },
-          {
-            color: "#4a503d",
-            name: "US Army Internment Camp",
-          },
-          {
-            color: "#e28f83",
-            name: "Immigration Detention Station",
-          },
-        ],
-      };
-      dispatch({ type: "add layer", payload: newLayer });
-    });
-  }, [dispatch]);
 
   useEffect(() => {
     // Load CSV, convert to GeoJSON, add to the layers in the store
@@ -153,8 +69,9 @@ const MapLayers = () => {
 
     if (layer.id === "far") {
       return <FARLayer key={layer.id} layer={layer} before={before} />;
-    }
-    if (layer.sourceType === "geojson") {
+    } else if (layer.id === "sos-facilities") {
+      return <FacilitiesLayer key={layer.id} layer={layer} before={before} />;
+    } else if (layer.sourceType === "geojson") {
       return <GeoJsonLayer key={layer.id} layer={layer} before={before} />;
     }
     return null;
