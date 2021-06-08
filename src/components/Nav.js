@@ -41,7 +41,9 @@ const Nav = () => {
           <a href={link.url}>{link.label}</a>
         ))}
       </ol>
-      <img alt="Densho logo" src={Logo} />
+      <a href="https://densho.org/">
+        <img alt="Densho logo" src={Logo} />
+      </a>
       <ol className="links">
         {rightLinks.map((link) => (
           <a href={link.url}>{link.label}</a>
