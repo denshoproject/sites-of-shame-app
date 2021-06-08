@@ -1,10 +1,17 @@
 import React, { createContext, useReducer } from "react";
+import * as turf from "@turf/turf";
+
 import { constants } from "constants.js";
 import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
+
+  insetMapState: {
+    center: [-157.329712, 21.079375],
+    zoom: [5],
+  },
 
   mapState: {
     center: [-93, 38],
@@ -20,11 +27,12 @@ const initialState = {
   },
 
   transfers: {
-    index: null,
-    transfers: "",
-    transferData: {},
-    // preVisible: true,
-    // destVisible: true,
+    data: turf.featureCollection([]),
+  },
+
+  facilities: {
+    data: turf.featureCollection([]),
+    enabledCategories: ["WRA", "EAIS", "Hawaii"],
   },
 
   layers: [
@@ -42,7 +50,6 @@ const initialState = {
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
-      layerLegend: [],
     },
     {
       name: "Final Accountability Records",
@@ -54,24 +61,99 @@ const initialState = {
         "far-preLines",
         "far-prePoints",
       ],
-      layerLegend: [],
     },
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      clickable: false,
-      layerLegend: [],
+      data: constants.DATA_PATH + "transfer-orders.geojson",
+      clickable: true,
+      layerType: "line",
+      sourceType: "geojson",
+      paint: {
+        "line-width": 3,
+        "line-color": "gray",
+      },
+      enabled: true,
+    },
+    {
+      name: "Facilities",
+      id: "sos-facilities",
+      clickable: true,
+      layerType: "circle",
+      sourceType: "geojson",
+      enabled: true,
+      categories: [
+        {
+          name: "WRA",
+          value: "wra",
+          types: [
+            {
+              color: "#ff7b54",
+              name: "Concentration Camp",
+            },
+            {
+              color: "#FFB26B",
+              name: "Temporary Assembly Center",
+            },
+            {
+              color: "#8e9775",
+              name: "Additional Facility",
+            },
+            {
+              color: "#939b62",
+              name: "Citizen Isolation Center",
+            },
+          ],
+        },
+        {
+          name: "EAIS",
+          value: "eais",
+          types: [
+            {
+              color: "#ffd56b",
+              name: "Department of Justice Internment Camp",
+            },
+            {
+              color: "#e28f83",
+              name: "Immigration Detention Station",
+            },
+            {
+              color: "#4a503d",
+              name: "US Army Internment Camp",
+            },
+            {
+              color: "#faf2da",
+              name: "US Federal Prison",
+            },
+          ],
+        },
+        {
+          name: "Hawaii",
+          value: "hawaii",
+          types: [
+            {
+              color: "#4a503d",
+              name: "US Army Internment Camp",
+            },
+            {
+              color: "#8e9775",
+              name: "Additional Facility",
+            },
+          ],
+        },
+      ],
     },
   ],
 };
 
 const getNewState = (state, action) => {
   switch (action.type) {
-    case "set transfer orders":
+    case "set transfer data":
       return {
         ...state,
         transfers: {
           ...state.transfers,
+          data: action.data,
         },
       };
     case "set far index":
@@ -117,6 +199,22 @@ const getNewState = (state, action) => {
           },
         },
       };
+    case "set facilities data":
+      return {
+        ...state,
+        facilities: {
+          ...state.facilities,
+          data: action.data,
+        },
+      };
+    case "set facilities enabledCategories":
+      return {
+        ...state,
+        facilities: {
+          ...state.facilities,
+          enabledCategories: action.categories,
+        },
+      };
     case "set clickedFeature":
       return {
         ...state,
@@ -160,6 +258,14 @@ const getNewState = (state, action) => {
       return {
         ...state,
         mapState: {
+          center: action.center,
+          zoom: action.zoom,
+        },
+      };
+    case "set insetMapState":
+      return {
+        ...state,
+        insetMapState: {
           center: action.center,
           zoom: action.zoom,
         },

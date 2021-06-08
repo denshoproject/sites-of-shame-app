@@ -67,7 +67,7 @@ const FARPicker = () => {
             onChange={(e) => handlePreVisibleChange(e.target.checked)}
             checked={preVisible}
           />
-          Previous locations
+          Before Camp
         </label>
       </div>
       <div className="far-picker-row">
@@ -78,7 +78,7 @@ const FARPicker = () => {
             onChange={(e) => handleDestVisibleChange(e.target.checked)}
             checked={destVisible}
           />
-          Destination locations
+          After Camp
         </label>
       </div>
     </div>

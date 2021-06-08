@@ -8,7 +8,7 @@ import { Context } from "store";
 
 const TransferLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);
-  const { transferData } = state.transfers;
+  const { data } = state.transfers;
 
   const fetchTransfers = () =>
     d3.csv(constants.DATA_PATH + "transfer-orders.csv");
@@ -28,25 +28,31 @@ const TransferLayer = ({ before, layer }) => {
     });
   }, [dispatch]);
 
-  let coord1 = "";
-  let coord2 = "";
-  const transferLines = turf.featureCollection(
-    transfers
-      .map((j) => {
-        if (!j.latitude1 || !j.longitude1 || !j.latitude2 || !j.longitude2)
-          return console.error("missing latitude or longitude", j);
-        else coord1 = [+j.longitude1, +j.latitude1];
-        coord2 = [+j.longitude2, +j.latitude2];
-        var finalcoordinate = [coord1, coord2];
-        return turf.lineString(finalcoordinate, j);
-      })
-      .filter((transfer) => typeof transfer != "undefined")
-  );
+  let transferLines = turf.featureCollection([]);
+
+  if (data.length) {
+    transferLines = turf.featureCollection(
+      data
+        .map((j) => {
+          if (!j.latitude1 || !j.longitude1 || !j.latitude2 || !j.longitude2) {
+            return console.error("missing latitude or longitude", j);
+          }
+          return turf.lineString(
+            [
+              [j.longitude1, j.latitude1],
+              [j.longitude2, j.latitude2],
+            ],
+            j
+          );
+        })
+        .filter((transfer) => typeof transfer != "undefined")
+    );
+  }
 
   return (
     <>
       <Source
-        id={`${layer.id}`}
+        id={layer.id}
         geoJsonSource={{
           type: "geojson",
           data: transferLines,
@@ -54,8 +60,8 @@ const TransferLayer = ({ before, layer }) => {
       />
       <Layer
         type="line"
-        id={`${layer.id}`}
-        sourceId={`${layer.id}`}
+        id={layer.id}
+        sourceId={layer.id}
         before={before}
         paint={{
           "line-width": 1,

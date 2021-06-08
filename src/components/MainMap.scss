@@ -1,14 +1,20 @@
+@import "~scss/_variables.scss";
+
 .MainMap {
   height: 100%;
   width: 100%;
   position: relative;
 
+  .mapboxgl-map {
+    font-family: $body-font-family;
+  }
+
   .controls {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 0.5rem;
+    right: 0.5rem;
     z-index: 1000;
 
     & > * {
