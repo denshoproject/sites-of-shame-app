@@ -3,6 +3,7 @@ import * as turf from "@turf/turf";
 import { csv } from "d3";
 
 import FARLayer from "components/FARLayer";
+import TransferLayer from "components/TransferLayer";
 import FacilitiesLayer from "components/FacilitiesLayer";
 import GeoJsonLayer from "components/GeoJsonLayer";
 import { Context } from "store";
@@ -68,6 +69,8 @@ const MapLayers = () => {
 
     if (layer.id === "far") {
       return <FARLayer key={layer.id} layer={layer} before={before} />;
+    } else if (layer.id === "transfer orders") {
+      return <TransferLayer key={layer.id} layer={layer} before={before} />;
     } else if (layer.id === "sos-facilities") {
       return <FacilitiesLayer key={layer.id} layer={layer} before={before} />;
     } else if (layer.sourceType === "geojson") {

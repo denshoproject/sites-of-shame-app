@@ -26,6 +26,10 @@ const initialState = {
     destVisible: true,
   },
 
+  transfers: {
+    data: turf.featureCollection([]),
+  },
+
   facilities: {
     data: turf.featureCollection([]),
     enabledCategories: ["WRA", "EAIS", "Hawaii"],
@@ -144,6 +148,14 @@ const initialState = {
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "set transfer data":
+      return {
+        ...state,
+        transfers: {
+          ...state.transfers,
+          data: action.data,
+        },
+      };
     case "set far index":
       return {
         ...state,
