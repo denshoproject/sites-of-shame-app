@@ -30,7 +30,17 @@ const FacilitiesLayer = ({ before, layer }) => {
   }, [data, dispatch]);
 
   const paint = {
-    "circle-radius": ["/", ["to-number", ["get", "peak_population"]], 500],
+    "circle-radius": [
+      "interpolate",
+      ["linear"],
+      ["to-number", ["get", "peak_population"]],
+      100,
+      5,
+      1000,
+      10,
+      20000,
+      15,
+    ],
     "circle-color": {
       property: "sos_category",
       type: "categorical",
@@ -45,7 +55,7 @@ const FacilitiesLayer = ({ before, layer }) => {
         ["Immigration Detention Station", "#e28f83"],
       ],
     },
-    "circle-stroke-color": "white",
+    "circle-stroke-color": "rgba(255, 255, 255, 0.25)",
     "circle-stroke-width": 1,
     "circle-opacity": 1,
   };
