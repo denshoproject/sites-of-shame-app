@@ -1,0 +1,26 @@
+@import "~scss/_variables.scss";
+
+.Nav {
+  height: $nav-height;
+  background: $color-ui-blue;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      margin: 0 1em;
+    }
+  }
+}
