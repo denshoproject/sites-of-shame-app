@@ -57,11 +57,10 @@ const FARLayer = ({ before, layer }) => {
     selectedCampData
       ?.filter((row) => row.pre_lat && row.pre_lng)
       ?.map((row) =>
-        turf.lineString(
-          [
-            [row.pre_lng, row.pre_lat],
-            [selectedCampRow.lng, selectedCampRow.lat],
-          ],
+        turf.greatCircle(
+          turf.point([row.pre_lng, row.pre_lat]),
+          turf.point([selectedCampRow.lng, selectedCampRow.lat]),
+
           row
         )
       ) ?? []
@@ -74,11 +73,10 @@ const FARLayer = ({ before, layer }) => {
         let lng0 = selectedCampRow.lng;
         let lng1 = row.dest_lng;
         if (lng1 - lng0 >= 180) lng1 -= 360;
-        return turf.lineString(
-          [
-            [lng0, selectedCampRow.lat],
-            [lng1, row.dest_lat],
-          ],
+        return turf.greatCircle(
+          turf.point([lng0, selectedCampRow.lat]),
+          turf.point([lng1, row.dest_lat]),
+
           row
         );
       }) ?? []
