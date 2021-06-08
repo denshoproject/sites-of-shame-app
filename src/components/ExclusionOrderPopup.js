@@ -5,6 +5,11 @@ import "./ExclusionOrderPopup.scss";
 const ExclusionOrderPopup = ({ feature }) => {
   const { properties } = feature;
 
+  let imagesrc =
+    "https://ddr.densho.org/media/sitesofshame/EO-C-" +
+    properties.Name.slice(22) +
+    ".png";
+
   return (
     <div className="eo-popup">
       <div className="popup-row">
@@ -33,8 +38,7 @@ const ExclusionOrderPopup = ({ feature }) => {
       </div>
       <div className="eo-row">
         <span className="eo-meta">
-          <img src="https://media.densho.org/sitesofshame/EO-.pdf" />
-          {properties.Name.slice(21)}
+          <img src={imagesrc} style={{ width: "150px" }} />
         </span>
       </div>
     </div>
