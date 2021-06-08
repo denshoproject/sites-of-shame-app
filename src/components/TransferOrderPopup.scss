@@ -1,10 +1,14 @@
+@import "~scss/_variables.scss";
+
 .to-popup {
   .to-name {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
+    color: $color-ui-blue;
   }
 
   .to-meta {
-    font-size: 0.9em;
+    font-size: 0.95em;
+    line-height: 1.5;
   }
 }
