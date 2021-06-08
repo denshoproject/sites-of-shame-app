@@ -12,18 +12,27 @@ const FacilityPopup = ({ feature }) => {
       </div>
       <div className="popup-row">
         <span className="facility-meta">
-          {properties.sos_category} in {properties.location_name}
+          {properties.sos_category}
+          {properties.location_name ? (
+            <span> in {properties.location_name}</span>
+          ) : null}
         </span>
       </div>
       <div className="popup-row">
         <span className="facility-meta">
-          Open from {properties.date_opened} to {properties.date_closed}
+          {properties.date_opened && properties.date_closed ? (
+            <span>
+              Open from {properties.date_opened} to {properties.date_closed}
+            </span>
+          ) : null}
         </span>
       </div>
       <div className="popup-row">
         <span className="facility-meta">
-          Peak population: {properties.peak_population} (
-          {properties.peak_popdate})
+          Peak population: {properties.peak_population}
+          {properties.peak_popdate ? (
+            <span> ({properties.peak_popdate})</span>
+          ) : null}
         </span>
       </div>
       <div className="popup-row">{properties.location_description}</div>
