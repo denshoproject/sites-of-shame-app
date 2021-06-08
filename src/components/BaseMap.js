@@ -19,6 +19,7 @@ const BaseMap = ({
   className,
   center,
   includeZoomControls,
+  showPopups,
   zoom,
   onMoveEnd,
 }) => {
@@ -66,7 +67,7 @@ const BaseMap = ({
         onClick={handleClick}
       >
         {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
-        <PopupSwitch />
+        {showPopups ? <PopupSwitch /> : null}
         <Image id="diagonal-grid" url={DiagonalGrid} />
         <MapLayers />
         {children}

@@ -24,6 +24,7 @@ const MainMap = () => {
       className="MainMap"
       includeZoomControls={true}
       onMoveEnd={handleMoveEnd}
+      showPopups={true}
       zoom={mapState.zoom}
     >
       <div className="controls">
