@@ -36,7 +36,11 @@ const ExclusionOrderPopup = ({ feature }) => {
       </div>
       <div className="eo-row">
         <span className="eo-meta">
-          <img src={imagesrc} style={{ width: "150px" }} />
+          <img
+            alt="First page of exclusion order document"
+            src={imagesrc}
+            style={{ width: "150px" }}
+          />
         </span>
       </div>
     </div>
