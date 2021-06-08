@@ -18,9 +18,9 @@ const FacilitiesLayer = ({ before, layer }) => {
 
     fetchFacilities().then((rows) => {
       const facilitiesGeoJSON = turf.featureCollection(
-        rows.map((f) => {
-          return turf.point([f.geo_longitude, f.geo_latitude], f);
-        })
+        rows
+          .filter((f) => f.geo_longitude && f.geo_latitude)
+          .map((f) => turf.point([f.geo_longitude, f.geo_latitude], f))
       );
       dispatch({
         type: "set facilities data",
