@@ -5,10 +5,8 @@ import "./ExclusionOrderPopup.scss";
 const ExclusionOrderPopup = ({ feature }) => {
   const { properties } = feature;
 
-  let imagesrc =
-    "https://ddr.densho.org/media/sitesofshame/EO-C-" +
-    properties.Name.slice(22) +
-    ".png";
+  const id = properties.Name.replace("SoS - Exclusion Order ", "");
+  const imagesrc = `https://ddr.densho.org/media/sitesofshame/EO-C-${id}.png`;
 
   let name = properties.Name.slice(6);
 
@@ -43,7 +41,11 @@ const ExclusionOrderPopup = ({ feature }) => {
       <div className="content-image">
         <div className="eo-row">
           <span className="eo-meta">
-            <img className="eo-image" src={imagesrc} />
+            <img
+              alt="First page of exclusion order document"
+              src={imagesrc}
+              style={{ width: "150px" }}
+            />
           </span>
         </div>
       </div>
