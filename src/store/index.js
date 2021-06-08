@@ -126,7 +126,16 @@ const initialState = {
         {
           name: "Hawaii",
           value: "hawaii",
-          types: [],
+          types: [
+            {
+              color: "#4a503d",
+              name: "US Army Internment Camp",
+            },
+            {
+              color: "#8e9775",
+              name: "Additional Facility",
+            },
+          ],
         },
       ],
     },
