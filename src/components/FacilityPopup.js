@@ -5,11 +5,21 @@ import "./FacilityPopup.scss";
 const FacilityPopup = ({ feature }) => {
   const { properties } = feature;
 
+  const imgsrc = properties.image_url;
+
   return (
     <div className="facility-popup">
       <div className="popup-row">
-        <span className="facility-name">{properties.facility_name}</span>
+        <span className="facility-meta">
+          <img alt="Image of Facility" src={imgsrc} className="imgcrop" />
+        </span>
       </div>
+      <div className="popup-row">
+        <div className="facility-title">
+          <span className="facility-name">{properties.facility_name}</span>
+        </div>
+      </div>
+
       <div className="popup-row">
         <span className="facility-meta">
           {properties.sos_category}
@@ -35,6 +45,7 @@ const FacilityPopup = ({ feature }) => {
           ) : null}
         </span>
       </div>
+
       <div className="popup-row">{properties.location_description}</div>
       {properties.encyc_article_status ? (
         <div className="popup-row">

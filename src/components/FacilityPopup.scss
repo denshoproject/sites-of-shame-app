@@ -1,10 +1,24 @@
+@import "~scss/_variables.scss";
+
 .facility-popup {
   .facility-name {
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: bold;
+    color: $color-ui-blue;
+  }
+
+  .facility-title {
+    padding-bottom: 10px;
   }
 
   .facility-meta {
     font-size: 0.9em;
+  }
+
+  .imgcrop {
+    width: 400px;
+    height: 150px;
+    object-fit: cover;
+    padding-bottom: 20px;
   }
 }
