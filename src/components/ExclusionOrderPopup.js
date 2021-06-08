@@ -5,10 +5,8 @@ import "./ExclusionOrderPopup.scss";
 const ExclusionOrderPopup = ({ feature }) => {
   const { properties } = feature;
 
-  let imagesrc =
-    "https://ddr.densho.org/media/sitesofshame/EO-C-" +
-    properties.Name.slice(22) +
-    ".png";
+  const id = properties.Name.replace("SoS - Exclusion Order ", "");
+  const imagesrc = `https://ddr.densho.org/media/sitesofshame/EO-C-${id}.png`;
 
   return (
     <div className="eo-popup">
