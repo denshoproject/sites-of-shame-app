@@ -40,7 +40,7 @@ const FacilityPopup = ({ feature }) => {
         <div className="popup-row">
           Read more{" "}
           <a target="_blank" rel="noreferrer" href={properties.encyc_url}>
-            on the Densho Encyclopedia
+            in the Densho Encyclopedia
           </a>
         </div>
       ) : null}
