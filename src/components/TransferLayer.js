@@ -37,11 +37,9 @@ const TransferLayer = ({ before, layer }) => {
           if (!j.latitude1 || !j.longitude1 || !j.latitude2 || !j.longitude2) {
             return console.error("missing latitude or longitude", j);
           }
-          return turf.lineString(
-            [
-              [j.longitude1, j.latitude1],
-              [j.longitude2, j.latitude2],
-            ],
+          return turf.greatCircle(
+            turf.point([j.longitude1, j.latitude1]),
+            turf.point([j.longitude2, j.latitude2]),
             j
           );
         })
