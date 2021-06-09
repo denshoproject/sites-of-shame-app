@@ -30,6 +30,10 @@ const initialState = {
     data: turf.featureCollection([]),
   },
 
+  families: {
+    data: turf.featureCollection([]),
+  },
+
   facilities: {
     data: turf.featureCollection([]),
     enabledCategories: ["WRA", "EAIS", "Hawaii"],
@@ -73,6 +77,12 @@ const initialState = {
         "line-width": 3,
         "line-color": "gray",
       },
+      enabled: true,
+    },
+    {
+      name: "Families",
+      id: "families",
+      clickable: true,
       enabled: true,
     },
     {
@@ -153,6 +163,14 @@ const getNewState = (state, action) => {
         ...state,
         transfers: {
           ...state.transfers,
+          data: action.data,
+        },
+      };
+    case "set family data":
+      return {
+        ...state,
+        families: {
+          ...state.families,
           data: action.data,
         },
       };

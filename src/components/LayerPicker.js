@@ -25,8 +25,8 @@ const LayerPicker = () => {
           <label>
             <input
               type="checkbox"
-              checked={isEnabled("sos-journeys")}
-              onChange={() => toggleLayer("sos-journeys")}
+              checked={isEnabled("families")}
+              onChange={() => toggleLayer("families")}
             />
             Family Journeys
           </label>
