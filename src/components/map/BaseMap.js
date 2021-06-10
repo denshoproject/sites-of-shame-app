@@ -5,8 +5,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 import { constants } from "constants.js";
 import { Context } from "store";
-import MapLayers from "components/MapLayers";
-import PopupSwitch from "components/PopupSwitch";
+import MapLayers from "components/layers/MapLayers";
+import PopupSwitch from "components/popups/PopupSwitch";
 import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 

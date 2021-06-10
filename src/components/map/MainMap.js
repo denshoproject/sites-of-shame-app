@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
 import { Context } from "store";
-import BaseMap from "components/BaseMap";
-import LayerPicker from "components/LayerPicker";
+import BaseMap from "components/map/BaseMap";
+import LayerPicker from "components/ui/LayerPicker";
 import "./MainMap.scss";
 
 const MainMap = () => {

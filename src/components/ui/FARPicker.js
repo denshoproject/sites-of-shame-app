@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 import { constants } from "constants.js";
 import { Context } from "store";
-import LegendCircle from "components/LegendCircle";
+import LegendCircle from "components/ui/LegendCircle";
 import "./FARPicker.scss";
 
 const FARPicker = () => {

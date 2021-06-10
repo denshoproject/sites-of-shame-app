@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { Context } from "store";
-import BaseMap from "components/BaseMap";
+import BaseMap from "components/map/BaseMap";
 import "./InsetMap.scss";
 
 const InsetMap = () => {

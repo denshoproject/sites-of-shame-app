@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 
 import { Context } from "store";
-import Infobox from "components/Infobox";
-import InfoboxButton from "components/InfoboxButton";
-import LayerPickerSubsection from "components/LayerPickerSubsection";
-import LegendCircle from "components/LegendCircle";
+import Infobox from "components/ui/Infobox";
+import InfoboxButton from "components/ui/InfoboxButton";
+import LayerPickerSubsection from "components/ui/LayerPickerSubsection";
+import LegendCircle from "components/ui/LegendCircle";
 import "./FacilitiesPicker.scss";
 
 const FacilitiesPicker = () => {
