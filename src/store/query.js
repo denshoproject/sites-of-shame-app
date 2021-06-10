@@ -12,6 +12,7 @@ export const stateToQuery = (state) => {
     facilityCategories,
     farDestVisible: state.far.destVisible,
     farPreVisible: state.far.preVisible,
+    selectedFamily: state.families.selectedFamily,
     farSelectedCamp: state.far.selectedCamp,
     lat: state.mapState.center[1].toFixed(4),
     layers,

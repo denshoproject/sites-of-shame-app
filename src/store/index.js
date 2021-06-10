@@ -37,6 +37,12 @@ const initialState = {
     data: turf.featureCollection([]),
   },
 
+  families: {
+    selectedFamily: "",
+    familyData: {},
+    data: [],
+  },
+
   facilities: {
     data: turf.featureCollection([]),
     enabledCategories: ["WRA", "EAIS", "Hawaii"],
@@ -63,6 +69,11 @@ const initialState = {
       id: "far",
       clickable: false,
       clickableSublayers: ["far-lines", "far-points"],
+    },
+    {
+      name: "Family Journeys",
+      id: "families",
+      clickable: true,
     },
     {
       name: "Transfer Orders",
@@ -182,6 +193,22 @@ const getNewState = (state, action) => {
         transfers: {
           ...state.transfers,
           data: action.data,
+        },
+      };
+    case "set family data":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          data: action.data,
+        },
+      };
+    case "set family selectedFamily":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          selectedFamily: action.selectedFamily,
         },
       };
     case "set far loading":

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Context } from "store";
 import FARPicker from "components/FARPicker";
+import FamilyPicker from "components/FamilyPicker";
 import FacilitiesPicker from "components/FacilitiesPicker";
 import LayerPickerSection from "components/LayerPickerSection";
 import LayerPickerSubsection from "components/LayerPickerSubsection";
@@ -25,11 +26,12 @@ const LayerPicker = () => {
           <label>
             <input
               type="checkbox"
-              checked={isEnabled("sos-journeys")}
-              onChange={() => toggleLayer("sos-journeys")}
+              checked={isEnabled("families")}
+              onChange={() => toggleLayer("families")}
             />
             Family Journeys
           </label>
+          <FamilyPicker />
         </LayerPickerSubsection>
         <LayerPickerSubsection>
           <label>
