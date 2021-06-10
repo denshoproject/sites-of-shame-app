@@ -6,7 +6,7 @@ import * as turf from "@turf/turf";
 import { constants } from "constants.js";
 import { Context } from "store";
 
-const FamilyLayer = ({ before, layer }) => {
+const FamilyLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
   const { data, selectedFamily } = state.families;
 
@@ -14,7 +14,7 @@ const FamilyLayer = ({ before, layer }) => {
     d3.csv(constants.DATA_PATH + "familyjourneys-withdates.csv");
 
   useEffect(() => {
-    if (data.length) return;
+    if (!loadData || data.length) return;
     fetchFamilies().then((rows) => {
       dispatch({
         type: "set family data",
@@ -27,7 +27,7 @@ const FamilyLayer = ({ before, layer }) => {
           .filter(({ latitude, longitude }) => latitude && longitude),
       });
     });
-  }, [data, dispatch]);
+  }, [data, dispatch, loadData]);
 
   const familyData = useMemo(
     () => (data ? data.filter((d) => d.family_id === selectedFamily) : []),
