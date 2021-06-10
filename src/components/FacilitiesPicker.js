@@ -30,7 +30,7 @@ const FacilitiesPicker = () => {
   return (
     <div className="facilities-picker">
       {layer.categories.map((category) => (
-        <LayerPickerSubsection>
+        <LayerPickerSubsection key={category.name}>
           <div className="facilities-category-name">
             {clickedId === category.name ? (
               <Infobox id={category.name} />
