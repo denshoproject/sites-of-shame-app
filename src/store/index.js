@@ -75,7 +75,7 @@ const initialState = {
         "line-width": 3,
         "line-color": "gray",
       },
-      enabled: true,
+      enabled: false,
     },
     {
       name: "Facilities",
