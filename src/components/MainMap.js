@@ -23,6 +23,7 @@ const MainMap = () => {
       center={mapState.center}
       className="MainMap"
       includeZoomControls={true}
+      isInteractive={true}
       onMoveEnd={handleMoveEnd}
       showPopups={true}
       zoom={mapState.zoom}
