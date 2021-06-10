@@ -18,11 +18,13 @@ const FamilyLayer = ({ before, layer }) => {
     fetchFamilies().then((rows) => {
       dispatch({
         type: "set family data",
-        data: rows.map((row) => ({
-          ...row,
-          latitude: +row.latitude,
-          longitude: +row.longitude,
-        })),
+        data: rows
+          .map((row) => ({
+            ...row,
+            latitude: +row.latitude,
+            longitude: +row.longitude,
+          }))
+          .filter(({ latitude, longitude }) => latitude && longitude),
       });
     });
   }, [data, dispatch]);
@@ -47,6 +49,12 @@ const FamilyLayer = ({ before, layer }) => {
       .filter((line) => line)
   );
 
+  const points = turf.featureCollection(
+    familyData.map((step) => {
+      return turf.point([step.longitude, step.latitude], step);
+    })
+  );
+
   return (
     <>
       <Source
@@ -65,6 +73,24 @@ const FamilyLayer = ({ before, layer }) => {
           "line-width": 2,
           "line-color": "gray",
           "line-opacity": 0.25,
+        }}
+      />
+      <Source
+        id={`${layer.id}-points`}
+        geoJsonSource={{
+          type: "geojson",
+          data: points,
+        }}
+      />
+      <Layer
+        type="circle"
+        id={`${layer.id}-points`}
+        sourceId={`${layer.id}-points`}
+        before={before}
+        paint={{
+          "circle-radius": 5,
+          "circle-color": "gray",
+          "circle-opacity": 0.25,
         }}
       />
     </>
