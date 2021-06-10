@@ -23,14 +23,14 @@ const PopupSwitch = () => {
         {layerId === "sos-facilities" ? (
           <FacilityPopup feature={clickedFeature} />
         ) : null}
+        {layerId === "families" ? (
+          <FamilyPopup feature={clickedFeature} />
+        ) : null}
         {layerId === "transfer orders" ? (
           <TransferOrderPopup feature={clickedFeature} />
         ) : null}
         {layerId === "exclusion orders" ? (
           <ExclusionOrderPopup feature={clickedFeature} />
-        ) : null}
-        {layerId === "sos-journeys" ? (
-          <FamilyPopup feature={clickedFeature} />
         ) : null}
         {layerId.startsWith("far") ? (
           <FARPopup feature={clickedFeature} />

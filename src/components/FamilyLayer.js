@@ -8,7 +8,7 @@ import { Context } from "store";
 
 const FamilyLayer = ({ before, layer }) => {
   const { state, dispatch } = useContext(Context);
-  const { data } = state.families;
+  const { data, selectedFamily } = state.families;
 
   const fetchFamilies = () =>
     d3.csv(constants.DATA_PATH + "familyjourneys-withdates.csv");
@@ -35,8 +35,11 @@ const FamilyLayer = ({ before, layer }) => {
   ];
 
   if (data.length) {
+    //Create arrary with only selectedFamily
     data.map((j) => {
-      familyArray.push([j.longitude1, j.latitude1]);
+      j.family_id == selectedFamily
+        ? familyArray.push([j.longitude1, j.latitude1])
+        : familyArray.push();
     });
   }
 
@@ -57,7 +60,7 @@ const FamilyLayer = ({ before, layer }) => {
         sourceId={layer.id}
         before={before}
         paint={{
-          "line-width": 1,
+          "line-width": 2,
           "line-color": "gray",
           "line-opacity": 0.25,
         }}

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Context } from "store";
 import FARPicker from "components/FARPicker";
+import FamilyPicker from "components/FamilyPicker";
 import FacilitiesPicker from "components/FacilitiesPicker";
 import LayerPickerSection from "components/LayerPickerSection";
 import LayerPickerSubsection from "components/LayerPickerSubsection";
@@ -30,6 +31,7 @@ const LayerPicker = () => {
             />
             Family Journeys
           </label>
+          <FamilyPicker />
         </LayerPickerSubsection>
         <LayerPickerSubsection>
           <label>

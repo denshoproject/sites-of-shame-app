@@ -31,6 +31,8 @@ const initialState = {
   },
 
   families: {
+    selectedFamily: "",
+    // familyData: {},
     data: turf.featureCollection([]),
   },
 
@@ -77,12 +79,6 @@ const initialState = {
         "line-width": 3,
         "line-color": "gray",
       },
-      enabled: true,
-    },
-    {
-      name: "Families",
-      id: "families",
-      clickable: true,
       enabled: true,
     },
     {
@@ -172,6 +168,14 @@ const getNewState = (state, action) => {
         families: {
           ...state.families,
           data: action.data,
+        },
+      };
+    case "set family selectedFamily":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          selectedFamily: action.selectedFamily,
         },
       };
     case "set far index":
