@@ -24,6 +24,7 @@ const initialState = {
     campData: {},
     preVisible: true,
     destVisible: true,
+    loading: {},
   },
 
   transfers: {
@@ -55,12 +56,7 @@ const initialState = {
       name: "Final Accountability Records",
       id: "far",
       clickable: false,
-      clickableSublayers: [
-        "far-destLines",
-        "far-destPoints",
-        "far-preLines",
-        "far-prePoints",
-      ],
+      clickableSublayers: ["far-lines", "far-points"],
     },
     {
       name: "Transfer Orders",
@@ -154,6 +150,17 @@ const getNewState = (state, action) => {
         transfers: {
           ...state.transfers,
           data: action.data,
+        },
+      };
+    case "set far loading":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          loading: {
+            ...state.far.loading,
+            [action.camp]: action.loading,
+          },
         },
       };
     case "set far index":

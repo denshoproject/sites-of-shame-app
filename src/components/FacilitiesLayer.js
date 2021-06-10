@@ -6,7 +6,7 @@ import * as turf from "@turf/turf";
 import { constants } from "constants.js";
 import { Context } from "store";
 
-const FacilitiesLayer = ({ before, layer }) => {
+const FacilitiesLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
   const { data, enabledCategories } = state.facilities;
 
@@ -14,7 +14,7 @@ const FacilitiesLayer = ({ before, layer }) => {
 
   // Load facilities data if needed
   useEffect(() => {
-    if (data.features.length > 0) return;
+    if (!loadData || data.features.length > 0) return;
 
     fetchFacilities().then((rows) => {
       const facilitiesGeoJSON = turf.featureCollection(
@@ -27,7 +27,7 @@ const FacilitiesLayer = ({ before, layer }) => {
         data: facilitiesGeoJSON,
       });
     });
-  }, [data, dispatch]);
+  }, [data, dispatch, loadData]);
 
   const paint = {
     "circle-radius": [

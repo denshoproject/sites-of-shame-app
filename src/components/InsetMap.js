@@ -21,6 +21,7 @@ const InsetMap = () => {
     <BaseMap
       center={insetMapState.center}
       className="InsetMap"
+      isInset={true}
       onMoveEnd={handleMoveEnd}
       zoom={insetMapState.zoom}
     />

@@ -1,23 +1,31 @@
 import React from "react";
-import dayjs from "dayjs";
 
 import "./FARPopup.scss";
 
 const FARPopup = ({ feature }) => {
   const { properties } = feature;
-  const finalDepartureDate = dayjs(properties.date_of_final_departure);
 
   return (
     <div className="far-popup">
       <div className="far-popup-row">
-        Origin: {properties.pre_city}, {properties.pre_state}
+        <h2 className="far-location-name">
+          {properties.city}, {properties.state}
+        </h2>
       </div>
-      <div className="far-popup-row">
-        Destination: {properties.dest_city}, {properties.dest_state}
-      </div>
-      <div className="far-popup-row">
-        Final departure: {finalDepartureDate.format("MMM D, YYYY")}
-      </div>
+      {properties.beforeCount ? (
+        <div className="far-popup-row">
+          {properties.beforeCount}
+          <span> {properties.beforeCount === 1 ? "person" : "people"}</span>
+          <span> lived here before entering the incarceration system</span>
+        </div>
+      ) : null}
+      {properties.afterCount ? (
+        <div className="far-popup-row">
+          {properties.afterCount}
+          <span> {properties.afterCount === 1 ? "person" : "people"}</span>
+          <span> moved here after leaving the incarceration system</span>
+        </div>
+      ) : null}
     </div>
   );
 };

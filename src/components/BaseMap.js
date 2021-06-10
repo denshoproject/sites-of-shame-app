@@ -19,6 +19,7 @@ const BaseMap = ({
   className,
   center,
   includeZoomControls,
+  isInset,
   showPopups,
   zoom,
   onMoveEnd,
@@ -69,7 +70,7 @@ const BaseMap = ({
         {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
         {showPopups ? <PopupSwitch /> : null}
         <Image id="diagonal-grid" url={DiagonalGrid} />
-        <MapLayers />
+        <MapLayers loadLayerData={!isInset} />
         {children}
       </Map>
     </div>

@@ -23,7 +23,7 @@ const journeysToGeoJSON = (journeys) => {
   );
 };
 
-const MapLayers = () => {
+const MapLayers = ({ loadLayerData }) => {
   const { state, dispatch } = useContext(Context);
 
   useEffect(() => {
@@ -68,11 +68,32 @@ const MapLayers = () => {
     }
 
     if (layer.id === "far") {
-      return <FARLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <FARLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.id === "transfer orders") {
-      return <TransferLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <TransferLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.id === "sos-facilities") {
-      return <FacilitiesLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <FacilitiesLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.sourceType === "geojson") {
       return <GeoJsonLayer key={layer.id} layer={layer} before={before} />;
     }
