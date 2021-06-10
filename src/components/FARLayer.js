@@ -10,14 +10,17 @@ const FARLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
   const { campData, destVisible, index, loading, preVisible, selectedCamp } =
     state.far;
+
   const selectedCampData = useMemo(
     () => campData[selectedCamp] || [],
     [campData, selectedCamp]
   );
+
   const selectedCampLoading = useMemo(
     () => loading[selectedCamp] || false,
     [loading, selectedCamp]
   );
+
   const needToLoadData = useMemo(
     () =>
       loadData &&
@@ -26,11 +29,13 @@ const FARLayer = ({ before, layer, loadData }) => {
       !selectedCampLoading,
     [loadData, selectedCamp, selectedCampData, selectedCampLoading]
   );
-  let selectedCampRow = null;
 
-  if (index && selectedCamp) {
-    selectedCampRow = index.filter((row) => row.slug === selectedCamp)[0];
-  }
+  const selectedCampRow = useMemo(() => {
+    if (index && selectedCamp) {
+      return index.filter((row) => row.slug === selectedCamp)[0];
+    }
+    return null;
+  }, [index, selectedCamp]);
 
   // Load FAR data if needed
   useEffect(() => {
@@ -108,26 +113,30 @@ const FARLayer = ({ before, layer, loadData }) => {
     });
   }, [selectedCampData]);
 
-  if (!selectedCampRow) return null;
+  const pointCollection = useMemo(() => {
+    return turf.featureCollection(
+      points.map((point) => turf.point([point.lng, point.lat], point))
+    );
+  }, [points]);
 
-  const pointCollection = turf.featureCollection(
-    points.map((point) => turf.point([point.lng, point.lat], point))
-  );
+  const lineCollection = useMemo(() => {
+    if (!selectedCampRow) return turf.featureCollection([]);
 
-  const lineCollection = turf.featureCollection(
-    points.map((point) => {
-      let lng0 = selectedCampRow.lng;
-      let lng1 = point.lng;
-      if (lng1 - lng0 >= 180) lng1 -= 360;
-      return turf.greatCircle(
-        turf.point([lng0, selectedCampRow.lat]),
-        turf.point([lng1, point.lat]),
-        {
-          properties: point,
-        }
-      );
-    })
-  );
+    return turf.featureCollection(
+      points.map((point) => {
+        let lng0 = selectedCampRow.lng;
+        let lng1 = point.lng;
+        if (lng1 - lng0 >= 180) lng1 -= 360;
+        return turf.greatCircle(
+          turf.point([lng0, selectedCampRow.lat]),
+          turf.point([lng1, point.lat]),
+          {
+            properties: point,
+          }
+        );
+      })
+    );
+  }, [selectedCampRow, points]);
 
   return (
     <>
