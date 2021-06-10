@@ -1,0 +1,14 @@
+@import "~scss/_variables.scss";
+
+.infobox-button {
+  align-items: center;
+  border: 1px solid $color-ui-gray;
+  border-radius: 50%;
+  color: $color-ui-gray;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 1em;
+  justify-content: center;
+  width: 1em;
+}

@@ -1,3 +1,5 @@
+@import "~scss/_variables.scss";
+
 .facilities-picker {
   input[type="checkbox"] {
     margin-left: 0;
@@ -10,19 +12,37 @@
   }
 
   .layer-legend-items {
-    background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: black;
     font-weight: normal;
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
   }
 
   .layer-legend-item {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+    position: relative;
+
+    &-content {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      .infobox-button {
+        align-self: center;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .facilities-category-name {
+    &-content {
+      align-items: center;
+      display: flex;
+    }
+
+    .infobox-button {
+      align-self: center;
+      margin-left: 0.5em;
+    }
   }
 }

@@ -8,6 +8,12 @@ const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
 
+  infobox: {
+    openId: null,
+    clickedId: null,
+    content: [],
+  },
+
   insetMapState: {
     center: [-157.329712, 21.079375],
     zoom: [5],
@@ -144,6 +150,32 @@ const initialState = {
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "clear open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: null,
+          openId: null,
+        },
+      };
+    case "set open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: action.clickedId,
+          openId: action.id,
+        },
+      };
+    case "set infobox content":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          content: action.content,
+        },
+      };
     case "set transfer data":
       return {
         ...state,

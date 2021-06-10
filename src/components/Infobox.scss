@@ -1,0 +1,38 @@
+@import "~scss/_variables.scss";
+
+.infobox {
+  background: white;
+  box-shadow: $ui-box-shadow;
+  left: calc(-#{$infobox-width} - 1.5rem);
+  padding: 0.5rem;
+  position: absolute;
+  margin-top: -1rem;
+  width: $infobox-width;
+
+  &:after {
+    content: "";
+    background-color: white;
+    border-right: 1px solid #eee;
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    top: 1rem;
+    right: -0.5rem;
+    transform: rotate(45deg);
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+  }
+
+  &-description {
+    line-height: 1.25em;
+  }
+
+  a {
+    color: $color-ui-orange;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
