@@ -29,19 +29,48 @@ const FamilyLayer = ({ before, layer }) => {
   }, [dispatch]);
 
   let familyLines = turf.featureCollection([]);
+  let allIndividualLines = turf.featureCollection([]);
   let familyArray = [
     [-122.6762071, -45.5234515],
     [-114.019501, 46.8605189],
   ];
+  let individualArray = [
+    [-122.6762071, -45.5234515],
+    [-114.019501, 46.8605189],
+  ];
 
+  // Get all individuals within the selected family
+  let individualsInSelectedFamily = [];
   if (data.length) {
-    //Create arrary with only selectedFamily
+    //Create array with only selectedFamily
     data.map((j) => {
       j.family_id == selectedFamily
-        ? familyArray.push([j.longitude1, j.latitude1])
+        ? familyArray.push([j.longitude1, j.latitude1]) &&
+          individualsInSelectedFamily.push(j.person_id)
         : familyArray.push();
     });
   }
+
+  // Get all unique individuals within the selected family
+  const uniqueIndividualsInFamily = [...new Set(individualsInSelectedFamily)];
+
+  let compiledIndividualJourneys = [];
+
+  for (const person of uniqueIndividualsInFamily) {
+    data.map((i) =>
+      person == i.person_id
+        ? individualArray.push([i.longitude1, i.latitude1])
+        : individualArray.push()
+    );
+    const individualLine = turf.lineString(individualArray);
+    compiledIndividualJourneys.push(individualLine);
+    individualArray = [
+      [-122.6762071, -45.5234515],
+      [-114.019501, 46.8605189],
+    ];
+  }
+
+  allIndividualLines = turf.featureCollection([compiledIndividualJourneys]);
 
   familyLines = turf.featureCollection([turf.lineString(familyArray)]);
 
