@@ -11,6 +11,7 @@ import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 
 const BaseMap = ({
+  bounds,
   children,
   className,
   center,
@@ -67,6 +68,7 @@ const BaseMap = ({
           width: "100%",
         }}
         center={center}
+        fitBounds={bounds}
         interactive={isInteractive}
         zoom={zoom}
         onMoveEnd={onMoveEnd}

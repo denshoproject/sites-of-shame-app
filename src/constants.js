@@ -2,4 +2,8 @@ export const constants = {
   MAPBOX_ACCESS_TOKEN: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN,
   MAPBOX_BASE_LAYER: process.env.REACT_APP_MAPBOX_BASE_LAYER,
   DATA_PATH: process.env.REACT_APP_DATA_PATH,
+  HAWAII_BOUNDS: [
+    [-160.4279, 18.7711],
+    [-154.6545, 22.4415],
+  ],
 };
