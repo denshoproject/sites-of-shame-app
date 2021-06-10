@@ -1,10 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
-import * as d3 from "d3";
+import React, { useContext } from "react";
 
-import { constants } from "constants.js";
 import { Context } from "store";
 import "./FamilyPicker.scss";
-import * as turf from "@turf/turf";
 
 const FamilyPicker = () => {
   const { state, dispatch } = useContext(Context);
@@ -12,8 +9,10 @@ const FamilyPicker = () => {
 
   let uniqueFamilies = [];
   if (data.length) {
-    const onlyFamilyId = data.map((family) => family.family_id);
-    uniqueFamilies = [...new Set(onlyFamilyId)];
+    const onlyFamilyId = data
+      .map((family) => family.family_id)
+      .filter((familyId) => familyId.length > 0);
+    uniqueFamilies = [...new Set(onlyFamilyId)].sort();
   }
 
   const handleSelectedFamilyChange = (value) => {

@@ -33,7 +33,7 @@ const initialState = {
   families: {
     selectedFamily: "",
     familyData: {},
-    data: turf.featureCollection([]),
+    data: [],
   },
 
   facilities: {

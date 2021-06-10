@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
@@ -14,65 +14,38 @@ const FamilyLayer = ({ before, layer }) => {
     d3.csv(constants.DATA_PATH + "familyjourneys-withdates.csv");
 
   useEffect(() => {
+    if (data.length) return;
     fetchFamilies().then((rows) => {
       dispatch({
         type: "set family data",
         data: rows.map((row) => ({
           ...row,
-          personid: +row.person_id,
-          familyid: +row.family_id,
-          latitude1: +row.latitude,
-          longitude1: +row.longitude,
+          latitude: +row.latitude,
+          longitude: +row.longitude,
         })),
       });
     });
-  }, [dispatch]);
+  }, [data, dispatch]);
 
-  let familyLines = turf.featureCollection([]);
-  let allIndividualLines = turf.featureCollection([]);
-  let familyArray = [
-    [-122.6762071, -45.5234515],
-    [-114.019501, 46.8605189],
-  ];
-  let individualArray = [
-    [-122.6762071, -45.5234515],
-    [-114.019501, 46.8605189],
-  ];
+  const familyData = useMemo(
+    () => (data ? data.filter((d) => d.family_id === selectedFamily) : []),
+    [data, selectedFamily]
+  );
 
-  // Get all individuals within the selected family
-  let individualsInSelectedFamily = [];
-  if (data.length) {
-    //Create array with only selectedFamily
-    data.map((j) => {
-      j.family_id == selectedFamily
-        ? familyArray.push([j.longitude1, j.latitude1]) &&
-          individualsInSelectedFamily.push(j.person_id)
-        : familyArray.push();
-    });
-  }
+  const byIndividual = d3.group(familyData, (d) => d.person_id);
 
-  // Get all unique individuals within the selected family
-  const uniqueIndividualsInFamily = [...new Set(individualsInSelectedFamily)];
-
-  let compiledIndividualJourneys = [];
-
-  for (const person of uniqueIndividualsInFamily) {
-    data.map((i) =>
-      person == i.person_id
-        ? individualArray.push([i.longitude1, i.latitude1])
-        : individualArray.push()
-    );
-    const individualLine = turf.lineString(individualArray);
-    compiledIndividualJourneys.push(individualLine);
-    individualArray = [
-      [-122.6762071, -45.5234515],
-      [-114.019501, 46.8605189],
-    ];
-  }
-
-  allIndividualLines = turf.featureCollection([compiledIndividualJourneys]);
-
-  familyLines = turf.featureCollection([turf.lineString(familyArray)]);
+  const lines = turf.featureCollection(
+    Array.from(byIndividual.keys())
+      .map((personId) => {
+        const steps = byIndividual.get(personId);
+        if (steps.length < 2) return null;
+        return turf.lineString(
+          steps.map((step) => [step.longitude, step.latitude]),
+          steps[0]
+        );
+      })
+      .filter((line) => line)
+  );
 
   return (
     <>
@@ -80,7 +53,7 @@ const FamilyLayer = ({ before, layer }) => {
         id={layer.id}
         geoJsonSource={{
           type: "geojson",
-          data: familyLines,
+          data: lines,
         }}
       />
       <Layer
