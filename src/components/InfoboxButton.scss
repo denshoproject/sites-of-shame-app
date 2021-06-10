@@ -8,7 +8,14 @@
   cursor: pointer;
   display: flex;
   flex-shrink: 0;
+  font-size: 0.75em;
+  line-height: 1em;
   height: 1em;
   justify-content: center;
   width: 1em;
+
+  &:hover {
+    border-color: darken($color-ui-gray, 30%);
+    color: darken($color-ui-gray, 30%);
+  }
 }
