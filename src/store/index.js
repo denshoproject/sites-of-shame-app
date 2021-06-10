@@ -8,6 +8,12 @@ const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
 
+  infobox: {
+    openId: null,
+    clickedId: null,
+    content: [],
+  },
+
   insetMapState: {
     center: [-157.329712, 21.079375],
     zoom: [5],
@@ -24,6 +30,7 @@ const initialState = {
     campData: {},
     preVisible: true,
     destVisible: true,
+    loading: {},
   },
 
   transfers: {
@@ -61,12 +68,7 @@ const initialState = {
       name: "Final Accountability Records",
       id: "far",
       clickable: false,
-      clickableSublayers: [
-        "far-destLines",
-        "far-destPoints",
-        "far-preLines",
-        "far-prePoints",
-      ],
+      clickableSublayers: ["far-lines", "far-points"],
     },
     {
       name: "Family Journeys",
@@ -84,7 +86,7 @@ const initialState = {
         "line-width": 3,
         "line-color": "gray",
       },
-      enabled: true,
+      enabled: false,
     },
     {
       name: "Facilities",
@@ -159,6 +161,32 @@ const initialState = {
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "clear open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: null,
+          openId: null,
+        },
+      };
+    case "set open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: action.clickedId,
+          openId: action.id,
+        },
+      };
+    case "set infobox content":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          content: action.content,
+        },
+      };
     case "set transfer data":
       return {
         ...state,
@@ -181,6 +209,17 @@ const getNewState = (state, action) => {
         families: {
           ...state.families,
           selectedFamily: action.selectedFamily,
+        },
+      };
+    case "set far loading":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          loading: {
+            ...state.far.loading,
+            [action.camp]: action.loading,
+          },
         },
       };
     case "set far index":

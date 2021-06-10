@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useMemo, useRef } from "react";
 import ReactMapboxGl, { Image, ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -10,15 +10,13 @@ import PopupSwitch from "components/PopupSwitch";
 import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 
-const Map = ReactMapboxGl({
-  accessToken: constants.MAPBOX_ACCESS_TOKEN,
-});
-
 const BaseMap = ({
   children,
   className,
   center,
   includeZoomControls,
+  isInset,
+  isInteractive,
   showPopups,
   zoom,
   onMoveEnd,
@@ -52,6 +50,13 @@ const BaseMap = ({
     });
   };
 
+  const Map = useMemo(() => {
+    return ReactMapboxGl({
+      accessToken: constants.MAPBOX_ACCESS_TOKEN,
+      interactive: isInteractive,
+    });
+  }, [isInteractive]);
+
   return (
     <div className={classNames("BaseMap", className)}>
       <Map
@@ -62,6 +67,7 @@ const BaseMap = ({
           width: "100%",
         }}
         center={center}
+        interactive={isInteractive}
         zoom={zoom}
         onMoveEnd={onMoveEnd}
         onClick={handleClick}
@@ -69,7 +75,7 @@ const BaseMap = ({
         {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
         {showPopups ? <PopupSwitch /> : null}
         <Image id="diagonal-grid" url={DiagonalGrid} />
-        <MapLayers />
+        <MapLayers loadLayerData={!isInset} />
         {children}
       </Map>
     </div>

@@ -1,6 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import * as turf from "@turf/turf";
-import { csv } from "d3";
+import React, { useContext } from "react";
 
 import FARLayer from "components/FARLayer";
 import TransferLayer from "components/TransferLayer";
@@ -8,10 +6,9 @@ import FamilyLayer from "components/FamilyLayer";
 import FacilitiesLayer from "components/FacilitiesLayer";
 import GeoJsonLayer from "components/GeoJsonLayer";
 import { Context } from "store";
-import { constants } from "constants.js";
 
-const MapLayers = () => {
-  const { state, dispatch } = useContext(Context);
+const MapLayers = ({ loadLayerData }) => {
+  const { state } = useContext(Context);
 
   let enabledLayers = state.layers
     .filter(({ enabled }) => enabled)
@@ -31,13 +28,41 @@ const MapLayers = () => {
     }
 
     if (layer.id === "far") {
-      return <FARLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <FARLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.id === "transfer orders") {
-      return <TransferLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <TransferLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.id === "families") {
-      return <FamilyLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <FamilyLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.id === "sos-facilities") {
-      return <FacilitiesLayer key={layer.id} layer={layer} before={before} />;
+      return (
+        <FacilitiesLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
     } else if (layer.sourceType === "geojson") {
       return <GeoJsonLayer key={layer.id} layer={layer} before={before} />;
     }

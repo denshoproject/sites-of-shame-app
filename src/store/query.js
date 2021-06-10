@@ -6,7 +6,10 @@ export const stateToQuery = (state) => {
     .map((layer) => layer.id)
     .join("|");
 
+  const facilityCategories = state.facilities.enabledCategories.join("|");
+
   const queryState = {
+    facilityCategories,
     farDestVisible: state.far.destVisible,
     farPreVisible: state.far.preVisible,
     selectedFamily: state.families.selectedFamily,
@@ -67,6 +70,13 @@ export const queryToState = (initialState) => {
   }
   if (queryState.farPreVisible) {
     stateUpdates.far.preVisible = queryState.farPreVisible === "true";
+  }
+
+  if (queryState.facilityCategories) {
+    if (!stateUpdates.facilities)
+      stateUpdates.facilities = { ...initialState.facilities };
+    stateUpdates.facilities.enabledCategories =
+      queryState.facilityCategories.split("|");
   }
 
   return {

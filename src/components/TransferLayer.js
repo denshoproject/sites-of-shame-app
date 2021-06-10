@@ -6,7 +6,7 @@ import * as turf from "@turf/turf";
 import { constants } from "constants.js";
 import { Context } from "store";
 
-const TransferLayer = ({ before, layer }) => {
+const TransferLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
   const { data } = state.transfers;
 
@@ -14,6 +14,8 @@ const TransferLayer = ({ before, layer }) => {
     d3.csv(constants.DATA_PATH + "transfer-orders.csv");
 
   useEffect(() => {
+    if (!loadData) return;
+
     fetchTransfers().then((rows) => {
       dispatch({
         type: "set transfer data",
@@ -26,7 +28,7 @@ const TransferLayer = ({ before, layer }) => {
         })),
       });
     });
-  }, [dispatch]);
+  }, [dispatch, loadData]);
 
   let transferLines = turf.featureCollection([]);
 
