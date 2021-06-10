@@ -32,7 +32,7 @@ const initialState = {
 
   families: {
     selectedFamily: "",
-    // familyData: {},
+    familyData: {},
     data: turf.featureCollection([]),
   },
 
@@ -67,6 +67,11 @@ const initialState = {
         "far-preLines",
         "far-prePoints",
       ],
+    },
+    {
+      name: "Family Journeys",
+      id: "families",
+      clickable: true,
     },
     {
       name: "Transfer Orders",
