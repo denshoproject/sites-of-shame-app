@@ -5,13 +5,13 @@ import "./FacilityPopup.scss";
 const FacilityPopup = ({ feature }) => {
   const { properties } = feature;
 
-  const imgsrc = properties.image_url;
+  const imagesrc = `https://ddr.densho.org/media/sitesofshame/site-${properties.legacy_densho_id}.jpg`;
 
   return (
     <div className="facility-popup">
       <div className="popup-row">
         <span className="facility-meta">
-          <img alt="Image of Facility" src={imgsrc} className="imgcrop" />
+          <img alt="Image of Facility" src={imagesrc} className="imgcrop" />
         </span>
       </div>
       <div className="popup-row">
