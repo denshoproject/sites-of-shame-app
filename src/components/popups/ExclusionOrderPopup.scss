@@ -10,7 +10,7 @@
   }
 
   .eo-title {
-    text-align: center;
+    text-align: left;
     padding-bottom: 10px;
   }
 
@@ -29,18 +29,15 @@
     line-height: 1.8;
   }
 
-  .content-text {
-    float: left;
-    width: 150px;
+  .imgcrop {
+    width: 440px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 5%;
+    margin: 0px -20px 0px -20px;
   }
 
-  .content-image {
-    float: right;
-    width: 250px;
-  }
-
-  .eo-image {
-    width: 220px;
-    padding-left: 10px;
+  .img-container {
+    overflow: hidden;
   }
 }

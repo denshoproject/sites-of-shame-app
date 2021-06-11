@@ -15,37 +15,35 @@ const ExclusionOrderPopup = ({ feature }) => {
           <span className="eo-name">{properties.Name}</span>
         </div>
       </div>
-      <div className="content-text">
-        <div className="eo-row">
-          <span className="eo-meta">
-            <span className="eo-meta">{properties.description}</span>
-          </span>
-        </div>
-        <div className="eo-row">
-          <span className="eo-meta eo-details">
-            <strong>Issued:</strong> {properties["Issue Date"]} <br></br>
-            <strong>Effective: </strong>
-            {properties["Effective Date"]} <br></br>
-            <strong>Camp destination:</strong>{" "}
-            {properties["WRA Camp Destination"]}
-          </span>
-        </div>
-        <div className="eo-row">
-          <span className="eo-meta">
-            {properties["Number of people excluded"]} people excluded
-          </span>
-        </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          <span className="eo-meta">{properties.description}</span>
+        </span>
       </div>
-      <div className="content-image">
-        <div className="eo-row">
-          <span className="eo-meta">
+      <div className="eo-row">
+        <span className="eo-meta eo-details">
+          <strong>Issued:</strong> {properties["Issue Date"]} <br></br>
+          <strong>Effective: </strong>
+          {properties["Effective Date"]} <br></br>
+          <strong>Camp destination:</strong>{" "}
+          {properties["WRA Camp Destination"]}
+        </span>
+      </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          {properties["Number of people excluded"]} people excluded
+        </span>
+      </div>
+      <div className="eo-row">
+        <span className="eo-meta">
+          <div className="img-container">
             <img
               alt="First page of exclusion order document"
               src={imagesrc}
-              style={{ width: "150px" }}
+              className="imgcrop"
             />
-          </span>
-        </div>
+          </div>
+        </span>
       </div>
     </div>
   );
