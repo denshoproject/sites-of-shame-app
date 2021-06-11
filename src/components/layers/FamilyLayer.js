@@ -41,9 +41,12 @@ const FamilyLayer = ({ before, layer, loadData }) => {
       .map((personId) => {
         const steps = byIndividual.get(personId);
         if (steps.length < 2) return null;
-        return turf.lineString(
-          steps.map((step) => [step.longitude, step.latitude]),
-          steps[0]
+        return turf.bezierSpline(
+          turf.lineString(
+            steps.map((step) => [step.longitude, step.latitude]),
+            steps[0]
+          ),
+          { sharpness: 0.35 }
         );
       })
       .filter((line) => line)
