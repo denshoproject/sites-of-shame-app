@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import * as d3 from "d3";
 
 import { Context } from "store";
-import InsetMap from "components/InsetMap";
-import MainMap from "components/MainMap";
+import InsetMap from "components/map/InsetMap";
+import MainMap from "components/map/MainMap";
 import "./Index.scss";
 
 const Index = () => {

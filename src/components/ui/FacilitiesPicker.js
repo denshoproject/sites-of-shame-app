@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
 
 import { Context } from "store";
-import Infobox from "components/Infobox";
-import InfoboxButton from "components/InfoboxButton";
-import LayerPickerSubsection from "components/LayerPickerSubsection";
-import LegendCircle from "components/LegendCircle";
+import Infobox from "components/ui/Infobox";
+import InfoboxButton from "components/ui/InfoboxButton";
+import LayerPickerSubsection from "components/ui/LayerPickerSubsection";
+import LegendCircle from "components/ui/LegendCircle";
 import "./FacilitiesPicker.scss";
 
 const FacilitiesPicker = () => {
   const { state, dispatch } = useContext(Context);
-  const layer = state.layers.filter(({ id }) => id === "sos-facilities")[0];
 
   const { clickedId } = state.infobox;
-  const { enabledCategories } = state.facilities;
+  const { categories, enabledCategories } = state.facilities;
 
   const toggleCategory = (name) => {
     let newCategories;
@@ -29,7 +28,7 @@ const FacilitiesPicker = () => {
 
   return (
     <div className="facilities-picker">
-      {layer.categories.map((category) => (
+      {categories.map((category) => (
         <LayerPickerSubsection key={category.name}>
           <div className="facilities-category-name">
             {clickedId === category.name ? (

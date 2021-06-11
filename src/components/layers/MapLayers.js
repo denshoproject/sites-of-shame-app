@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 
-import FARLayer from "components/FARLayer";
-import TransferLayer from "components/TransferLayer";
-import FamilyLayer from "components/FamilyLayer";
-import FacilitiesLayer from "components/FacilitiesLayer";
-import GeoJsonLayer from "components/GeoJsonLayer";
+import FARLayer from "components/layers/FARLayer";
+import TransferLayer from "components/layers/TransferLayer";
+import FamilyLayer from "components/layers/FamilyLayer";
+import FacilitiesLayer from "components/layers/FacilitiesLayer";
+import GeoJsonLayer from "components/layers/GeoJsonLayer";
 import { Context } from "store";
 
 const MapLayers = ({ loadLayerData }) => {

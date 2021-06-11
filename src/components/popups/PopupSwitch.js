@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Popup } from "react-mapbox-gl";
 
-import FacilityPopup from "components/FacilityPopup";
-import TransferOrderPopup from "components/TransferOrderPopup";
-import FamilyPopup from "components/FamilyPopup";
-import FARPopup from "components/FARPopup";
-import ExclusionOrderPopup from "components/ExclusionOrderPopup";
+import FacilityPopup from "components/popups/FacilityPopup";
+import TransferOrderPopup from "components/popups/TransferOrderPopup";
+import FamilyPopup from "components/popups/FamilyPopup";
+import FARPopup from "components/popups/FARPopup";
+import ExclusionOrderPopup from "components/popups/ExclusionOrderPopup";
 import { Context } from "store";
 import "./PopupSwitch.scss";
 

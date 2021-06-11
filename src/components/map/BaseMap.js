@@ -3,14 +3,15 @@ import React, { useContext, useMemo, useRef } from "react";
 import ReactMapboxGl, { Image, ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-import { constants } from "constants.js";
+import { MAPBOX_ACCESS_TOKEN, MAPBOX_BASE_LAYER } from "constants.js";
 import { Context } from "store";
-import MapLayers from "components/MapLayers";
-import PopupSwitch from "components/PopupSwitch";
+import MapLayers from "components/layers/MapLayers";
+import PopupSwitch from "components/popups/PopupSwitch";
 import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 
 const BaseMap = ({
+  bounds,
   children,
   className,
   center,
@@ -52,7 +53,7 @@ const BaseMap = ({
 
   const Map = useMemo(() => {
     return ReactMapboxGl({
-      accessToken: constants.MAPBOX_ACCESS_TOKEN,
+      accessToken: MAPBOX_ACCESS_TOKEN,
       interactive: isInteractive,
     });
   }, [isInteractive]);
@@ -61,12 +62,13 @@ const BaseMap = ({
     <div className={classNames("BaseMap", className)}>
       <Map
         // eslint-disable-next-line
-        style={constants.MAPBOX_BASE_LAYER}
+        style={MAPBOX_BASE_LAYER}
         containerStyle={{
           height: "100%",
           width: "100%",
         }}
         center={center}
+        fitBounds={bounds}
         interactive={isInteractive}
         zoom={zoom}
         onMoveEnd={onMoveEnd}

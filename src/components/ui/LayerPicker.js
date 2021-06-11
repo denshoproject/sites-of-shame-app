@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
 import { Context } from "store";
-import FARPicker from "components/FARPicker";
-import FamilyPicker from "components/FamilyPicker";
-import FacilitiesPicker from "components/FacilitiesPicker";
-import LayerPickerSection from "components/LayerPickerSection";
-import LayerPickerSubsection from "components/LayerPickerSubsection";
+import FARPicker from "components/ui/FARPicker";
+import FamilyPicker from "components/ui/FamilyPicker";
+import FacilitiesPicker from "components/ui/FacilitiesPicker";
+import LayerPickerSection from "components/ui/LayerPickerSection";
+import LayerPickerSubsection from "components/ui/LayerPickerSubsection";
 import "./LayerPicker.scss";
 
 const LayerPicker = () => {
