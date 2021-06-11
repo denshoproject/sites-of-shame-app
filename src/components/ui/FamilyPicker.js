@@ -15,6 +15,23 @@ const FamilyPicker = () => {
     uniqueFamilies = [...new Set(onlyFamilyId)].sort();
   }
 
+  let capitalizeUniqueFamilies = [];
+  if (data.length) {
+    const familyName = data
+      .map((family) => family.family_name)
+      .filter((familyName) => familyName.length > 0);
+    capitalizeUniqueFamilies = [...new Set(familyName)].sort();
+  }
+
+  let allFamilyNames = [];
+
+  let i = 0;
+  while (i < uniqueFamilies.length) {
+    let bothNames = [uniqueFamilies[i], capitalizeUniqueFamilies[i]];
+    i++;
+    allFamilyNames.push(bothNames);
+  }
+
   const handleSelectedFamilyChange = (value) => {
     dispatch({ type: "set family selectedFamily", selectedFamily: value });
   };
@@ -28,9 +45,9 @@ const FamilyPicker = () => {
         >
           <option value="">Select a family</option>
 
-          {uniqueFamilies.map((family) => (
-            <option key={family} value={family}>
-              {family}
+          {allFamilyNames.map((family) => (
+            <option key={family[0]} value={family[0]}>
+              {family[1]}
             </option>
           ))}
         </select>
