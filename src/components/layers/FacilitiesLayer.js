@@ -3,14 +3,22 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { constants } from "constants.js";
+import { DATA_PATH, FACILITY_COLORS } from "constants.js";
 import { Context } from "store";
+
+const categoryValueToName = {
+  wra: "WRA",
+  eais: "EAIS",
+  hawaii: "Hawaii",
+};
+
+const getColor = (category, type) => FACILITY_COLORS[category][type];
 
 const FacilitiesLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
-  const { data, enabledCategories } = state.facilities;
+  const { categories, data, enabledCategories } = state.facilities;
 
-  const fetchFacilities = () => d3.csv(constants.DATA_PATH + "facilities.csv");
+  const fetchFacilities = () => d3.csv(DATA_PATH + "facilities.csv");
 
   // Load facilities data if needed
   useEffect(() => {
@@ -25,6 +33,36 @@ const FacilitiesLayer = ({ before, layer, loadData }) => {
       dispatch({
         type: "set facilities data",
         data: facilitiesGeoJSON,
+      });
+
+      const categoryNames = Array.from(
+        new Set(rows.map((row) => row.sos_system))
+      ).filter((category) => category);
+      const categories = categoryNames.map((category) => {
+        const types = Array.from(
+          new Set(
+            rows
+              .filter((row) => row.sos_system === category && row.sos_category)
+              .map((row) => row.sos_category)
+          )
+        )
+          .sort()
+          .map((type) => {
+            return {
+              name: type,
+              color: getColor(category, type),
+            };
+          });
+        return {
+          name: categoryValueToName[category],
+          value: category,
+          types,
+        };
+      });
+
+      dispatch({
+        type: "set facilities categories",
+        categories,
       });
     });
   }, [data, dispatch, loadData]);
@@ -60,13 +98,18 @@ const FacilitiesLayer = ({ before, layer, loadData }) => {
     "circle-opacity": 1,
   };
 
-  let filter = [
-    "any",
-    ...enabledCategories.map((category) => {
-      const { value } = layer.categories.filter((c) => c.name === category)[0];
-      return ["==", ["get", "sos_system"], value];
-    }),
-  ];
+  let filter = ["any"];
+
+  if (categories) {
+    filter = [
+      "any",
+      ...enabledCategories.map((category) => {
+        const { value } =
+          categories.filter((c) => c.name === category)[0] || {};
+        return ["==", ["get", "sos_system"], value];
+      }),
+    ];
+  }
 
   return (
     <>

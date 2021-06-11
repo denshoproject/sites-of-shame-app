@@ -3,7 +3,7 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { constants } from "constants.js";
+import { DATA_PATH } from "constants.js";
 import { Context } from "store";
 
 const FamilyLayer = ({ before, layer, loadData }) => {
@@ -11,7 +11,7 @@ const FamilyLayer = ({ before, layer, loadData }) => {
   const { data, selectedFamily } = state.families;
 
   const fetchFamilies = () =>
-    d3.csv(constants.DATA_PATH + "familyjourneys-withdates.csv");
+    d3.csv(DATA_PATH + "familyjourneys-withdates.csv");
 
   useEffect(() => {
     if (!loadData || data.length) return;

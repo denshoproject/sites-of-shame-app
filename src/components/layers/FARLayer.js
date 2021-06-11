@@ -3,7 +3,7 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { constants } from "constants.js";
+import { DATA_PATH } from "constants.js";
 import { Context } from "store";
 
 const FARLayer = ({ before, layer, loadData }) => {
@@ -47,7 +47,7 @@ const FARLayer = ({ before, layer, loadData }) => {
       loading: true,
     });
 
-    d3.csv(`${constants.DATA_PATH}far/${selectedCamp}.csv`).then((rows) => {
+    d3.csv(`${DATA_PATH}far/${selectedCamp}.csv`).then((rows) => {
       dispatch({
         type: "set far loading",
         camp: selectedCamp,

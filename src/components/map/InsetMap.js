@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { Context } from "store";
 import BaseMap from "components/map/BaseMap";
-import { constants } from "constants.js";
+import { HAWAII_BOUNDS } from "constants.js";
 import "./InsetMap.scss";
 
 const InsetMap = () => {
@@ -11,7 +11,7 @@ const InsetMap = () => {
 
   return (
     <BaseMap
-      bounds={constants.HAWAII_BOUNDS}
+      bounds={HAWAII_BOUNDS}
       center={insetMapState.center}
       className="InsetMap"
       isInset={true}
