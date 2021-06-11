@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import * as turf from "@turf/turf";
 
-import { constants } from "constants.js";
+import { DATA_PATH } from "constants.js";
 import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
@@ -44,6 +44,7 @@ const initialState = {
   },
 
   facilities: {
+    categories: [],
     data: turf.featureCollection([]),
     enabledCategories: ["WRA", "EAIS", "Hawaii"],
   },
@@ -52,7 +53,7 @@ const initialState = {
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: constants.DATA_PATH + "exclusion-orders.geojson",
+      data: DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
       layerType: "fill",
       sourceType: "geojson",
@@ -78,7 +79,7 @@ const initialState = {
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: constants.DATA_PATH + "transfer-orders.geojson",
+      data: DATA_PATH + "transfer-orders.geojson",
       clickable: true,
       layerType: "line",
       sourceType: "geojson",
@@ -95,66 +96,6 @@ const initialState = {
       layerType: "circle",
       sourceType: "geojson",
       enabled: true,
-      categories: [
-        {
-          name: "WRA",
-          value: "wra",
-          types: [
-            {
-              color: "#ff7b54",
-              name: "Concentration Camp",
-            },
-            {
-              color: "#FFB26B",
-              name: "Temporary Assembly Center",
-            },
-            {
-              color: "#8e9775",
-              name: "Additional Facility",
-            },
-            {
-              color: "#939b62",
-              name: "Citizen Isolation Center",
-            },
-          ],
-        },
-        {
-          name: "EAIS",
-          value: "eais",
-          types: [
-            {
-              color: "#ffd56b",
-              name: "Department of Justice Internment Camp",
-            },
-            {
-              color: "#e28f83",
-              name: "Immigration Detention Station",
-            },
-            {
-              color: "#4a503d",
-              name: "US Army Internment Camp",
-            },
-            {
-              color: "#faf2da",
-              name: "US Federal Prison",
-            },
-          ],
-        },
-        {
-          name: "Hawaii",
-          value: "hawaii",
-          types: [
-            {
-              color: "#4a503d",
-              name: "US Army Internment Camp",
-            },
-            {
-              color: "#8e9775",
-              name: "Additional Facility",
-            },
-          ],
-        },
-      ],
     },
   ],
 };
@@ -263,6 +204,14 @@ const getNewState = (state, action) => {
             ...state.far.campData,
             [action.camp]: action.data,
           },
+        },
+      };
+    case "set facilities categories":
+      return {
+        ...state,
+        facilities: {
+          ...state.facilities,
+          categories: action.categories,
         },
       };
     case "set facilities data":

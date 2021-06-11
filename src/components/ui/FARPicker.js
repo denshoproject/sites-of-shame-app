@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import * as d3 from "d3";
 
-import { constants } from "constants.js";
+import { DATA_PATH } from "constants.js";
 import { Context } from "store";
 import LegendCircle from "components/ui/LegendCircle";
 import "./FARPicker.scss";
@@ -10,7 +10,7 @@ const FARPicker = () => {
   const { state, dispatch } = useContext(Context);
   const { destVisible, index, preVisible, selectedCamp } = state.far;
 
-  const fetchFarIndex = () => d3.csv(`${constants.DATA_PATH}far/index.csv`);
+  const fetchFarIndex = () => d3.csv(`${DATA_PATH}far/index.csv`);
 
   useEffect(() => {
     if (index) return;

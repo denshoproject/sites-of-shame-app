@@ -9,10 +9,9 @@ import "./FacilitiesPicker.scss";
 
 const FacilitiesPicker = () => {
   const { state, dispatch } = useContext(Context);
-  const layer = state.layers.filter(({ id }) => id === "sos-facilities")[0];
 
   const { clickedId } = state.infobox;
-  const { enabledCategories } = state.facilities;
+  const { categories, enabledCategories } = state.facilities;
 
   const toggleCategory = (name) => {
     let newCategories;
@@ -29,7 +28,7 @@ const FacilitiesPicker = () => {
 
   return (
     <div className="facilities-picker">
-      {layer.categories.map((category) => (
+      {categories.map((category) => (
         <LayerPickerSubsection key={category.name}>
           <div className="facilities-category-name">
             {clickedId === category.name ? (
