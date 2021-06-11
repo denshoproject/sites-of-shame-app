@@ -87,12 +87,16 @@ const FamilyLayer = ({ before, layer, loadData }) => {
       };
     });
 
-  const colorExpression = ["match", ["get", "person_id"]];
-  colorScheme.forEach(({ personId, color }) => {
-    colorExpression.push(personId);
-    colorExpression.push(color);
-  });
-  colorExpression.push("gray");
+  let colorExpression = "gray";
+
+  if (colorScheme.length > 0) {
+    colorExpression = ["match", ["get", "person_id"]];
+    colorScheme.forEach(({ personId, color }) => {
+      colorExpression.push(personId);
+      colorExpression.push(color);
+    });
+    colorExpression.push("gray");
+  }
 
   return (
     <>
