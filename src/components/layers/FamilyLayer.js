@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useMemo } from "react";
-import { Image, Layer, Source } from "react-mapbox-gl";
+import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import Arrow from "img/arrow.sdf";
 import { DATA_PATH } from "constants.js";
 import { Context } from "store";
 
@@ -101,7 +100,6 @@ const FamilyLayer = ({ before, layer, loadData }) => {
 
   return (
     <>
-      <Image id="arrow" options={{ sdf: true }} url={Arrow} />
       <Source
         id={layer.id}
         geoJsonSource={{
