@@ -29,34 +29,70 @@ const FamilyLayer = ({ before, layer, loadData }) => {
     });
   }, [data, dispatch, loadData]);
 
-  const familyData = useMemo(
-    () => (data ? data.filter((d) => d.family_id === selectedFamily) : []),
-    [data, selectedFamily]
-  );
+  const familyData = useMemo(() => {
+    return data ? data.filter((d) => d.family_id === selectedFamily) : [];
+  }, [data, selectedFamily]);
 
-  const byIndividual = d3.group(familyData, (d) => d.person_id);
+  const byIndividual = useMemo(() => {
+    return d3.group(familyData, (d) => d.person_id);
+  }, [familyData]);
 
-  const lines = turf.featureCollection(
-    Array.from(byIndividual.keys())
-      .map((personId) => {
-        const steps = byIndividual.get(personId);
-        if (steps.length < 2) return null;
-        return turf.bezierSpline(
-          turf.lineString(
-            steps.map((step) => [step.longitude, step.latitude]),
-            steps[0]
-          ),
-          { sharpness: 0.35 }
-        );
+  const individuals = useMemo(() => {
+    return Array.from(byIndividual.keys());
+  }, [byIndividual]);
+
+  const sharpnesses = useMemo(() => {
+    return Object.fromEntries(
+      individuals.map((personId) => {
+        return [personId, Math.random() / 4 + 0.5];
       })
-      .filter((line) => line)
-  );
+    );
+  }, [individuals]);
 
-  const points = turf.featureCollection(
-    familyData.map((step) => {
-      return turf.point([step.longitude, step.latitude], step);
-    })
-  );
+  const lines = useMemo(() => {
+    return turf.featureCollection(
+      Array.from(byIndividual.keys())
+        .map((personId) => {
+          const steps = byIndividual.get(personId);
+          if (steps.length < 2) return null;
+          return turf.bezierSpline(
+            turf.lineString(
+              steps.map((step) => [step.longitude, step.latitude])
+            ),
+            {
+              sharpness: sharpnesses[personId],
+              properties: steps[0],
+            }
+          );
+        })
+        .filter((line) => line)
+    );
+  }, [byIndividual, sharpnesses]);
+
+  const points = useMemo(() => {
+    return turf.featureCollection(
+      familyData.map((step) => {
+        return turf.point([step.longitude, step.latitude], step);
+      })
+    );
+  }, [familyData]);
+
+  const colorScale = d3.scaleOrdinal(d3.schemeSet3);
+  const colorScheme = Array.from(byIndividual.keys())
+    .sort()
+    .map((person) => {
+      return {
+        personId: person,
+        color: colorScale(person),
+      };
+    });
+
+  const colorExpression = ["match", ["get", "person_id"]];
+  colorScheme.forEach(({ personId, color }) => {
+    colorExpression.push(personId);
+    colorExpression.push(color);
+  });
+  colorExpression.push("gray");
 
   return (
     <>
@@ -73,9 +109,9 @@ const FamilyLayer = ({ before, layer, loadData }) => {
         sourceId={layer.id}
         before={before}
         paint={{
-          "line-width": 2,
-          "line-color": "gray",
-          "line-opacity": 0.25,
+          "line-width": 4,
+          "line-color": colorExpression,
+          "line-opacity": 0.75,
         }}
       />
       <Source
@@ -91,9 +127,9 @@ const FamilyLayer = ({ before, layer, loadData }) => {
         sourceId={`${layer.id}-points`}
         before={before}
         paint={{
-          "circle-radius": 5,
-          "circle-color": "gray",
-          "circle-opacity": 0.25,
+          "circle-radius": 6,
+          "circle-color": colorExpression,
+          "circle-opacity": 0.75,
         }}
       />
     </>
