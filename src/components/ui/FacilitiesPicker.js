@@ -5,6 +5,7 @@ import Infobox from "components/ui/Infobox";
 import InfoboxButton from "components/ui/InfoboxButton";
 import LayerPickerSubsection from "components/ui/LayerPickerSubsection";
 import LegendCircle from "components/ui/LegendCircle";
+import LegendSizeCircle from "components/ui/LegendSizeCircle";
 import "./FacilitiesPicker.scss";
 
 const FacilitiesPicker = () => {
@@ -67,6 +68,9 @@ const FacilitiesPicker = () => {
           </div>
         </LayerPickerSubsection>
       ))}
+      <div>
+        <LegendSizeCircle />
+      </div>
     </div>
   );
 };
