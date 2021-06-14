@@ -17,7 +17,13 @@ const ExclusionOrderPopup = ({ feature }) => {
       </div>
       <div className="eo-row">
         <span className="eo-meta">
-          <span className="eo-meta">{properties.description}</span>
+          <div className="img-container">
+            <img
+              alt="First page of exclusion order document"
+              src={imagesrc}
+              className="imgcrop"
+            />
+          </div>
         </span>
       </div>
       <div className="eo-row">
@@ -36,13 +42,7 @@ const ExclusionOrderPopup = ({ feature }) => {
       </div>
       <div className="eo-row">
         <span className="eo-meta">
-          <div className="img-container">
-            <img
-              alt="First page of exclusion order document"
-              src={imagesrc}
-              className="imgcrop"
-            />
-          </div>
+          <span className="eo-meta">{properties.description}</span>
         </span>
       </div>
     </div>
