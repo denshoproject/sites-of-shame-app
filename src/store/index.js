@@ -60,7 +60,15 @@ const initialState = {
       paint: {
         "fill-color": "#BEC1C1",
         "fill-outline-color": "#333",
-        "fill-opacity": 0.25,
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          4,
+          0.15,
+          12,
+          0.05,
+        ],
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
