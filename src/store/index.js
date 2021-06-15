@@ -1,12 +1,18 @@
 import React, { createContext, useReducer } from "react";
 import * as turf from "@turf/turf";
 
-import { constants } from "constants.js";
+import { DATA_PATH } from "constants.js";
 import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
+
+  infobox: {
+    openId: null,
+    clickedId: null,
+    content: [],
+  },
 
   insetMapState: {
     center: [-157.329712, 21.079375],
@@ -24,13 +30,21 @@ const initialState = {
     campData: {},
     preVisible: true,
     destVisible: true,
+    loading: {},
   },
 
   transfers: {
-    data: turf.featureCollection([]),
+    data: [],
+  },
+
+  families: {
+    selectedFamily: "",
+    familyData: {},
+    data: [],
   },
 
   facilities: {
+    categories: [],
     data: turf.featureCollection([]),
     enabledCategories: ["WRA", "EAIS", "Hawaii"],
   },
@@ -39,7 +53,7 @@ const initialState = {
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: constants.DATA_PATH + "exclusion-orders.geojson",
+      data: DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
       layerType: "fill",
       sourceType: "geojson",
@@ -50,22 +64,24 @@ const initialState = {
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
+      order: 0,
     },
     {
       name: "Final Accountability Records",
       id: "far",
       clickable: false,
-      clickableSublayers: [
-        "far-destLines",
-        "far-destPoints",
-        "far-preLines",
-        "far-prePoints",
-      ],
+      clickableSublayers: ["far-lines", "far-points"],
+    },
+    {
+      name: "Family Journeys",
+      id: "families",
+      clickable: true,
+      order: 5,
     },
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: constants.DATA_PATH + "transfer-orders.geojson",
+      data: DATA_PATH + "transfer-orders.geojson",
       clickable: true,
       layerType: "line",
       sourceType: "geojson",
@@ -73,7 +89,8 @@ const initialState = {
         "line-width": 3,
         "line-color": "gray",
       },
-      enabled: true,
+      enabled: false,
+      order: 4,
     },
     {
       name: "Facilities",
@@ -82,78 +99,72 @@ const initialState = {
       layerType: "circle",
       sourceType: "geojson",
       enabled: true,
-      categories: [
-        {
-          name: "WRA",
-          value: "wra",
-          types: [
-            {
-              color: "#ff7b54",
-              name: "Concentration Camp",
-            },
-            {
-              color: "#FFB26B",
-              name: "Temporary Assembly Center",
-            },
-            {
-              color: "#8e9775",
-              name: "Additional Facility",
-            },
-            {
-              color: "#939b62",
-              name: "Citizen Isolation Center",
-            },
-          ],
-        },
-        {
-          name: "EAIS",
-          value: "eais",
-          types: [
-            {
-              color: "#ffd56b",
-              name: "Department of Justice Internment Camp",
-            },
-            {
-              color: "#e28f83",
-              name: "Immigration Detention Station",
-            },
-            {
-              color: "#4a503d",
-              name: "US Army Internment Camp",
-            },
-            {
-              color: "#faf2da",
-              name: "US Federal Prison",
-            },
-          ],
-        },
-        {
-          name: "Hawaii",
-          value: "hawaii",
-          types: [
-            {
-              color: "#4a503d",
-              name: "US Army Internment Camp",
-            },
-            {
-              color: "#8e9775",
-              name: "Additional Facility",
-            },
-          ],
-        },
-      ],
+      order: 2,
     },
   ],
 };
 
 const getNewState = (state, action) => {
   switch (action.type) {
+    case "clear open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: null,
+          openId: null,
+        },
+      };
+    case "set open infobox":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          clickedId: action.clickedId,
+          openId: action.id,
+        },
+      };
+    case "set infobox content":
+      return {
+        ...state,
+        infobox: {
+          ...state.infobox,
+          content: action.content,
+        },
+      };
     case "set transfer data":
       return {
         ...state,
         transfers: {
           ...state.transfers,
           data: action.data,
+        },
+      };
+    case "set family data":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          data: action.data,
+        },
+      };
+    case "set family selectedFamily":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          selectedFamily: action.selectedFamily,
+        },
+      };
+    case "set far loading":
+      return {
+        ...state,
+        far: {
+          ...state.far,
+          loading: {
+            ...state.far.loading,
+            [action.camp]: action.loading,
+          },
         },
       };
     case "set far index":
@@ -197,6 +208,14 @@ const getNewState = (state, action) => {
             ...state.far.campData,
             [action.camp]: action.data,
           },
+        },
+      };
+    case "set facilities categories":
+      return {
+        ...state,
+        facilities: {
+          ...state.facilities,
+          categories: action.categories,
         },
       };
     case "set facilities data":
