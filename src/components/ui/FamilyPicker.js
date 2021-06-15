@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Context } from "store";
 import "./FamilyPicker.scss";
+import FamilyIndividuals from "components/ui/FamilyIndividuals";
 
 const FamilyPicker = () => {
   const { state, dispatch } = useContext(Context);
@@ -51,6 +52,7 @@ const FamilyPicker = () => {
             </option>
           ))}
         </select>
+        <FamilyIndividuals />
       </div>
     </div>
   );
