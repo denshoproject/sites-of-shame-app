@@ -11,7 +11,7 @@ const FamilyPopup = ({ feature }) => {
         <span className="family-name">{properties.person_name}</span>
       </div>
       <div className="popup-row">
-        <span className="family-meta">{properties.family_name} Family</span>
+        <span className="family-meta">{properties.family_name}</span>
       </div>
       <div className="popup-row">
         <span className="family-meta">{properties.individualdescription}</span>

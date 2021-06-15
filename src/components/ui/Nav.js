@@ -38,7 +38,9 @@ const Nav = () => {
     <nav className="Nav">
       <ol className="links">
         {leftLinks.map((link) => (
-          <a href={link.url}>{link.label}</a>
+          <a key={link.label} href={link.url}>
+            {link.label}
+          </a>
         ))}
       </ol>
       <a href="https://densho.org/">
@@ -46,7 +48,9 @@ const Nav = () => {
       </a>
       <ol className="links">
         {rightLinks.map((link) => (
-          <a href={link.url}>{link.label}</a>
+          <a key={link.label} href={link.url}>
+            {link.label}
+          </a>
         ))}
       </ol>
     </nav>

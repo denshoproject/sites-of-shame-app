@@ -1,0 +1,44 @@
+@import "~scss/_variables.scss";
+
+.eo-popup {
+  .eo-row {
+    margin-bottom: 0.5em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .eo-title {
+    text-align: left;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+  }
+
+  .eo-name {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #222227;
+  }
+
+  .eo-meta {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  .eo-details {
+    line-height: 1.8;
+  }
+
+  .imgcrop {
+    width: 440px;
+    height: 225px;
+    object-fit: cover;
+    object-position: 50% 5%;
+    margin: 0px -2em 0px -2em;
+  }
+
+  .img-container {
+    overflow: hidden;
+  }
+}

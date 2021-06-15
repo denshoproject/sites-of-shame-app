@@ -6,9 +6,13 @@ export const stateToQuery = (state) => {
     .map((layer) => layer.id)
     .join("|");
 
+  const facilityCategories = state.facilities.enabledCategories.join("|");
+
   const queryState = {
+    facilityCategories,
     farDestVisible: state.far.destVisible,
     farPreVisible: state.far.preVisible,
+    selectedFamily: state.families.selectedFamily,
     farSelectedCamp: state.far.selectedCamp,
     lat: state.mapState.center[1].toFixed(4),
     layers,
@@ -66,6 +70,19 @@ export const queryToState = (initialState) => {
   }
   if (queryState.farPreVisible) {
     stateUpdates.far.preVisible = queryState.farPreVisible === "true";
+  }
+
+  if (queryState.facilityCategories) {
+    if (!stateUpdates.facilities)
+      stateUpdates.facilities = { ...initialState.facilities };
+    stateUpdates.facilities.enabledCategories =
+      queryState.facilityCategories.split("|");
+  }
+
+  if (queryState.selectedFamily) {
+    if (!stateUpdates.families)
+      stateUpdates.families = { ...initialState.families };
+    stateUpdates.families.selectedFamily = queryState.selectedFamily;
   }
 
   return {
