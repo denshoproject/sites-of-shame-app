@@ -3,26 +3,36 @@ import React from "react";
 import "./LegendSizeCircle.scss";
 
 const LegendSizeCircle = () => {
+  const sizes = [
+    {
+      radius: 5,
+      population: 200,
+    },
+    {
+      radius: 10,
+      population: 2000,
+    },
+    {
+      radius: 15,
+      population: "20,000",
+    },
+  ];
+
   return (
     <>
       <div className="size-legend">
-        <span
-          style={{ width: 10, height: 10, margin: 10 }}
-          className="legend-circle"
-        />
-        <span
-          style={{ width: 20, height: 20, margin: 10 }}
-          className="legend-circle"
-        />
-        <span
-          style={{ width: 30, height: 30, margin: 10 }}
-          className="legend-circle"
-        />
-        <span
-          style={{ width: 40, height: 40, margin: 10 }}
-          className="legend-circle"
-        />
-        <p className="legend-text">Sized by peak population</p>
+        <div className="size-legend-list">
+          {sizes.map((size) => (
+            <div className="size-legend-item" key={size.radius}>
+              <span
+                style={{ width: size.radius * 2, height: size.radius * 2 }}
+                className="legend-circle"
+              />
+              <span className="size-population">{size.population}</span>
+            </div>
+          ))}
+        </div>
+        <p className="legend-text">Size by peak population</p>
       </div>
     </>
   );

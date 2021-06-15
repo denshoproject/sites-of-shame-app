@@ -68,9 +68,9 @@ const FacilitiesPicker = () => {
           </div>
         </LayerPickerSubsection>
       ))}
-      <div>
+      <LayerPickerSubsection>
         <LegendSizeCircle />
-      </div>
+      </LayerPickerSubsection>
     </div>
   );
 };
