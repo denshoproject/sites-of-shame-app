@@ -50,7 +50,7 @@ const FamilyIndividuals = () => {
     i += 1;
   }
 
-  selectedFamily == "" ? (allNamesArray = []) : (allNamesArray = allNamesArray);
+  if (selectedFamily === "") allNamesArray = [];
 
   return (
     <div className="individual-list">
