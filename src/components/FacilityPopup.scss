@@ -4,11 +4,12 @@
   .facility-name {
     font-size: 1.6em;
     font-weight: bold;
-    color: $color-ui-blue;
+    color: #222227;
   }
 
   .facility-title {
-    padding-bottom: 10px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
   }
 
   .facility-meta {
@@ -17,8 +18,17 @@
 
   .imgcrop {
     width: 400px;
-    height: 150px;
+    height: 225px;
     object-fit: cover;
-    padding-bottom: 20px;
+    padding-bottom: 0.7em;
+  }
+
+  .peak-population {
+    font-weight: 800;
+  }
+
+  .more-info {
+    color: #f07057;
+    font-weight: 800;
   }
 }
