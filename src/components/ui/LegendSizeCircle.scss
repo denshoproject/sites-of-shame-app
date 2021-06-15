@@ -1,0 +1,28 @@
+.size-legend {
+  margin-top: 1em;
+  text-align: center;
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+
+    .legend-circle {
+      margin: 0.5em;
+    }
+
+    .size-population {
+      font-size: 0.9em;
+    }
+  }
+}
+
+.legend-text {
+  font-weight: 800;
+}

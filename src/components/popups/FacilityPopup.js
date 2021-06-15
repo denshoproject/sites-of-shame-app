@@ -5,10 +5,23 @@ import "./FacilityPopup.scss";
 const FacilityPopup = ({ feature }) => {
   const { properties } = feature;
 
+  const imagesrc = `https://ddr.densho.org/media/sitesofshame/site-${properties.legacy_densho_id}.jpg`;
+
   return (
     <div className="facility-popup">
       <div className="popup-row">
-        <span className="facility-name">{properties.facility_name}</span>
+        <div className="facility-title">
+          <span className="facility-name">{properties.facility_name}</span>
+        </div>
+      </div>
+      <div className="popup-row">
+        <span className="facility-meta">
+          <img
+            alt={properties.facility_name}
+            src={imagesrc}
+            className="imgcrop"
+          />
+        </span>
       </div>
       <div className="popup-row">
         <span className="facility-meta">
@@ -28,19 +41,25 @@ const FacilityPopup = ({ feature }) => {
         </span>
       </div>
       <div className="popup-row">
-        <span className="facility-meta">
-          Peak population: {properties.peak_population}
+        <span className="facility-meta peak-population">Peak population:</span>{" "}
+        <span>
+          {properties.peak_population}
           {properties.peak_popdate ? (
             <span> ({properties.peak_popdate})</span>
           ) : null}
         </span>
       </div>
+
       <div className="popup-row">{properties.location_description}</div>
       {properties.encyc_article_status ? (
         <div className="popup-row">
-          Read more{" "}
-          <a target="_blank" rel="noreferrer" href={properties.encyc_url}>
-            in the Densho Encyclopedia
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="more-info"
+            href={properties.encyc_url}
+          >
+            More Info
           </a>
         </div>
       ) : null}

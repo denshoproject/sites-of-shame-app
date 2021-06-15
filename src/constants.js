@@ -8,20 +8,20 @@ export const HAWAII_BOUNDS = [
 
 export const FACILITY_COLORS = {
   wra: {
-    "Additional Facility": "#8e9775",
-    "Citizen Isolation Center": "#939b62",
-    "Concentration Camp": "#ff7b54",
-    "Temporary Assembly Center": "#FFB26B",
+    "Additional Facility": "#3C3C3C",
+    "Citizen Isolation Center": "#C3391E",
+    "Concentration Camp": "#E97543",
+    "Temporary Assembly Center": "#F7A935",
   },
   eais: {
-    "Additional Facility": "#8e9775",
-    "Department of Justice Internment Camp": "#ffd56b",
-    "Immigration Detention Station": "#e28f83",
-    "U.S. Army Internment Camp": "#4a503d",
+    "Additional Facility": "#3C3C3C",
+    "Department of Justice Internment Camp": "#81B9E2",
+    "Immigration Detention Station": "#6FD1CB",
+    "U.S. Army Internment Camp": "#3C9B90",
     "U.S. Federal Prison": "#faf2da",
   },
   hawaii: {
-    "Additional Facility": "#8e9775",
-    "U.S. Army Internment Camp": "#4a503d",
+    "Additional Facility": "#3C3C3C",
+    "U.S. Army Internment Camp": "#B3B3B3",
   },
 };

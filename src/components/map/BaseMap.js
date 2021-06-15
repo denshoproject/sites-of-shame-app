@@ -75,7 +75,7 @@ const BaseMap = ({
         onMoveEnd={onMoveEnd}
         onClick={handleClick}
       >
-        {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
+        {includeZoomControls ? <ZoomControl position="top-left" /> : null}
         {showPopups ? <PopupSwitch /> : null}
         <Image id="arrow" options={{ sdf: true }} url={Arrow} />
         <Image id="diagonal-grid" url={DiagonalGrid} />
