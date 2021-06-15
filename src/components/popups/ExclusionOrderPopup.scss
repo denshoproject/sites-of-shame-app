@@ -10,14 +10,15 @@
   }
 
   .eo-title {
-    text-align: center;
-    padding-bottom: 10px;
+    text-align: left;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
   }
 
   .eo-name {
     font-size: 1.6em;
     font-weight: bold;
-    color: $color-ui-blue;
+    color: #222227;
   }
 
   .eo-meta {
@@ -29,18 +30,15 @@
     line-height: 1.8;
   }
 
-  .content-text {
-    float: left;
-    width: 150px;
+  .imgcrop {
+    width: 440px;
+    height: 225px;
+    object-fit: cover;
+    object-position: 50% 5%;
+    margin: 0px -2em 0px -2em;
   }
 
-  .content-image {
-    float: right;
-    width: 250px;
-  }
-
-  .eo-image {
-    width: 220px;
-    padding-left: 10px;
+  .img-container {
+    overflow: hidden;
   }
 }
