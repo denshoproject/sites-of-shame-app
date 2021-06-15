@@ -2,13 +2,17 @@
 
 .to-popup {
   .to-name {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: bold;
-    color: $color-ui-blue;
+    color: #222227;
   }
 
   .to-meta {
     font-size: 0.95em;
     line-height: 1.5;
+  }
+
+  .bold-text {
+    font-weight: 800;
   }
 }
