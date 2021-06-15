@@ -11,7 +11,8 @@
 
   .eo-title {
     text-align: left;
-    padding-bottom: 10px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
   }
 
   .eo-name {
@@ -31,10 +32,10 @@
 
   .imgcrop {
     width: 440px;
-    height: 200px;
+    height: 225px;
     object-fit: cover;
     object-position: 50% 5%;
-    margin: 0px -20px 0px -20px;
+    margin: 0px -2em 0px -2em;
   }
 
   .img-container {
