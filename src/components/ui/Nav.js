@@ -4,33 +4,12 @@ import Logo from "img/logo.png";
 import "./Nav.scss";
 
 const Nav = () => {
-  const leftLinks = [
-    {
-      label: "Collections & Research",
-      url: "https://densho.org/archives/",
-    },
-    {
-      label: "Learn",
-      url: "https://densho.org/learning-center/",
-    },
-    {
-      label: "Teach",
-      url: "",
-    },
-  ];
+  const leftLinks = [];
 
   const rightLinks = [
     {
-      label: "About Us",
+      label: "About",
       url: "https://densho.org/about-densho/",
-    },
-    {
-      label: "Get Involved",
-      url: "https://densho.org/about-densho/get-involved/",
-    },
-    {
-      label: "Donate",
-      url: "https://densho.org/give/",
     },
   ];
 
@@ -45,6 +24,7 @@ const Nav = () => {
       </ol>
       <a href="https://densho.org/">
         <img alt="Densho logo" src={Logo} />
+        <span className="site-name">Sites of Shame</span>
       </a>
       <ol className="links">
         {rightLinks.map((link) => (
