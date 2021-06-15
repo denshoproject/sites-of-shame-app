@@ -7,6 +7,7 @@ import { MAPBOX_ACCESS_TOKEN, MAPBOX_BASE_LAYER } from "constants.js";
 import { Context } from "store";
 import MapLayers from "components/layers/MapLayers";
 import PopupSwitch from "components/popups/PopupSwitch";
+import Arrow from "img/arrow.sdf";
 import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 
@@ -76,6 +77,7 @@ const BaseMap = ({
       >
         {includeZoomControls ? <ZoomControl position="bottom-right" /> : null}
         {showPopups ? <PopupSwitch /> : null}
+        <Image id="arrow" options={{ sdf: true }} url={Arrow} />
         <Image id="diagonal-grid" url={DiagonalGrid} />
         <MapLayers loadLayerData={!isInset} />
         {children}

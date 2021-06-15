@@ -118,6 +118,19 @@ const FamilyLayer = ({ before, layer, loadData }) => {
           "line-opacity": 0.75,
         }}
       />
+      <Layer
+        type="symbol"
+        sourceId={layer.id}
+        before={layer.id}
+        paint={{
+          "icon-color": colorExpression,
+        }}
+        layout={{
+          "icon-image": "arrow",
+          "icon-size": ["interpolate", ["linear"], ["zoom"], 4, 0.5, 12, 2],
+          "symbol-placement": "line",
+        }}
+      />
       <Source
         id={`${layer.id}-points`}
         geoJsonSource={{

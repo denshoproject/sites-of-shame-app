@@ -34,7 +34,7 @@ const initialState = {
   },
 
   transfers: {
-    data: turf.featureCollection([]),
+    data: [],
   },
 
   families: {
