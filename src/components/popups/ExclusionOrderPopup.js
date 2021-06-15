@@ -8,11 +8,13 @@ const ExclusionOrderPopup = ({ feature }) => {
   const id = properties.Name.replace("SoS - Exclusion Order ", "");
   const imagesrc = `https://ddr.densho.org/media/sitesofshame/EO-C-${id}.png`;
 
+  let name = properties.Name.replace("SoS - ", "");
+
   return (
     <div className="eo-popup">
       <div className="popup-row">
         <div className="eo-title">
-          <span className="eo-name">{properties.Name}</span>
+          <span className="eo-name">{name}</span>
         </div>
       </div>
       <div className="eo-row">

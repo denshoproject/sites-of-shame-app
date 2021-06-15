@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
@@ -24,29 +24,35 @@ const TransferLayer = ({ before, layer, loadData }) => {
           longitude1: +row.longitude1,
           latitude2: +row.latitude2,
           longitude2: +row.longitude2,
+          personsTransferred: +row["Persons transferred"],
         })),
       });
     });
   }, [dispatch, loadData]);
 
-  let transferLines = turf.featureCollection([]);
-
-  if (data.length) {
-    transferLines = turf.featureCollection(
+  const transferLines = useMemo(() => {
+    return turf.featureCollection(
       data
-        .map((j) => {
-          if (!j.latitude1 || !j.longitude1 || !j.latitude2 || !j.longitude2) {
-            return console.error("missing latitude or longitude", j);
+        .map((row) => {
+          if (
+            !row.latitude1 ||
+            !row.longitude1 ||
+            !row.latitude2 ||
+            !row.longitude2
+          ) {
+            return console.error("missing latitude or longitude", row);
           }
           return turf.greatCircle(
-            turf.point([j.longitude1, j.latitude1]),
-            turf.point([j.longitude2, j.latitude2]),
-            j
+            turf.point([row.longitude1, row.latitude1]),
+            turf.point([row.longitude2, row.latitude2]),
+            { properties: row }
           );
         })
         .filter((transfer) => typeof transfer != "undefined")
     );
-  }
+  }, [data]);
+
+  const colorExpression = "#2d2a6b";
 
   return (
     <>
@@ -63,9 +69,30 @@ const TransferLayer = ({ before, layer, loadData }) => {
         sourceId={layer.id}
         before={before}
         paint={{
-          "line-width": 1,
-          "line-color": "#e3cd68",
+          "line-width": [
+            "interpolate",
+            ["linear"],
+            ["get", "personsTransferred"],
+            50,
+            1,
+            250,
+            4,
+          ],
+          "line-color": colorExpression,
           "line-opacity": 0.25,
+        }}
+      />
+      <Layer
+        type="symbol"
+        sourceId={layer.id}
+        before={layer.id}
+        paint={{
+          "icon-color": colorExpression,
+        }}
+        layout={{
+          "icon-image": "arrow",
+          "icon-size": ["interpolate", ["linear"], ["zoom"], 4, 0.5, 12, 2],
+          "symbol-placement": "line",
         }}
       />
     </>

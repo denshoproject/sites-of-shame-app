@@ -34,7 +34,7 @@ const initialState = {
   },
 
   transfers: {
-    data: turf.featureCollection([]),
+    data: [],
   },
 
   families: {
@@ -64,6 +64,7 @@ const initialState = {
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
+      order: 0,
     },
     {
       name: "Final Accountability Records",
@@ -75,6 +76,7 @@ const initialState = {
       name: "Family Journeys",
       id: "families",
       clickable: true,
+      order: 5,
     },
     {
       name: "Transfer Orders",
@@ -88,6 +90,7 @@ const initialState = {
         "line-color": "gray",
       },
       enabled: false,
+      order: 4,
     },
     {
       name: "Facilities",
@@ -96,6 +99,7 @@ const initialState = {
       layerType: "circle",
       sourceType: "geojson",
       enabled: true,
+      order: 2,
     },
   ],
 };

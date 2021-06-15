@@ -79,6 +79,12 @@ export const queryToState = (initialState) => {
       queryState.facilityCategories.split("|");
   }
 
+  if (queryState.selectedFamily) {
+    if (!stateUpdates.families)
+      stateUpdates.families = { ...initialState.families };
+    stateUpdates.families.selectedFamily = queryState.selectedFamily;
+  }
+
   return {
     ...initialState,
     ...stateUpdates,
