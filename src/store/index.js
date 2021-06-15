@@ -39,8 +39,8 @@ const initialState = {
 
   families: {
     selectedFamily: "",
-    familyData: {},
     data: [],
+    colorScheme: [],
   },
 
   facilities: {
@@ -146,6 +146,14 @@ const getNewState = (state, action) => {
         families: {
           ...state.families,
           data: action.data,
+        },
+      };
+    case "set family colorScheme":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          colorScheme: action.colorScheme,
         },
       };
     case "set family selectedFamily":
