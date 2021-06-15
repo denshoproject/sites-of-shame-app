@@ -16,7 +16,11 @@ const FacilityPopup = ({ feature }) => {
       </div>
       <div className="popup-row">
         <span className="facility-meta">
-          <img alt="Image of Facility" src={imagesrc} className="imgcrop" />
+          <img
+            alt={properties.facility_name}
+            src={imagesrc}
+            className="imgcrop"
+          />
         </span>
       </div>
       <div className="popup-row">
