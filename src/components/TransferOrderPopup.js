@@ -16,7 +16,7 @@ const TransferOrderPopup = ({ feature }) => {
       <div className="to-row">
         <span className="to-meta">
           <span className="to-meta">
-            <strong>Date of departure:</strong>{" "}
+            <span className="bold-text">Date of departure:</span>{" "}
             {properties["Date of Departure"]}
           </span>
         </span>
@@ -24,7 +24,8 @@ const TransferOrderPopup = ({ feature }) => {
       <div className="to-row">
         <span className="to-meta">
           <span className="to-meta">
-            <strong>Date of arrival:</strong> {properties["Date of Arrival"]}
+            <span className="bold-text">Date of arrival:</span>{" "}
+            {properties["Date of Arrival"]}
           </span>
         </span>
       </div>
