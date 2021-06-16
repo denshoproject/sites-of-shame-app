@@ -7,6 +7,7 @@ const ExclusionOrderPopup = ({ feature }) => {
 
   const id = properties.Name.replace("SoS - Exclusion Order ", "");
   const imagesrc = `https://ddr.densho.org/media/sitesofshame/EO-C-${id}.png`;
+  const pdflink = `https://ddr.densho.org/media/sitesofshame/EO-${id}.pdf`;
 
   let name = properties.Name.replace("SoS - ", "");
 
@@ -52,7 +53,7 @@ const ExclusionOrderPopup = ({ feature }) => {
           target="_blank"
           rel="noreferrer"
           className="view-full-image"
-          href={imagesrc}
+          href={pdflink}
         >
           View full Exclusion Order
         </a>
