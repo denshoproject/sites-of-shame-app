@@ -47,6 +47,16 @@ const ExclusionOrderPopup = ({ feature }) => {
           <span className="eo-meta">{properties.description}</span>
         </span>
       </div>
+      <div className="eo-row">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="view-full-image"
+          href={imagesrc}
+        >
+          View full Exclusion Order
+        </a>
+      </div>
     </div>
   );
 };
