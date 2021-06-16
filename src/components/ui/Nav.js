@@ -8,23 +8,25 @@ const Nav = () => {
 
   const rightLinks = [
     {
-      label: "About",
+      label: "About the map",
       url: "https://densho.org/about-densho/",
+    },
+    {
+      label: "Visit the Densho site",
+      url: "https://densho.org/",
+    },
+    {
+      label: "Donate",
+      url: "https://densho.org/give/",
     },
   ];
 
   return (
     <nav className="Nav">
-      <ol className="links">
-        {leftLinks.map((link) => (
-          <a key={link.label} href={link.url}>
-            {link.label}
-          </a>
-        ))}
-      </ol>
       <a href="https://densho.org/">
         <img alt="Densho logo" src={Logo} />
-        <span className="site-name">Sites of Shame</span>
+        <span className="site-name separator"> / </span>
+        <span className="site-name"> Sites of Shame</span>
       </a>
       <ol className="links">
         {rightLinks.map((link) => (
