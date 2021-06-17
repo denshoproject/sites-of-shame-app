@@ -42,10 +42,15 @@ const TransferLayer = ({ before, layer, loadData }) => {
           ) {
             return console.error("missing latitude or longitude", row);
           }
-          return turf.greatCircle(
-            turf.point([row.longitude1, row.latitude1]),
-            turf.point([row.longitude2, row.latitude2]),
-            { properties: row }
+          let offset = Math.random() * 20;
+          return turf.transformTranslate(
+            turf.greatCircle(
+              turf.point([row.longitude1, row.latitude1]),
+              turf.point([row.longitude2, row.latitude2]),
+              { properties: row }
+            ),
+            offset,
+            offset
           );
         })
         .filter((transfer) => typeof transfer != "undefined")
@@ -74,9 +79,9 @@ const TransferLayer = ({ before, layer, loadData }) => {
             ["linear"],
             ["get", "personsTransferred"],
             50,
-            1,
+            0.5,
             250,
-            4,
+            1.5,
           ],
           "line-color": colorExpression,
           "line-opacity": 0.25,
