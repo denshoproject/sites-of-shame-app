@@ -1,5 +1,6 @@
 import React from "react";
 
+import PopupHeader from "components/popups/PopupHeader";
 import "./FacilityPopup.scss";
 
 const FacilityPopup = ({ feature }) => {
@@ -9,11 +10,9 @@ const FacilityPopup = ({ feature }) => {
 
   return (
     <div className="facility-popup">
-      <div className="popup-row">
-        <div className="facility-title">
-          <span className="facility-name">{properties.facility_name}</span>
-        </div>
-      </div>
+      <PopupHeader className="facility-title">
+        {properties.facility_name}
+      </PopupHeader>
       <div className="popup-row">
         <span className="facility-meta">
           <img

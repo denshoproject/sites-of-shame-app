@@ -1,18 +1,16 @@
 import React from "react";
 
+import PopupHeader from "components/popups/PopupHeader";
 import "./TransferOrderPopup.scss";
 
 const TransferOrderPopup = ({ feature }) => {
-  console.log(feature);
   const { properties } = feature;
 
   return (
     <div className="to-popup">
-      <div className="popup-row">
-        <span className="to-name">
-          Transfer Order #{properties["Transfer order number"]}
-        </span>
-      </div>
+      <PopupHeader className="to-name">
+        Transfer Order #{properties["Transfer order number"]}
+      </PopupHeader>
       <div className="to-row">
         <span className="to-meta">
           <span className="to-meta">

@@ -1,9 +1,13 @@
 @import "~scss/_variables.scss";
 
 .layer-picker-section {
+  display: flex;
+  flex-direction: column;
   box-shadow: $ui-box-shadow;
   margin-bottom: 1em;
   width: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
 
   h3 {
     background: $color-ui-blue;
@@ -28,6 +32,8 @@
     background: white;
     display: none;
     padding: 1em 1em;
+    overflow-y: auto;
+    flex: 1 1 auto;
 
     &.expanded {
       display: block;

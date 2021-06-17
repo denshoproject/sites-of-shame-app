@@ -1,5 +1,6 @@
 import React from "react";
 
+import PopupHeader from "components/popups/PopupHeader";
 import "./FARPopup.scss";
 
 const FARPopup = ({ feature }) => {
@@ -7,11 +8,9 @@ const FARPopup = ({ feature }) => {
 
   return (
     <div className="far-popup">
-      <div className="far-popup-row">
-        <h2 className="far-location-name">
-          {properties.city}, {properties.state}
-        </h2>
-      </div>
+      <PopupHeader className="far-location-name">
+        {properties.city}, {properties.state}
+      </PopupHeader>
       {properties.beforeCount ? (
         <div className="far-popup-row">
           {properties.beforeCount}
