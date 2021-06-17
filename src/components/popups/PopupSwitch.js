@@ -27,8 +27,8 @@ const PopupSwitch = () => {
   return (
     <Popup className="popup-switch" coordinates={[lng, lat]}>
       <div className="popup-content">
-        <div onClick={() => closePopup()} className="close-popup">
-          x
+        <div className="close-popup">
+          <span onClick={() => closePopup()}>x</span>
         </div>
         {layerId === "sos-facilities" ? (
           <FacilityPopup feature={clickedFeature} />
