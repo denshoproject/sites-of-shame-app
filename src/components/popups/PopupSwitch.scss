@@ -15,4 +15,19 @@
       }
     }
   }
+
+  .close-popup {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    font-size: 1.2em;
+    font-weight: 200;
+    text-align: right;
+    padding-bottom: 0.5em;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-ui-gray;
+    }
+  }
 }
