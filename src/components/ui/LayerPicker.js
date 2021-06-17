@@ -44,8 +44,9 @@ const LayerPicker = () => {
           <FamilyPicker />
         </LayerPickerSubsection>
         <LayerPickerSubsection>
-          <label>
+          <label className="labeltext">
             <input
+              className="checkbox"
               type="checkbox"
               checked={isEnabled("far")}
               onChange={() => toggleLayer("far")}
@@ -55,8 +56,9 @@ const LayerPicker = () => {
           <FARPicker />
         </LayerPickerSubsection>
         <LayerPickerSubsection>
-          <label>
+          <label className="labeltext">
             <input
+              className="checkbox"
               type="checkbox"
               checked={isEnabled("transfer orders")}
               onChange={() => toggleLayer("transfer orders")}

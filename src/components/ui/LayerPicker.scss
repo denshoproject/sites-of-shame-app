@@ -28,12 +28,11 @@
   }
 
   .labeltext {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .checkbox {
-    vertical-align: middle;
-    position: relative;
-    bottom: 0.1em;
+    display: flex;
   }
 }

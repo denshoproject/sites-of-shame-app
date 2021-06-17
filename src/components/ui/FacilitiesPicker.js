@@ -36,8 +36,9 @@ const FacilitiesPicker = () => {
               <Infobox id={category.name} />
             ) : null}
             <div className="facilities-category-name-content">
-              <label>
+              <label className="labeltext">
                 <input
+                  className="checkbox"
                   type="checkbox"
                   checked={enabledCategories.indexOf(category.name) >= 0}
                   onChange={() => toggleCategory(category.name)}
