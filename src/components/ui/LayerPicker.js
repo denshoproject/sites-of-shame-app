@@ -29,8 +29,9 @@ const LayerPicker = () => {
     <div className="layer-picker">
       <LayerPickerSection name="Journeys">
         <LayerPickerSubsection>
-          <label>
+          <label className="labeltext">
             <input
+              className="checkbox"
               type="checkbox"
               checked={isEnabled("families")}
               onChange={() => {

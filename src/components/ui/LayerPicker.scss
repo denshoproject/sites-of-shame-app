@@ -26,4 +26,14 @@
       padding-bottom: 1em;
     }
   }
+
+  .labeltext {
+    display: block;
+  }
+
+  .checkbox {
+    vertical-align: middle;
+    position: relative;
+    bottom: 0.1em;
+  }
 }
