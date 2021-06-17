@@ -14,7 +14,7 @@ const FamilyPopup = ({ feature }) => {
         {properties.image_url ? (
           <span className="family-meta">
             <img
-              alt="Image of Family Member"
+              alt={properties.person_name}
               src={properties.image_url}
               className="imgcrop"
             />
