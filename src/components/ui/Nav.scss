@@ -1,13 +1,21 @@
 @import "~scss/_variables.scss";
 
-.Nav {
+.nav {
   height: $nav-height;
   background: $color-ui-blue;
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 5rem;
+  font-family: $content-font-family;
+
+  &-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
   a {
     color: white;
@@ -24,7 +32,19 @@
     }
   }
 
+  .separator {
+    font-size: 2em;
+    margin-left: 1rem;
+  }
+
   .site-name {
-    margin-left: 1em;
+    color: #f07057;
+    letter-spacing: 2px;
+    margin-left: 1rem;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    height: 1.8em;
   }
 }
