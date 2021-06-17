@@ -1,24 +1,37 @@
 @import "~scss/_variables.scss";
 
+$infobox-padding: 0.5rem;
+$infobox-pointer-width: 1rem;
+
 .infobox {
   background: white;
   box-shadow: $ui-box-shadow;
-  left: calc(-#{$infobox-width} - 1.5rem);
-  padding: 0.5rem;
+  padding: $infobox-padding;
   position: absolute;
-  margin-top: -1rem;
+  margin-left: -$infobox-width - (2 * $infobox-padding) - $infobox-pointer-width;
+  margin-top: -3.75rem;
   width: $infobox-width;
+  z-index: 1001;
 
   &:after {
     content: "";
     background-color: white;
     border-right: 1px solid #eee;
     position: absolute;
-    height: 1rem;
-    width: 1rem;
-    top: 1rem;
-    right: -0.5rem;
+    height: $infobox-pointer-width;
+    width: $infobox-pointer-width;
+    top: $infobox-pointer-width;
+    right: -$infobox-pointer-width / 2;
     transform: rotate(45deg);
+  }
+
+  &.orient-bottom {
+    margin-top: -0.75rem;
+
+    &:after {
+      top: unset;
+      bottom: $infobox-pointer-width;
+    }
   }
 
   h2 {

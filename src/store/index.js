@@ -12,6 +12,8 @@ const initialState = {
     openId: null,
     clickedId: null,
     content: [],
+    x: null,
+    y: null,
   },
 
   insetMapState: {
@@ -121,6 +123,8 @@ const getNewState = (state, action) => {
           ...state.infobox,
           clickedId: null,
           openId: null,
+          x: null,
+          y: null,
         },
       };
     case "set open infobox":
@@ -130,6 +134,8 @@ const getNewState = (state, action) => {
           ...state.infobox,
           clickedId: action.clickedId,
           openId: action.id,
+          x: action.x,
+          y: action.y,
         },
       };
     case "set infobox content":

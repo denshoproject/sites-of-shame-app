@@ -5,7 +5,7 @@
   flex-direction: column;
   text-align: left;
   overflow: hidden;
-  width: 20em;
+  width: 22em;
 
   .layer {
     background-color: #466086;
@@ -24,6 +24,16 @@
 
     &:last-child {
       padding-bottom: 1em;
+    }
+  }
+
+  .subsection-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    .infobox-button {
+      margin-left: 1em;
     }
   }
 }
