@@ -42,7 +42,7 @@ const TransferLayer = ({ before, layer, loadData }) => {
           ) {
             return console.error("missing latitude or longitude", row);
           }
-          let offset = Math.random() * 20;
+          let offset = (Math.random() * 2 - 1) * 12;
           return turf.transformTranslate(
             turf.greatCircle(
               turf.point([row.longitude1, row.latitude1]),
