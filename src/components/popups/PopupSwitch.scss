@@ -31,3 +31,11 @@
     }
   }
 }
+
+@media (max-width: #{$breakpoint-small}) {
+  .popup-switch {
+    .popup-content {
+      max-width: 250px;
+    }
+  }
+}
