@@ -1,5 +1,6 @@
 import React from "react";
 
+import PopupHeader from "components/popups/PopupHeader";
 import "./FamilyPopup.scss";
 
 const FamilyPopup = ({ feature }) => {
@@ -7,9 +8,9 @@ const FamilyPopup = ({ feature }) => {
 
   return (
     <div className="family-popup">
-      <div className="popup-row">
-        <span className="family-name">{properties.person_name}</span>
-      </div>
+      <PopupHeader className="family-name">
+        {properties.person_name}
+      </PopupHeader>
       <div className="popup-row">
         {properties.image_url ? (
           <span className="family-meta">

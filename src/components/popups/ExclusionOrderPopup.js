@@ -1,5 +1,6 @@
 import React from "react";
 
+import PopupHeader from "components/popups/PopupHeader";
 import "./ExclusionOrderPopup.scss";
 
 const ExclusionOrderPopup = ({ feature }) => {
@@ -13,11 +14,7 @@ const ExclusionOrderPopup = ({ feature }) => {
 
   return (
     <div className="eo-popup">
-      <div className="popup-row">
-        <div className="eo-title">
-          <span className="eo-name">{name}</span>
-        </div>
-      </div>
+      <PopupHeader className="eo-title">{name}</PopupHeader>
       <div className="eo-row">
         <span className="eo-meta">
           <div className="img-container">
