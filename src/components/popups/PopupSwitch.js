@@ -10,16 +10,26 @@ import { Context } from "store";
 import "./PopupSwitch.scss";
 
 const PopupSwitch = () => {
-  const { state } = useContext(Context);
+  const { state, dispatch } = useContext(Context);
   const { clickedFeature, clickedFeatureLngLat } = state;
   if (!clickedFeature || !clickedFeatureLngLat) return null;
 
   const layerId = clickedFeature.layer.id;
   const { lng, lat } = clickedFeatureLngLat;
 
+  const closePopup = () => {
+    dispatch({
+      type: "set clickedFeature",
+      clickedFeature: null,
+    });
+  };
+
   return (
     <Popup className="popup-switch" coordinates={[lng, lat]}>
       <div className="popup-content">
+        <div onClick={() => closePopup()} className="close-popup">
+          x
+        </div>
         {layerId === "sos-facilities" ? (
           <FacilityPopup feature={clickedFeature} />
         ) : null}
