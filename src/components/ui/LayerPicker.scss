@@ -1,13 +1,14 @@
 @import "~scss/_variables.scss";
 
 .layer-picker {
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  border-radius: 10px;
+  overflow: hidden;
   width: 20em;
 
   .layer {
     background-color: #466086;
-    border-radius: 10px;
     color: white;
     cursor: pointer;
     margin: 0.5em;

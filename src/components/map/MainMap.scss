@@ -16,6 +16,8 @@
     top: 0.5rem;
     right: 0.5rem;
     z-index: 1000;
+    max-height: 90vh;
+    overflow: hidden;
 
     & > * {
       margin-bottom: 0.5rem;
