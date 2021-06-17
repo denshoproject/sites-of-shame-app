@@ -39,8 +39,8 @@ const initialState = {
 
   families: {
     selectedFamily: "",
-    familyData: {},
     data: [],
+    colorScheme: [],
   },
 
   facilities: {
@@ -60,7 +60,15 @@ const initialState = {
       paint: {
         "fill-color": "#BEC1C1",
         "fill-outline-color": "#333",
-        "fill-opacity": 0.25,
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          4,
+          0.15,
+          12,
+          0.05,
+        ],
         "fill-pattern": "diagonal-grid",
       },
       enabled: true,
@@ -146,6 +154,14 @@ const getNewState = (state, action) => {
         families: {
           ...state.families,
           data: action.data,
+        },
+      };
+    case "set family colorScheme":
+      return {
+        ...state,
+        families: {
+          ...state.families,
+          colorScheme: action.colorScheme,
         },
       };
     case "set family selectedFamily":

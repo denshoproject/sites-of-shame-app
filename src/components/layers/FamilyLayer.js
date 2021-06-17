@@ -8,7 +8,7 @@ import { Context } from "store";
 
 const FamilyLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
-  const { data, selectedFamily } = state.families;
+  const { colorScheme, data, selectedFamily } = state.families;
 
   const fetchFamilies = () =>
     d3.csv(DATA_PATH + "familyjourneys-withdates.csv");
@@ -77,15 +77,21 @@ const FamilyLayer = ({ before, layer, loadData }) => {
     );
   }, [familyData]);
 
-  const colorScale = d3.scaleOrdinal(d3.schemeSet3);
-  const colorScheme = Array.from(byIndividual.keys())
-    .sort()
-    .map((person) => {
-      return {
-        personId: person,
-        color: colorScale(person),
-      };
+  useEffect(() => {
+    const colorScale = d3.scaleOrdinal(d3.schemeSet3);
+    const scheme = Array.from(byIndividual.keys())
+      .sort()
+      .map((person) => {
+        return {
+          personId: person,
+          color: colorScale(person),
+        };
+      });
+    dispatch({
+      type: "set family colorScheme",
+      colorScheme: scheme,
     });
+  }, [byIndividual, dispatch]);
 
   let colorExpression = "gray";
 

@@ -72,24 +72,32 @@ const FARLayer = ({ before, layer, loadData }) => {
   //
 
   const points = useMemo(() => {
-    const pointRows = [
-      ...(selectedCampData
+    const preRows =
+      selectedCampData
         ?.filter((row) => row.pre_lat && row.pre_lng)
         ?.map((row) => ({
           ...row,
           value: -1,
           lat: row.pre_lat,
           lng: row.pre_lng,
-        })) ?? []),
-      ...(selectedCampData
+        })) ?? [];
+    const destRows =
+      selectedCampData
         ?.filter((row) => row.dest_lat && row.dest_lng)
         ?.map((row) => ({
           ...row,
           value: 1,
           lat: row.dest_lat,
           lng: row.dest_lng,
-        })) ?? []),
-    ];
+        })) ?? [];
+
+    let pointRows = [];
+    if (preVisible) {
+      pointRows = pointRows.concat(preRows);
+    }
+    if (destVisible) {
+      pointRows = pointRows.concat(destRows);
+    }
 
     // Hash points by lat/lng to group them
     const hash = {};
@@ -111,7 +119,7 @@ const FARLayer = ({ before, layer, loadData }) => {
         count: rows.length,
       };
     });
-  }, [selectedCampData]);
+  }, [destVisible, preVisible, selectedCampData]);
 
   const pointCollection = useMemo(() => {
     return turf.featureCollection(
@@ -187,9 +195,6 @@ const FARLayer = ({ before, layer, loadData }) => {
           ],
           "line-opacity": 0.25,
         }}
-        layout={{
-          visibility: preVisible ? "visible" : "none",
-        }}
       />
 
       <Source
@@ -225,9 +230,6 @@ const FARLayer = ({ before, layer, loadData }) => {
             1,
             "#86d5e3",
           ],
-        }}
-        layout={{
-          visibility: destVisible ? "visible" : "none",
         }}
       />
     </>
