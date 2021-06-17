@@ -1,6 +1,6 @@
 import React from "react";
 
-import Logo from "img/logo.png";
+import Logo from "img/densho-logo-horizontal.png";
 import "./Nav.scss";
 
 const Nav = () => {
@@ -24,7 +24,7 @@ const Nav = () => {
   return (
     <nav className="Nav">
       <a href="https://densho.org/">
-        <img alt="Densho logo" src={Logo} />
+        <img alt="Densho logo" src={Logo} className="logo" />
         <span className="site-name separator"> / </span>
         <span className="site-name"> Sites of Shame</span>
       </a>
