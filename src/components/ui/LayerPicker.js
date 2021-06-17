@@ -19,6 +19,12 @@ const LayerPicker = () => {
   const toggleLayer = (id) => dispatch({ type: "toggle layer", layerId: id });
   const isEnabled = (id) => enabledLayers.indexOf(id) >= 0;
 
+  const clearSelectedFamily = () =>
+    dispatch({
+      type: "set family selectedFamily",
+      selectedFamily: "",
+    });
+
   return (
     <div className="layer-picker">
       <LayerPickerSection name="Journeys">
@@ -27,7 +33,10 @@ const LayerPicker = () => {
             <input
               type="checkbox"
               checked={isEnabled("families")}
-              onChange={() => toggleLayer("families")}
+              onChange={() => {
+                if (isEnabled("families")) clearSelectedFamily();
+                toggleLayer("families");
+              }}
             />
             Family Journeys
           </label>
