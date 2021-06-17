@@ -22,6 +22,7 @@ const initialState = {
   },
 
   mapState: {
+    flyTo: null,
     center: [-93, 38],
     zoom: [4],
   },
@@ -299,8 +300,17 @@ const getNewState = (state, action) => {
       return {
         ...state,
         mapState: {
+          ...state.mapState,
           center: action.center,
           zoom: action.zoom,
+        },
+      };
+    case "set flyTo":
+      return {
+        ...state,
+        mapState: {
+          ...state.mapState,
+          flyTo: action.flyTo,
         },
       };
     case "set insetMapState":
