@@ -27,7 +27,7 @@ const FacilityPopup = ({ feature }) => {
         <span className="facility-meta">
           {properties.date_opened && properties.date_closed ? (
             <span>
-              Open from {properties.date_opened} to {properties.date_closed}
+              Active from {properties.date_opened} to {properties.date_closed}
             </span>
           ) : null}
         </span>
