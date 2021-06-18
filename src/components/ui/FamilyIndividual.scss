@@ -1,17 +1,21 @@
-.individual-list {
-  padding-top: 0.6em;
-}
+@import "~scss/_variables.scss";
 
-ol.individual-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.family-individuals {
+  .family-name {
+    font-weight: bold;
+    margin-left: $legend-rectangle-width + 0.5rem;
+    margin-top: 1em;
+  }
 
-.each-individual {
-  font-weight: normal;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  .individual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
