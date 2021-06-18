@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useMemo } from "react";
 import { Layer, Source } from "react-mapbox-gl";
+import dayjs from "dayjs";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
@@ -25,6 +26,8 @@ const TransferLayer = ({ before, layer, loadData }) => {
           latitude2: +row.latitude2,
           longitude2: +row.longitude2,
           personsTransferred: +row["Persons transferred"],
+          arrivalDate: dayjs(row["Date of Arrival"]).toDate(),
+          departureDate: dayjs(row["Date of Departure"]).toDate(),
         })),
       });
     });
@@ -46,8 +49,11 @@ const TransferLayer = ({ before, layer, loadData }) => {
         longitude2: rows[0].longitude2,
         transferred: d3.sum(rows, (d) => d["Persons transferred"]),
         transfernumber: rows[0]["Transfer order number"],
+        transferCount: rows.length,
         origin: rows[0]["Assembly Center origin"],
         destination: rows[0]["Relocation Center destination"],
+        firstDeparture: d3.min(rows, (d) => d.departureDate),
+        lastArrival: d3.max(rows, (d) => d.arrivalDate),
       };
     });
   }, [data]);
