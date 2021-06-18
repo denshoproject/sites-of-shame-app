@@ -32,6 +32,11 @@
     display: flex;
     flex-direction: row;
 
+    label {
+      align-items: center;
+      display: flex;
+    }
+
     .infobox-button {
       margin-left: 1em;
     }

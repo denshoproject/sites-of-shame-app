@@ -1,6 +1,7 @@
 import React from "react";
 
 import InfoboxButton from "components/ui/InfoboxButton";
+import "./FacilityCategoryPicker.scss";
 
 const FacilityCategoryPicker = ({ name, enabled, toggle }) => {
   return (
