@@ -1,5 +1,12 @@
 import classNames from "classnames";
-import React, { useContext, useMemo, useRef } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import ReactMapboxGl, { Image, ZoomControl } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -24,11 +31,15 @@ const BaseMap = ({
   onMoveEnd,
 }) => {
   const { state, dispatch } = useContext(Context);
+  const currentClickedFeature = useRef();
   const clickableLayerIds = useRef();
+  const [map, setMap] = useState(null);
+  const { mapState } = state;
 
   clickableLayerIds.current = state.layers
     .filter(({ clickable, enabled }) => clickable && enabled)
     .map(({ id }) => id);
+  currentClickedFeature.current = state.clickedFeature;
 
   state.layers
     .filter(({ enabled }) => enabled)
@@ -41,16 +52,27 @@ const BaseMap = ({
       }
     });
 
-  const handleClick = (map, event) => {
-    const features = map.queryRenderedFeatures(event.point, {
-      layers: clickableLayerIds.current,
-    });
-    dispatch({
-      type: "set clickedFeature",
-      clickedFeature: features[0] || null,
-      clickedFeatureLngLat: event.lngLat || null,
-    });
-  };
+  const handleClick = useCallback(
+    (map, event) => {
+      if (!showPopups) return;
+      let clickedFeature, clickedFeatureLngLat;
+
+      if (!currentClickedFeature.current) {
+        const features = map.queryRenderedFeatures(event.point, {
+          layers: clickableLayerIds.current,
+        });
+        clickedFeature = features[0];
+        clickedFeatureLngLat = event.lngLat;
+      }
+
+      dispatch({
+        type: "set clickedFeature",
+        clickedFeature,
+        clickedFeatureLngLat,
+      });
+    },
+    [dispatch, showPopups, currentClickedFeature]
+  );
 
   const Map = useMemo(() => {
     return ReactMapboxGl({
@@ -58,6 +80,16 @@ const BaseMap = ({
       interactive: isInteractive,
     });
   }, [isInteractive]);
+
+  useEffect(() => {
+    if (mapState.flyTo && !isInset) {
+      map.fitBounds(mapState.flyTo, {
+        padding: 75,
+      });
+
+      dispatch({ type: "set flyTo", flyTo: null });
+    }
+  }, [dispatch, map, mapState.flyTo, isInset]);
 
   return (
     <div className={classNames("BaseMap", className)}>
@@ -74,6 +106,7 @@ const BaseMap = ({
         zoom={zoom}
         onMoveEnd={onMoveEnd}
         onClick={handleClick}
+        onStyleLoad={setMap}
       >
         {includeZoomControls ? <ZoomControl position="top-left" /> : null}
         {showPopups ? <PopupSwitch /> : null}

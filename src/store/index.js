@@ -12,6 +12,8 @@ const initialState = {
     openId: null,
     clickedId: null,
     content: [],
+    x: null,
+    y: null,
   },
 
   insetMapState: {
@@ -20,6 +22,7 @@ const initialState = {
   },
 
   mapState: {
+    flyTo: null,
     center: [-93, 38],
     zoom: [4],
   },
@@ -121,6 +124,8 @@ const getNewState = (state, action) => {
           ...state.infobox,
           clickedId: null,
           openId: null,
+          x: null,
+          y: null,
         },
       };
     case "set open infobox":
@@ -130,6 +135,8 @@ const getNewState = (state, action) => {
           ...state.infobox,
           clickedId: action.clickedId,
           openId: action.id,
+          x: action.x,
+          y: action.y,
         },
       };
     case "set infobox content":
@@ -293,8 +300,17 @@ const getNewState = (state, action) => {
       return {
         ...state,
         mapState: {
+          ...state.mapState,
           center: action.center,
           zoom: action.zoom,
+        },
+      };
+    case "set flyTo":
+      return {
+        ...state,
+        mapState: {
+          ...state.mapState,
+          flyTo: action.flyTo,
         },
       };
     case "set insetMapState":

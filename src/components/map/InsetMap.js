@@ -6,18 +6,27 @@ import { HAWAII_BOUNDS } from "constants.js";
 import "./InsetMap.scss";
 
 const InsetMap = () => {
-  const { state } = useContext(Context);
+  const { dispatch, state } = useContext(Context);
   const { insetMapState } = state;
 
+  const handleClick = () => {
+    dispatch({
+      type: "set flyTo",
+      flyTo: HAWAII_BOUNDS,
+    });
+  };
+
   return (
-    <BaseMap
-      bounds={HAWAII_BOUNDS}
-      center={insetMapState.center}
-      className="InsetMap"
-      isInset={true}
-      isInteractive={false}
-      zoom={insetMapState.zoom}
-    />
+    <div className="inset-map-wrapper" onClick={handleClick}>
+      <BaseMap
+        bounds={HAWAII_BOUNDS}
+        center={insetMapState.center}
+        className="InsetMap"
+        isInset={true}
+        isInteractive={false}
+        zoom={insetMapState.zoom}
+      />
+    </div>
   );
 };
 

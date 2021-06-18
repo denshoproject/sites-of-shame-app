@@ -25,3 +25,9 @@ export const FACILITY_COLORS = {
     "U.S. Army Internment Camp": "#B3B3B3",
   },
 };
+
+export const FAR_COLORS = {
+  pre: "#e3cd68",
+  both: "#7FC788",
+  dest: "#86d5e3",
+};

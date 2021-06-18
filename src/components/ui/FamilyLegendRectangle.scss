@@ -1,10 +1,12 @@
+@import "~scss/_variables.scss";
+
 .family-legend-rectangle {
   display: inline-block;
-  width: 1.5em;
   flex-shrink: 0;
-  height: 0.8em;
+  height: $legend-rectangle-height;
   margin: 0;
   padding: 0;
   margin-right: 0.5em;
   background-color: #fff;
+  width: $legend-rectangle-width;
 }

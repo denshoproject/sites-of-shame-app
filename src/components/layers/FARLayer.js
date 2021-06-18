@@ -3,7 +3,7 @@ import { Layer, Source } from "react-mapbox-gl";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
-import { DATA_PATH } from "constants.js";
+import { DATA_PATH, FAR_COLORS } from "constants.js";
 import { Context } from "store";
 
 const FARLayer = ({ before, layer, loadData }) => {
@@ -187,11 +187,11 @@ const FARLayer = ({ before, layer, loadData }) => {
             ["linear"],
             ["get", "value"],
             -1,
-            "#e3cd68",
+            FAR_COLORS.pre,
             0,
-            "green",
+            FAR_COLORS.both,
             1,
-            "#86d5e3",
+            FAR_COLORS.dest,
           ],
           "line-opacity": 0.25,
         }}
@@ -224,11 +224,11 @@ const FARLayer = ({ before, layer, loadData }) => {
             ["linear"],
             ["get", "value"],
             -1,
-            "#e3cd68",
+            FAR_COLORS.pre,
             0,
-            "green",
+            FAR_COLORS.both,
             1,
-            "#86d5e3",
+            FAR_COLORS.dest,
           ],
         }}
       />
