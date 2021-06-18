@@ -102,14 +102,12 @@ const TransferLayer = ({ before, layer, loadData }) => {
             ["linear"],
             ["get", "transferred"],
             3000,
-            3,
-            5000,
-            5,
+            4,
             8000,
-            7,
+            10,
           ],
           "line-color": colorExpression,
-          "line-opacity": 0.4,
+          "line-opacity": 0.75,
         }}
       />
       <Layer
