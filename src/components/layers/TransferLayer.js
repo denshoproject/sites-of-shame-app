@@ -50,7 +50,7 @@ const TransferLayer = ({ before, layer, loadData }) => {
         destination: rows[0]["Relocation Center destination"],
       };
     });
-  });
+  }, [data]);
 
   const transferLines = useMemo(() => {
     return turf.featureCollection(
