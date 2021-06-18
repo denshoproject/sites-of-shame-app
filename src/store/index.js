@@ -92,14 +92,7 @@ const initialState = {
     {
       name: "Transfer Orders",
       id: "transfer orders",
-      data: DATA_PATH + "transfer-orders.geojson",
       clickable: true,
-      layerType: "line",
-      sourceType: "geojson",
-      paint: {
-        "line-width": 3,
-        "line-color": "gray",
-      },
       enabled: false,
       order: 4,
     },
