@@ -14,31 +14,14 @@ const TransferOrderPopup = ({ feature }) => {
       <div className="to-row">
         <span className="to-meta">
           <span className="to-meta">
-            <span className="bold-text">Date of departure:</span>{" "}
-            {properties["Date of Departure"]}
-          </span>
-        </span>
-      </div>
-      <div className="to-row">
-        <span className="to-meta">
-          <span className="to-meta">
-            <span className="bold-text">Date of arrival:</span>{" "}
-            {properties["Date of Arrival"]}
-          </span>
-        </span>
-      </div>
-      <div className="to-row">
-        <span className="to-meta">
-          <span className="to-meta">
-            From {properties["Assembly Center origin"]} to{" "}
-            {properties["Relocation Center destination"]}
+            From {properties.origin} to {properties.destination}
           </span>
         </span>
       </div>
 
       <div className="popup-row">
         <span className="to-meta">
-          {properties["Persons transferred"]} people transferred
+          {properties.transferred} people transferred
         </span>
       </div>
     </div>

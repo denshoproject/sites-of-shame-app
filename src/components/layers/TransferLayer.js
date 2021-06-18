@@ -46,6 +46,8 @@ const TransferLayer = ({ before, layer, loadData }) => {
         longitude2: rows[0].longitude2,
         transferred: d3.sum(rows, (d) => d["Persons transferred"]),
         transfernumber: rows[0]["Transfer order number"],
+        origin: rows[0]["Assembly Center origin"],
+        destination: rows[0]["Relocation Center destination"],
       };
     });
   });
