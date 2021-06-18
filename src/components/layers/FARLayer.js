@@ -49,11 +49,6 @@ const FARLayer = ({ before, layer, loadData }) => {
 
     d3.csv(`${DATA_PATH}far/${selectedCamp}.csv`).then((rows) => {
       dispatch({
-        type: "set far loading",
-        camp: selectedCamp,
-        loading: false,
-      });
-      dispatch({
         type: "set far camp data",
         camp: selectedCamp,
         data: rows.map((row) => ({
@@ -63,6 +58,11 @@ const FARLayer = ({ before, layer, loadData }) => {
           dest_lat: +row.dest_lat,
           dest_lng: +row.dest_lng,
         })),
+      });
+      dispatch({
+        type: "set far loading",
+        camp: selectedCamp,
+        loading: false,
       });
     });
   }, [needToLoadData, selectedCamp, dispatch]);
