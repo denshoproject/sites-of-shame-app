@@ -39,12 +39,7 @@ const ExclusionOrderPopup = ({ feature }) => {
         </span>
       </div>
       <div className="eo-row">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          className="view-full-image"
-          href={pdflink}
-        >
+        <a target="_blank" rel="noreferrer" href={pdflink}>
           View full Exclusion Order
         </a>
       </div>

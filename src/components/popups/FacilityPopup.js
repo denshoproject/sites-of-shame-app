@@ -45,12 +45,7 @@ const FacilityPopup = ({ feature }) => {
       <div className="popup-row">{properties.location_description}</div>
       {properties.encyc_article_status ? (
         <div className="popup-row">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className="more-info"
-            href={properties.encyc_url}
-          >
+          <a target="_blank" rel="noreferrer" href={properties.encyc_url}>
             More Info
           </a>
         </div>

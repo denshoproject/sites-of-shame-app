@@ -30,6 +30,12 @@
       color: $color-ui-gray;
     }
   }
+
+  a {
+    color: #f07057;
+    font-weight: 800;
+    text-decoration: none;
+  }
 }
 
 @media (max-width: #{$breakpoint-small}) {
