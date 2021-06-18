@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { Context } from "store";
 
 import InfoboxButton from "components/ui/InfoboxButton";
-import "./FamilyIndividual.scss";
+import "./FamilyIndividuals.scss";
 import FamilyLegendRectangle from "components/ui/FamilyLegendRectangle";
 
 const FamilyIndividuals = () => {
@@ -39,7 +39,8 @@ const FamilyIndividuals = () => {
 
   return (
     <div className="family-individuals">
-      <div className="familyname-container">
+      <div className="family-name-container">
+        <div className="family-name-spacer"></div>
         {familyName ? (
           <div className="family-name">{familyName} family</div>
         ) : null}
