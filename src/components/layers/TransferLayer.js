@@ -30,9 +30,29 @@ const TransferLayer = ({ before, layer, loadData }) => {
     });
   }, [dispatch, loadData]);
 
+  const transfers = useMemo(() => {
+    const hash = {};
+    data.forEach((r) => {
+      const key = `${r["Transfer order number"]}`;
+      if (!hash[key]) hash[key] = [];
+      hash[key].push(r);
+    });
+
+    return Object.values(hash).map((rows) => {
+      return {
+        latitude1: rows[0].latitude1,
+        longitude1: rows[0].longitude1,
+        latitude2: rows[0].latitude2,
+        longitude2: rows[0].longitude2,
+        transferred: d3.sum(rows, (d) => d["Persons transferred"]),
+        transfernumber: rows[0]["Transfer order number"],
+      };
+    });
+  });
+
   const transferLines = useMemo(() => {
     return turf.featureCollection(
-      data
+      transfers
         .map((row) => {
           if (
             !row.latitude1 ||
@@ -50,7 +70,7 @@ const TransferLayer = ({ before, layer, loadData }) => {
         })
         .filter((transfer) => typeof transfer != "undefined")
     );
-  }, [data]);
+  }, [transfers]);
 
   const colorExpression = "#2d2a6b";
 
@@ -72,14 +92,16 @@ const TransferLayer = ({ before, layer, loadData }) => {
           "line-width": [
             "interpolate",
             ["linear"],
-            ["get", "personsTransferred"],
-            50,
-            1,
-            250,
-            4,
+            ["get", "transferred"],
+            3000,
+            3,
+            5000,
+            5,
+            8000,
+            7,
           ],
           "line-color": colorExpression,
-          "line-opacity": 0.25,
+          "line-opacity": 0.4,
         }}
       />
       <Layer

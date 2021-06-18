@@ -9,7 +9,7 @@ const TransferOrderPopup = ({ feature }) => {
   return (
     <div className="to-popup">
       <PopupHeader className="to-name">
-        Transfer Order #{properties["Transfer order number"]}
+        Transfer Order #{properties["transfernumber"]}
       </PopupHeader>
       <div className="to-row">
         <span className="to-meta">
