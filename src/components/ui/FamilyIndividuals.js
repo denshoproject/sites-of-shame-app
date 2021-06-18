@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from "react";
 import * as d3 from "d3";
 import { Context } from "store";
 
+import InfoboxButton from "components/ui/InfoboxButton";
 import "./FamilyIndividual.scss";
 import FamilyLegendRectangle from "components/ui/FamilyLegendRectangle";
 
@@ -38,9 +39,20 @@ const FamilyIndividuals = () => {
 
   return (
     <div className="family-individuals">
-      {familyName ? (
-        <div className="family-name">{familyName} family</div>
-      ) : null}
+      <div style={{ display: "flex", alignItems: "center" }}>
+        {familyName ? (
+          <div style={{ display: "flex" }} className="family-name">
+            {familyName} family
+          </div>
+        ) : null}
+        {familyName ? (
+          <InfoboxButton
+            style={{ display: "flex" }}
+            id={familyName}
+            clickedId={familyName}
+          />
+        ) : null}
+      </div>
       <ol className="individual-list">
         {individuals.map(({ name, color }) => (
           <li key={name}>
