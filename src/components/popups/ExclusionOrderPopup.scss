@@ -18,16 +18,18 @@
     line-height: 1.8;
   }
 
-  .imgcrop {
-    width: 440px;
-    height: 225px;
-    object-fit: cover;
-    object-position: 50% 5%;
-    margin: 0px -2em 0px -2em;
-  }
-
   .img-container {
     overflow: hidden;
+    width: 100%;
+    height: 225px;
+  }
+
+  .imgcrop {
+    object-fit: cover;
+    object-position: 50% 5%;
+    margin-left: -2em;
+    margin-top: -2em;
+    width: calc(100% + 4em);
   }
 
   .view-full-image {

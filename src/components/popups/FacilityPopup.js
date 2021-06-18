@@ -1,6 +1,7 @@
 import React from "react";
 
 import PopupHeader from "components/popups/PopupHeader";
+import PopupImage from "components/popups/PopupImage";
 import "./FacilityPopup.scss";
 
 const FacilityPopup = ({ feature }) => {
@@ -13,15 +14,7 @@ const FacilityPopup = ({ feature }) => {
       <PopupHeader className="facility-title">
         {properties.facility_name}
       </PopupHeader>
-      <div className="popup-row">
-        <span className="facility-meta">
-          <img
-            alt={properties.facility_name}
-            src={imagesrc}
-            className="imgcrop"
-          />
-        </span>
-      </div>
+      <PopupImage alt={properties.facility_name} src={imagesrc} />
       <div className="popup-row">
         <span className="facility-meta">
           {properties.sos_category}

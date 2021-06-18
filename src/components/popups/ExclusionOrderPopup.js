@@ -1,6 +1,7 @@
 import React from "react";
 
 import PopupHeader from "components/popups/PopupHeader";
+import PopupImage from "components/popups/PopupImage";
 import "./ExclusionOrderPopup.scss";
 
 const ExclusionOrderPopup = ({ feature }) => {
@@ -15,16 +16,8 @@ const ExclusionOrderPopup = ({ feature }) => {
   return (
     <div className="eo-popup">
       <PopupHeader className="eo-title">{name}</PopupHeader>
-      <div className="eo-row">
-        <span className="eo-meta">
-          <div className="img-container">
-            <img
-              alt="First page of exclusion order document"
-              src={imagesrc}
-              className="imgcrop"
-            />
-          </div>
-        </span>
+      <div className="img-container">
+        <PopupImage alt={properties.facility_name} src={imagesrc} />
       </div>
       <div className="eo-row">
         <span className="eo-meta eo-details">
