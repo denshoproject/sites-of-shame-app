@@ -35,12 +35,7 @@ const FamilyPopup = ({ feature }) => {
       <div className="popup-row">
         {properties.more_info_url ? (
           <div className="popup-row">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              className="learn-more"
-              href={properties.more_info_url}
-            >
+            <a target="_blank" rel="noreferrer" href={properties.more_info_url}>
               Learn more
             </a>
           </div>
