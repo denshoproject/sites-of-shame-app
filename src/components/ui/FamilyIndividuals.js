@@ -13,6 +13,11 @@ const FamilyIndividuals = () => {
     return data ? data.filter((d) => d.family_id === selectedFamily) : [];
   }, [data, selectedFamily]);
 
+  const familyName = useMemo(
+    () => familyData[0]?.family_name ?? null,
+    [familyData]
+  );
+
   const byIndividual = useMemo(() => {
     return d3.group(familyData, (d) => d.person_id);
   }, [familyData]);
@@ -32,15 +37,18 @@ const FamilyIndividuals = () => {
   }, [byIndividual, colorScheme]);
 
   return (
-    <div className="individual-list">
-      {individuals.map(({ name, color }) => (
-        <ol className="each-individual">
-          <li>
+    <div className="family-individuals">
+      {familyName ? (
+        <div className="family-name">{familyName} family</div>
+      ) : null}
+      <ol className="individual-list">
+        {individuals.map(({ name, color }) => (
+          <li key={name}>
             <FamilyLegendRectangle color={color} />
             {name}
           </li>
-        </ol>
-      ))}
+        ))}
+      </ol>
     </div>
   );
 };
