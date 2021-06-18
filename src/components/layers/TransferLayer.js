@@ -80,7 +80,7 @@ const TransferLayer = ({ before, layer, loadData }) => {
     );
   }, [transfers]);
 
-  const colorExpression = "#2d2a6b";
+  const colorExpression = "#687980";
 
   return (
     <>
