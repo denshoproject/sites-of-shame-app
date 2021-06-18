@@ -1,4 +1,5 @@
 import React from "react";
+import dayjs from "dayjs";
 
 import PopupHeader from "components/popups/PopupHeader";
 import "./TransferOrderPopup.scss";
@@ -6,39 +7,30 @@ import "./TransferOrderPopup.scss";
 const TransferOrderPopup = ({ feature }) => {
   const { properties } = feature;
 
+  const formatDate = (date) => dayjs(date).format("MMM YYYY");
+  const firstDepartureFormatted = formatDate(properties.firstDeparture);
+  const lastArrivalFormatted = formatDate(properties.lastArrival);
+
   return (
     <div className="to-popup">
       <PopupHeader className="to-name">
-        Transfer Order #{properties["Transfer order number"]}
+        From {properties.origin} to {properties.destination}
       </PopupHeader>
-      <div className="to-row">
-        <span className="to-meta">
-          <span className="to-meta">
-            <span className="bold-text">Date of departure:</span>{" "}
-            {properties["Date of Departure"]}
-          </span>
-        </span>
-      </div>
-      <div className="to-row">
-        <span className="to-meta">
-          <span className="to-meta">
-            <span className="bold-text">Date of arrival:</span>{" "}
-            {properties["Date of Arrival"]}
-          </span>
-        </span>
-      </div>
-      <div className="to-row">
-        <span className="to-meta">
-          <span className="to-meta">
-            From {properties["Assembly Center origin"]} to{" "}
-            {properties["Relocation Center destination"]}
-          </span>
-        </span>
-      </div>
-
       <div className="popup-row">
         <span className="to-meta">
-          {properties["Persons transferred"]} people transferred
+          {firstDepartureFormatted === lastArrivalFormatted ? (
+            <span>In {firstDepartureFormatted}</span>
+          ) : (
+            <span>
+              Between {firstDepartureFormatted} and {lastArrivalFormatted}
+            </span>
+          )}
+        </span>
+      </div>
+      <div className="popup-row">
+        <span className="to-meta">
+          {properties.transferred} people transferred over{" "}
+          {properties.transferCount} transfer orders
         </span>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useMemo } from "react";
 import { Layer, Source } from "react-mapbox-gl";
+import dayjs from "dayjs";
 import * as d3 from "d3";
 import * as turf from "@turf/turf";
 
@@ -25,14 +26,41 @@ const TransferLayer = ({ before, layer, loadData }) => {
           latitude2: +row.latitude2,
           longitude2: +row.longitude2,
           personsTransferred: +row["Persons transferred"],
+          arrivalDate: dayjs(row["Date of Arrival"]).toDate(),
+          departureDate: dayjs(row["Date of Departure"]).toDate(),
         })),
       });
     });
   }, [dispatch, loadData]);
 
+  const transfers = useMemo(() => {
+    const hash = {};
+    data.forEach((r) => {
+      const key = `${r["Transfer order number"]}`;
+      if (!hash[key]) hash[key] = [];
+      hash[key].push(r);
+    });
+
+    return Object.values(hash).map((rows) => {
+      return {
+        latitude1: rows[0].latitude1,
+        longitude1: rows[0].longitude1,
+        latitude2: rows[0].latitude2,
+        longitude2: rows[0].longitude2,
+        transferred: d3.sum(rows, (d) => d["Persons transferred"]),
+        transfernumber: rows[0]["Transfer order number"],
+        transferCount: rows.length,
+        origin: rows[0]["Assembly Center origin"],
+        destination: rows[0]["Relocation Center destination"],
+        firstDeparture: d3.min(rows, (d) => d.departureDate),
+        lastArrival: d3.max(rows, (d) => d.arrivalDate),
+      };
+    });
+  }, [data]);
+
   const transferLines = useMemo(() => {
     return turf.featureCollection(
-      data
+      transfers
         .map((row) => {
           if (
             !row.latitude1 ||
@@ -50,7 +78,7 @@ const TransferLayer = ({ before, layer, loadData }) => {
         })
         .filter((transfer) => typeof transfer != "undefined")
     );
-  }, [data]);
+  }, [transfers]);
 
   const colorExpression = "#2d2a6b";
 
@@ -72,14 +100,14 @@ const TransferLayer = ({ before, layer, loadData }) => {
           "line-width": [
             "interpolate",
             ["linear"],
-            ["get", "personsTransferred"],
-            50,
-            1,
-            250,
+            ["get", "transferred"],
+            3000,
             4,
+            8000,
+            10,
           ],
           "line-color": colorExpression,
-          "line-opacity": 0.25,
+          "line-opacity": 0.75,
         }}
       />
       <Layer
