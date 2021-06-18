@@ -39,18 +39,12 @@ const FamilyIndividuals = () => {
 
   return (
     <div className="family-individuals">
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div className="familyname-container">
         {familyName ? (
-          <div style={{ display: "flex" }} className="family-name">
-            {familyName} family
-          </div>
+          <div className="family-name">{familyName} family</div>
         ) : null}
         {familyName ? (
-          <InfoboxButton
-            style={{ display: "flex" }}
-            id={familyName}
-            clickedId={familyName}
-          />
+          <InfoboxButton id={familyName} clickedId={familyName} />
         ) : null}
       </div>
       <ol className="individual-list">
