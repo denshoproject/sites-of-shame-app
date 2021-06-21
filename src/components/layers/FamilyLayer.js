@@ -71,7 +71,19 @@ const FamilyLayer = ({ before, layer, loadData }) => {
   const points = useMemo(() => {
     return turf.featureCollection(
       familyData.map((step) => {
-        return turf.point([step.longitude, step.latitude], step);
+        const locationData = familyData.filter(
+          (d) => d.location === step.location
+        );
+        return turf.point([step.longitude, step.latitude], {
+          ...step,
+          locationCount: locationData.length,
+          locationIndividuals: locationData
+            .map((d) => ({
+              name: d.person_name,
+              date: d.date,
+            }))
+            .sort((a, b) => d3.ascending(a.date, b.date)),
+        });
       })
     );
   }, [familyData]);

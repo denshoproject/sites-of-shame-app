@@ -86,7 +86,8 @@ const initialState = {
     {
       name: "Family Journeys",
       id: "families",
-      clickable: true,
+      clickable: false,
+      clickableSublayers: ["families", "families-points"],
       order: 5,
     },
     {
