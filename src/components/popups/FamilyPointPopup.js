@@ -36,8 +36,7 @@ const FamilyPointPopup = ({ feature }) => {
           <ul>
             {individuals.map((individual) => (
               <li key={individual.name}>
-                {individual.name} (
-                {dayjs(individual.date).format("MMM D, YYYY")})
+                {individual.name} ({dayjs(individual.date).format("MMM YYYY")})
               </li>
             ))}
           </ul>
