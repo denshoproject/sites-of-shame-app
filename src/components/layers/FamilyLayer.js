@@ -10,8 +10,7 @@ const FamilyLayer = ({ before, layer, loadData }) => {
   const { state, dispatch } = useContext(Context);
   const { colorScheme, data, selectedFamily } = state.families;
 
-  const fetchFamilies = () =>
-    d3.csv(DATA_PATH + "familyjourneys-withdates.csv");
+  const fetchFamilies = () => d3.csv(DATA_PATH + "family-journeys.csv");
 
   useEffect(() => {
     if (!loadData || data.length) return;
