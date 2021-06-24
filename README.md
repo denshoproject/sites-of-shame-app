@@ -51,3 +51,7 @@ There are some environment variables that will have to be set in order for the p
  * `REACT_APP_DATA_PATH`: The production data path
  * `REACT_APP_MAPBOX_ACCESS_TOKEN`: The Mapbox access token
  * `REACT_APP_MAPBOX_BASE_LAYER`: The Mapbox style URL
+
+## Next Steps
+
+One potential next step for this project would be an interactive timeline that allows the user to filter data based on the times that features are active and could also visualize the density of data at each point in time. We documented this more in [this Google Doc](https://docs.google.com/document/d/1ZpFKzQbPtk5AFDtu4opYZ_Jw9hHnbm0-OS3LCAUb1dg/edit#).
