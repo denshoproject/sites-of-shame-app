@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import ExclusionOrderLayer from "components/layers/ExclusionOrderLayer";
 import FARLayer from "components/layers/FARLayer";
 import TransferLayer from "components/layers/TransferLayer";
 import FamilyLayer from "components/layers/FamilyLayer";
@@ -30,6 +31,15 @@ const MapLayers = ({ loadLayerData }) => {
     if (layer.id === "far") {
       return (
         <FARLayer
+          loadData={loadLayerData}
+          key={layer.id}
+          layer={layer}
+          before={before}
+        />
+      );
+    } else if (layer.id === "exclusion orders") {
+      return (
+        <ExclusionOrderLayer
           loadData={loadLayerData}
           key={layer.id}
           layer={layer}

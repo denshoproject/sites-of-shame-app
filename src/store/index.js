@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import * as turf from "@turf/turf";
 
-import { DATA_PATH } from "constants.js";
 import { stateToQuery, queryToState } from "./query";
 
 const initialState = {
@@ -36,6 +35,10 @@ const initialState = {
     loading: {},
   },
 
+  exclusionOrders: {
+    data: turf.featureCollection([]),
+  },
+
   transfers: {
     data: [],
   },
@@ -56,24 +59,7 @@ const initialState = {
     {
       name: "Exclusion Orders",
       id: "exclusion orders",
-      data: DATA_PATH + "exclusion-orders.geojson",
       clickable: true,
-      layerType: "fill",
-      sourceType: "geojson",
-      paint: {
-        "fill-color": "#BEC1C1",
-        "fill-outline-color": "#333",
-        "fill-opacity": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          4,
-          0.15,
-          12,
-          0.05,
-        ],
-        "fill-pattern": "diagonal-grid",
-      },
       enabled: true,
       order: 0,
     },
@@ -146,6 +132,14 @@ const getNewState = (state, action) => {
         ...state,
         transfers: {
           ...state.transfers,
+          data: action.data,
+        },
+      };
+    case "set exclusionOrders data":
+      return {
+        ...state,
+        exclusionOrders: {
+          ...state.exclusionOrders,
           data: action.data,
         },
       };
