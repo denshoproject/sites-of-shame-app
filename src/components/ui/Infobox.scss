@@ -41,6 +41,8 @@ $infobox-pointer-width: 1rem;
 
   &-description {
     line-height: 1.25em;
+    max-height: 40vh;
+    overflow-y: auto;
   }
 
   a {
