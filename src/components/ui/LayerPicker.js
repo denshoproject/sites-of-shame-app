@@ -71,11 +71,11 @@ const LayerPicker = () => {
                 checked={isEnabled("transfer orders")}
                 onChange={() => toggleLayer("transfer orders")}
               />
-              Transfers between WRA camps
+              From Assembly Centers to Camps
             </label>
             <InfoboxButton
-              id="Transfers Between WRA Camps"
-              clickedId="Transfers Between WRA Camps"
+              id="From Assembly Centers to Camps"
+              clickedId="From Assembly Centers to Camps"
             />
           </div>
         </LayerPickerSubsection>
