@@ -12,6 +12,10 @@ const categoryValueToName = {
   hawaii: "Hawaii",
 };
 
+export const typeValueToName = {
+  "Department of Justice Internment Camp": "DOJ Internment Camp",
+};
+
 const getColor = (category, type) => FACILITY_COLORS[category][type];
 
 const FacilitiesLayer = ({ before, layer, loadData }) => {
@@ -51,6 +55,7 @@ const FacilitiesLayer = ({ before, layer, loadData }) => {
             return {
               name: type,
               color: getColor(category, type),
+              label: typeValueToName[type] || type,
             };
           });
         return {

@@ -3,11 +3,11 @@ import React from "react";
 import InfoboxButton from "components/ui/InfoboxButton";
 import LegendCircle from "components/ui/LegendCircle";
 
-const FacilityTypePicker = ({ name, color }) => {
+const FacilityTypePicker = ({ label, name, color }) => {
   return (
     <div className="layer-legend-item-content">
       <LegendCircle color={color} />
-      {name}
+      {label}
       <InfoboxButton id={name} clickedId={name} />
     </div>
   );
