@@ -5,6 +5,7 @@ import FacilityCategoryPicker from "components/ui/FacilityCategoryPicker";
 import FacilityTypePicker from "components/ui/FacilityTypePicker";
 import LayerPickerSubsection from "components/ui/LayerPickerSubsection";
 import LegendSizeCircle from "components/ui/LegendSizeCircle";
+import ExclusionOrderLegend from "components/ui/ExclusionOrderLegend";
 import "./FacilitiesPicker.scss";
 
 const FacilitiesPicker = () => {
@@ -27,6 +28,9 @@ const FacilitiesPicker = () => {
 
   return (
     <div className="facilities-picker">
+      <LayerPickerSubsection>
+        <ExclusionOrderLegend />
+      </LayerPickerSubsection>
       {categories.map((category) => (
         <LayerPickerSubsection key={category.name}>
           <FacilityCategoryPicker
@@ -49,6 +53,7 @@ const FacilitiesPicker = () => {
           </div>
         </LayerPickerSubsection>
       ))}
+
       <LayerPickerSubsection>
         <LegendSizeCircle />
       </LayerPickerSubsection>

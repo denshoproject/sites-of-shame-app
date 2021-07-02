@@ -1,0 +1,24 @@
+@import "~scss/_variables.scss";
+
+.eo-legend {
+  &-content {
+    align-items: center;
+    display: flex;
+  }
+
+  .infobox-button {
+    align-self: center;
+    margin-left: 0.5em;
+  }
+
+  .legend-square {
+    display: inline-block;
+    width: 1em;
+    flex-shrink: 0;
+    height: 1em;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    margin-right: 0.5em;
+  }
+}
