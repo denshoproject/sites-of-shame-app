@@ -8,7 +8,9 @@ const ExclusionOrderLegend = () => {
   return (
     <div className="eo-legend">
       <div className="eo-legend-content">
-        <img src={EoColor} className="legend-square" />
+        <div className="legend-square">
+          <img alt="Exclusion Order icon" src={EoColor} />
+        </div>
         Exclusion Orders
         <InfoboxButton id={"Exclusion Orders"} clickedId={"Exclusion Orders"} />
       </div>
