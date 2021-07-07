@@ -9,11 +9,19 @@
     width: 400px;
     height: 225px;
     object-fit: cover;
-    padding-bottom: 0.7em;
   }
 
   .peak-population {
     font-weight: 800;
+  }
+
+  .image-credit {
+    font-size: 0.7em;
+    padding-bottom: 1em;
+  }
+
+  .credit-link {
+    color: gray;
   }
 }
 
