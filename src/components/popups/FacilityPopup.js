@@ -8,6 +8,10 @@ const FacilityPopup = ({ feature }) => {
   const { properties } = feature;
 
   const imagesrc = `https://ddr.densho.org/media/sitesofshame/site-${properties.legacy_densho_id}.jpg`;
+  const imgCredit = properties.img_credit_line;
+  const creditArray = imgCredit.includes("Accessed from")
+    ? imgCredit.split("Accessed from: ")
+    : [imgCredit];
 
   return (
     <div className="facility-popup">
@@ -15,7 +19,13 @@ const FacilityPopup = ({ feature }) => {
         {properties.facility_name}
       </PopupHeader>
       <PopupImage alt={properties.facility_name} src={imagesrc} />
-      <div className="image-credit">{properties.img_credit_line}</div>
+      <div className="image-credit">
+        {creditArray[0]}{" "}
+        {imgCredit.includes("Accessed from") ? "Accessed from:" : ""}{" "}
+        <a href={creditArray[1]} className="credit-link">
+          {creditArray[1]}
+        </a>
+      </div>
       <div className="popup-row">
         <span className="facility-meta">
           {properties.sos_category}

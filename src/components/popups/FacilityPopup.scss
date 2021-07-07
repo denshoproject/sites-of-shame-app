@@ -19,6 +19,10 @@
     font-size: 0.7em;
     padding-bottom: 1em;
   }
+
+  .credit-link {
+    color: gray;
+  }
 }
 
 @media (max-width: #{$breakpoint-small}) {
