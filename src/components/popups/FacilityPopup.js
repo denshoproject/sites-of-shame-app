@@ -15,6 +15,7 @@ const FacilityPopup = ({ feature }) => {
         {properties.facility_name}
       </PopupHeader>
       <PopupImage alt={properties.facility_name} src={imagesrc} />
+      <div className="image-credit">{properties.img_credit_line}</div>
       <div className="popup-row">
         <span className="facility-meta">
           {properties.sos_category}
