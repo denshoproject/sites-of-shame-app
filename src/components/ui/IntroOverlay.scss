@@ -1,0 +1,67 @@
+@import "~scss/_variables.scss";
+
+.overlay {
+  position: fixed;
+  padding: 2em 5em 5em 5em;
+  width: 38%;
+  height: 50%;
+  border-top: 0.5em solid $color-ui-blue;
+  margin: 8em 4em 12em 22em;
+  background-color: white;
+  z-index: 2;
+  font-family: $content-font-family;
+
+  .overlay-button {
+    background-color: $color-ui-blue;
+    width: 10em;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .button-text {
+    color: white;
+    font-size: 0.8em;
+    padding: 1em;
+    font-weight: 600;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro-logo {
+    width: 9em;
+  }
+
+  .line {
+    width: 8.2em;
+    background-color: $color-ui-blue;
+  }
+
+  .title-text {
+    color: #f07057;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.07em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .text-firstparagraph {
+    margin-top: 0;
+    color: $color-ui-blue;
+    line-height: 1.4em;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+
+  .text-secondparagraph {
+    margin-bottom: 2em;
+    color: $color-ui-blue;
+    line-height: 1.4em;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+}
