@@ -6,10 +6,12 @@
   width: 38%;
   height: 55%;
   border-top: 0.5em solid $color-ui-blue;
-  margin: 8em 4em 12em 22em;
   background-color: white;
   z-index: 2;
   font-family: $content-font-family;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   .overlay-button {
     background-color: $color-ui-blue;
