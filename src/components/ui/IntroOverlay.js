@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 import Logo from "img/densho-logo-horizontal.png";
 import IntroLogo from "img/logo-intro.png";
@@ -10,6 +12,16 @@ const IntroOverlay = () => {
   };
 
   const wrapperRef = useRef(null);
+
+  const [overlayText, setOverlayText] = useState(null);
+
+  useEffect(() => {
+    if (overlayText) return;
+
+    fetch("./overlay-text.md")
+      .then((r) => r.text())
+      .then(setOverlayText);
+  }, [overlayText, setOverlayText]);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -32,18 +44,9 @@ const IntroOverlay = () => {
       <hr className="line" />
       <p class="title-text">SITES OF SHAME</p>
       <img alt="Densho logo" src={Logo} className="logo" />
-      <p className="text-firstparagraph">
-        During World War II, more than 125,000 individuals of Japanese ancestry
-        were held without trial in a complex network of detention sites
-        throughout the U.S. Over two-thirds of those imprisoned were U.S.
-        citizens.
-      </p>
-      <p className="text-secondparagraph">
-        Forty years later, the U.S. government determined that the incarceration
-        was wrong and President Ronald Reagan signed the Civil Liberties Act of
-        1988. While many of the physical sites have faded into the landscape,
-        their history serves as a reminder of the fragility of our democracy.
-      </p>
+      <div className="intro-content">
+        <ReactMarkdown children={overlayText} rehypePlugins={[rehypeRaw]} />
+      </div>
       <div class="overlay-button" onClick={() => closeOverlay()}>
         <p class="button-text">SEE THEIR JOURNEYS</p>
       </div>

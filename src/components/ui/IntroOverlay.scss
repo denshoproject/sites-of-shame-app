@@ -51,20 +51,13 @@
     margin-bottom: 0;
   }
 
-  .text-firstparagraph {
+  .intro-content {
     margin-top: 0;
     color: $color-ui-blue;
     line-height: 1.4em;
     font-size: 0.9em;
     font-weight: 600;
-  }
-
-  .text-secondparagraph {
-    margin-bottom: 2em;
-    color: $color-ui-blue;
-    line-height: 1.4em;
-    font-size: 0.9em;
-    font-weight: 600;
+    padding-bottom: 2em;
   }
 }
 
