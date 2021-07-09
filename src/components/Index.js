@@ -4,10 +4,14 @@ import * as d3 from "d3";
 import { Context } from "store";
 import InsetMap from "components/map/InsetMap";
 import MainMap from "components/map/MainMap";
+import { GOOGLE_ANALYTICS_ID } from "constants.js";
 import "./Index.scss";
+import ReactGA from "react-ga4";
 
 const Index = () => {
   const { dispatch } = useContext(Context);
+
+  ReactGA.initialize(GOOGLE_ANALYTICS_ID);
 
   useEffect(() => {
     d3.csv("./infoboxes.csv").then((data) => {

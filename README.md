@@ -49,6 +49,7 @@ yarn build:production
 
 There are some environment variables that will have to be set in order for the production build to work. `cp .env.production.example .env.production` and edit the variables in `.env.production`:
  * `REACT_APP_DATA_PATH`: The production data path
+ * `REACT_APP_GOOGLE_ANALYTICS_ID`: The Google Analytics ID, should be of the format `G-XXXXXXXXXX`
  * `REACT_APP_MAPBOX_ACCESS_TOKEN`: The Mapbox access token
  * `REACT_APP_MAPBOX_BASE_LAYER`: The Mapbox style URL
 
