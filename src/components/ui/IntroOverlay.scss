@@ -4,7 +4,7 @@
   position: fixed;
   padding: 2em 5em 5em 5em;
   width: 38%;
-  height: 55%;
+  height: auto;
   border-top: 0.5em solid $color-ui-blue;
   background-color: white;
   z-index: 2000;
@@ -73,7 +73,6 @@
     justify-content: space-around;
     font-size: 0.75rem;
     padding: 2em;
-    height: 60%;
   }
 }
 
@@ -82,6 +81,5 @@
     justify-content: space-around;
     font-size: 0.75rem;
     padding: 2em;
-    height: 90%;
   }
 }
