@@ -1,5 +1,4 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
 
 import Logo from "img/densho-logo-horizontal.png";
 import IntroLogo from "img/logo-intro.png";
@@ -10,8 +9,23 @@ const IntroOverlay = () => {
     document.getElementById("overlay").style.display = "none";
   };
 
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        closeOverlay();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [wrapperRef]);
+
   return (
-    <div id="overlay" className="overlay">
+    <div id="overlay" className="overlay" ref={wrapperRef}>
       <div class="logo-container">
         <img alt="Densho logo" src={IntroLogo} className="intro-logo" />
       </div>
