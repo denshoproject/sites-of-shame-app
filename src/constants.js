@@ -1,3 +1,4 @@
+export const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
 export const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 export const MAPBOX_BASE_LAYER = process.env.REACT_APP_MAPBOX_BASE_LAYER;
 export const DATA_PATH = process.env.REACT_APP_DATA_PATH;
