@@ -7,6 +7,10 @@ const initialState = {
   clickedFeature: null,
   clickedFeatureLngLat: null,
 
+  intro: {
+    showIntro: true,
+  },
+
   infobox: {
     openId: null,
     clickedId: null,

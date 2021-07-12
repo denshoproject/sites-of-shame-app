@@ -17,7 +17,6 @@
     "query-string": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-ga": "^3.3.0",
     "react-ga4": "^1.0.4",
     "react-mapbox-gl": "^5.1.1",
     "react-markdown": "^6.0.2",

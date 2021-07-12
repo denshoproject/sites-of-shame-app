@@ -31,6 +31,8 @@ export const queryToState = (initialState) => {
   const queryState = queryString.parse(window.location.search);
   const stateUpdates = {};
 
+  stateUpdates.intro = { ...initialState.intro };
+
   if (queryState.zoom) {
     if (!stateUpdates.mapState)
       stateUpdates.mapState = { ...initialState.mapState };
@@ -64,6 +66,7 @@ export const queryToState = (initialState) => {
   if (!stateUpdates.far) stateUpdates.far = { ...initialState.far };
   if (queryState.farSelectedCamp) {
     stateUpdates.far.selectedCamp = queryState.farSelectedCamp;
+    stateUpdates.intro.showIntro = false;
   }
   if (queryState.farDestVisible) {
     stateUpdates.far.destVisible = queryState.farDestVisible === "true";
@@ -77,12 +80,14 @@ export const queryToState = (initialState) => {
       stateUpdates.facilities = { ...initialState.facilities };
     stateUpdates.facilities.enabledCategories =
       queryState.facilityCategories.split("|");
+    stateUpdates.intro.showIntro = false;
   }
 
   if (queryState.selectedFamily) {
     if (!stateUpdates.families)
       stateUpdates.families = { ...initialState.families };
     stateUpdates.families.selectedFamily = queryState.selectedFamily;
+    stateUpdates.intro.showIntro = false;
   }
 
   return {
