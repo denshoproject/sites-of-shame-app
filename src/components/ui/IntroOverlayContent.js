@@ -6,7 +6,7 @@ import Logo from "img/densho-logo-horizontal.png";
 import IntroLogo from "img/logo-intro.png";
 import "./IntroOverlay.scss";
 
-const IntroOverlayContent = (props) => {
+const IntroOverlayContent = ({ closeOverlay }) => {
   const wrapperRef = useRef(null);
 
   const [overlayText, setOverlayText] = useState(null);
@@ -22,7 +22,7 @@ const IntroOverlayContent = (props) => {
   useEffect(() => {
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-        return props.closeOverlay();
+        return closeOverlay();
       }
     }
 
@@ -30,7 +30,7 @@ const IntroOverlayContent = (props) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [wrapperRef]);
+  }, [closeOverlay, wrapperRef]);
 
   return (
     <div id="overlay" className="overlay" ref={wrapperRef}>
@@ -43,7 +43,7 @@ const IntroOverlayContent = (props) => {
       <div className="intro-content">
         <ReactMarkdown children={overlayText} rehypePlugins={[rehypeRaw]} />
       </div>
-      <div class="overlay-button" onClick={props.closeOverlay}>
+      <div class="overlay-button" onClick={closeOverlay}>
         <div class="overlay-button">
           <p class="button-text">SEE THEIR JOURNEYS</p>
         </div>
