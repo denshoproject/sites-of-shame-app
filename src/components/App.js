@@ -12,7 +12,6 @@ const App = () => {
     <div className="App">
       <IntroOverlay />
       <Nav />
-
       <Switch>
         <Route path="/" exact>
           <Index />
