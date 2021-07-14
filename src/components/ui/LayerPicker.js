@@ -71,7 +71,7 @@ const LayerPicker = () => {
                 checked={isEnabled("transfer orders")}
                 onChange={() => toggleLayer("transfer orders")}
               />
-              From Assembly Centers to Camps
+              From Assembly Center to Camp
             </label>
             <InfoboxButton
               id="From Assembly Centers to Camps"
