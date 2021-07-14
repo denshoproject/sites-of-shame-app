@@ -11,7 +11,7 @@ const ExclusionOrderLegend = () => {
         <div className="legend-square">
           <img alt="Exclusion Order icon" src={EoColor} />
         </div>
-        Exclusion Orders
+        Exclusion Area
         <InfoboxButton id={"Exclusion Orders"} clickedId={"Exclusion Orders"} />
       </div>
     </div>
