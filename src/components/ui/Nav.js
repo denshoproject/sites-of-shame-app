@@ -12,7 +12,7 @@ const Nav = () => {
     },
     {
       label: "Donate",
-      url: "https://densho.org/give/",
+      url: "https://connect.clickandpledge.com/w/Form/0ba80e4c-d3e5-4eab-bab8-6b1558794605",
     },
   ];
 
