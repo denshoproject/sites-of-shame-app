@@ -18,6 +18,15 @@ import Arrow from "img/arrow.sdf";
 import DiagonalGrid from "img/diagonal-grid.png";
 import "./BaseMap.scss";
 
+const Images = React.memo(() => {
+  return (
+    <>
+      <Image id="arrow" options={{ sdf: true }} url={Arrow} />
+      <Image id="diagonal-grid" url={DiagonalGrid} />
+    </>
+  );
+});
+
 const BaseMap = ({
   bounds,
   children,
@@ -110,8 +119,7 @@ const BaseMap = ({
       >
         {includeZoomControls ? <ZoomControl position="top-left" /> : null}
         {showPopups ? <PopupSwitch /> : null}
-        <Image id="arrow" options={{ sdf: true }} url={Arrow} />
-        <Image id="diagonal-grid" url={DiagonalGrid} />
+        <Images />
         <MapLayers loadLayerData={!isInset} />
         {children}
       </Map>

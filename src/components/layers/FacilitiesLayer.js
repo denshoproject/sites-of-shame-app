@@ -111,7 +111,7 @@ const FacilitiesLayer = ({ before, layer, loadData }) => {
       ...enabledCategories.map((category) => {
         const { value } =
           categories.filter((c) => c.name === category)[0] || {};
-        return ["==", ["get", "sos_system"], value];
+        return ["==", ["get", "sos_system"], value || null];
       }),
     ];
   }
