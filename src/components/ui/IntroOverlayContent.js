@@ -34,18 +34,18 @@ const IntroOverlayContent = ({ closeOverlay }) => {
 
   return (
     <div id="overlay" className="overlay" ref={wrapperRef}>
-      <div class="logo-container">
+      <div className="logo-container">
         <img alt="Densho logo" src={IntroLogo} className="intro-logo" />
       </div>
       <hr className="line" />
-      <p class="title-text">SITES OF SHAME</p>
+      <p className="title-text">SITES OF SHAME</p>
       <img alt="Densho logo" src={Logo} className="logo" />
       <div className="intro-content">
         <ReactMarkdown children={overlayText} rehypePlugins={[rehypeRaw]} />
       </div>
-      <div class="overlay-button" onClick={closeOverlay}>
-        <div class="overlay-button">
-          <p class="button-text">SEE THEIR JOURNEYS</p>
+      <div className="overlay-button" onClick={closeOverlay}>
+        <div className="overlay-button">
+          <p className="button-text">SEE THEIR JOURNEYS</p>
         </div>
       </div>
     </div>

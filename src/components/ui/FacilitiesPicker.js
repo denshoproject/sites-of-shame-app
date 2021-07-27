@@ -41,7 +41,10 @@ const FacilitiesPicker = () => {
           <div className="layer-list">
             <ol className="layer-legend-items">
               {category.types.map((type) => (
-                <li key={type.color} className="layer-legend-item">
+                <li
+                  key={`${category.name}-${type.color}`}
+                  className="layer-legend-item"
+                >
                   <FacilityTypePicker
                     name={type.name}
                     color={type.color}
