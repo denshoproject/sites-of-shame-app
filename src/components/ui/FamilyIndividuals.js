@@ -32,7 +32,10 @@ const FamilyIndividuals = () => {
         const color =
           colorScheme.filter(({ personId }) => personId === individual)[0]
             ?.color ?? null;
-        return { name, color };
+        const personId = byIndividual.get(individual)[0].person_id;
+        const hasBio = 
+          ((byIndividual.get(individual)[0].has_bio === 1) ? true : false);
+        return { name, color, personId, hasBio };
       })
       .sort((a, b) => d3.ascending(a.name, b.name));
   }, [byIndividual, colorScheme]);
@@ -49,10 +52,13 @@ const FamilyIndividuals = () => {
         ) : null}
       </div>
       <ol className="individual-list">
-        {individuals.map(({ name, color }) => (
+        {individuals.map(({ name, color, personId, hasBio }) => (
           <li key={name}>
             <FamilyLegendRectangle color={color} />
-            {name}
+            {name} 
+            {hasBio ? (
+              <InfoboxButton id={personId} clickedId={personId} />
+            ) : null}
           </li>
         ))}
       </ol>
