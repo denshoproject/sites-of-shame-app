@@ -34,7 +34,7 @@ const FamilyIndividuals = () => {
             ?.color ?? null;
         const personId = byIndividual.get(individual)[0].person_id;
         const hasBio = 
-          ((byIndividual.get(individual)[0].has_bio === 1) ? true : false);
+          ((byIndividual.get(individual)[0].has_bio == 1) ? true : false);
         return { name, color, personId, hasBio };
       })
       .sort((a, b) => d3.ascending(a.name, b.name));
