@@ -1,8 +1,8 @@
-PROJECT=densho-sites-of-shame
+PROJECT=sites-of-shame
 USER=ddr
 SHELL=/bin/bash
 
-SRC_REPO_STAMEN=git@github.com:stamen/densho-sites-of-shame.git
+SRC_REPO_STAMEN=git@github.com:denshoproject/sites-of-shame.git
 SRC_REPO_DATA=git@github.com:denshoproject/densho-sites-of-shame-data.git
 
 INSTALL_BASE=/opt
