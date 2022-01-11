@@ -27,6 +27,7 @@ help:
 install:
 	apt-get --assume-yes install csvkit sqlite3 yarnpkg
 	yarnpkg install
+	chown -R ansible.ansible $(INSTALLDIR)/node_modules/
 
 far:
 	-mkdir -p $(INSTALLDIR)/data-processing/input/
