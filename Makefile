@@ -44,6 +44,12 @@ build-stage:
 build:
 	yarnpkg build:production
 
+push-stage:
+	rsync -avz build/* ansible@ddrstatic.local:/var/www/sites-of-shame-stage/
+
+push-production:
+	rsync -avz build/* ansible@ddrstatic.local:/var/www/sites-of-shame/
+
 uninstall:
 	apt-get --assume-yes remove yarnpkg
 	rm -Rf build/
