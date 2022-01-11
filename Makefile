@@ -46,6 +46,7 @@ build:
 
 uninstall:
 	apt-get --assume-yes remove yarnpkg
+	rm -Rf build/
 	rm -Rf node_modules/
 	rm -Rf coverage/
 	rm -Rf .DS_Store/
