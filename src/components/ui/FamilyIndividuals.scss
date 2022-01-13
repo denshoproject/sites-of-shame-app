@@ -28,6 +28,11 @@
       align-items: center;
       display: flex;
       flex-direction: row;
+      
+      .infobox-button {
+        align-self: center;
+        margin-left: 0.5em;
+      }
     }
   }
 }
