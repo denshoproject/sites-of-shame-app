@@ -1,6 +1,6 @@
 # densho-sites-of-shame
 
-A storytelling map for [Densho](https://densho.org/).
+A storytelling map for [Densho](https://densho.org/).  Data for this app resides in https://github.com/denshoproject/sites-of-shame-data.
 
 ## What's included
 
